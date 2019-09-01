@@ -1,5 +1,8 @@
 package DTO;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Student {
 
     private String regNumber;
@@ -12,6 +15,8 @@ public class Student {
     private String tradeTwo;
     private String tradeThree;
     private String trainingType;
+
+    private List<Course> courses=new ArrayList<>();
 
     public Student() {
     }
@@ -27,6 +32,20 @@ public class Student {
         this.tradeTwo = tradeTwo;
         this.tradeThree = tradeThree;
         this.trainingType = trainingType;
+    }
+
+    public Student(String regNumber, String name, String date, String email, String telNumber, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, String trainingType, List<Course> courses) {
+        this.regNumber = regNumber;
+        this.name = name;
+        this.date = date;
+        this.email = email;
+        this.telNumber = telNumber;
+        this.nicNumber = nicNumber;
+        this.tradeOne = tradeOne;
+        this.tradeTwo = tradeTwo;
+        this.tradeThree = tradeThree;
+        this.trainingType = trainingType;
+        this.courses = courses;
     }
 
     public String getRegNumber() {
@@ -109,6 +128,14 @@ public class Student {
         this.trainingType = trainingType;
     }
 
+    public List<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -122,6 +149,7 @@ public class Student {
                 ", tradeTwo='" + tradeTwo + '\'' +
                 ", tradeThree='" + tradeThree + '\'' +
                 ", trainingType='" + trainingType + '\'' +
+                ", courses=" + courses +
                 '}';
     }
 }
