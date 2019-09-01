@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="StudantRegistration" prefHeight="751.0" prefWidth="1059.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <TextField fx:id="txtfullName" layoutX="157.0" layoutY="86.0" prefHeight="31.0" prefWidth="637.0" />
+      <Label layoutX="8.0" layoutY="85.0" prefHeight="27.0" prefWidth="110.0" text="Full Name" />
+      <TextField fx:id="txtnameWithInitials" layoutX="157.0" layoutY="123.0" prefHeight="31.0" prefWidth="637.0" />
+      <Label layoutX="7.0" layoutY="122.0" prefHeight="27.0" prefWidth="134.0" text="Name with initials" />
+      <Label layoutX="7.0" layoutY="157.0" prefHeight="27.0" prefWidth="110.0" text="Sex" />
+      <Label layoutX="8.0" layoutY="193.0" prefHeight="27.0" prefWidth="110.0" text="Date of Birth" />
+      <Label layoutX="134.0" layoutY="193.0" prefHeight="27.0" prefWidth="30.0" text="Year" />
+      <TextField fx:id="txtdobYear" layoutX="173.0" layoutY="194.0" prefHeight="25.0" prefWidth="119.0" />
+      <TextField fx:id="txtdobMonth" layoutX="379.0" layoutY="194.0" prefHeight="25.0" prefWidth="61.0" />
+      <TextField fx:id="txtdobDay" layoutX="496.0" layoutY="194.0" prefHeight="25.0" prefWidth="61.0" />
+      <Label layoutX="466.0" layoutY="193.0" prefHeight="27.0" prefWidth="30.0" text="Day" />
+      <Label layoutX="319.0" layoutY="193.0" prefHeight="27.0" prefWidth="52.0" text="Month" />
+      <Label layoutX="8.0" layoutY="228.0" prefHeight="27.0" prefWidth="110.0" text="Address" />
+      <TextArea fx:id="txtAddress" layoutX="134.0" layoutY="233.0" prefHeight="51.0" prefWidth="435.0" />
+      <Label layoutX="8.0" layoutY="298.0" prefHeight="27.0" prefWidth="110.0" text="NIC" />
+      <TextField fx:id="txtNic" layoutX="134.0" layoutY="295.0" prefHeight="31.0" prefWidth="224.0" />
+      <Label layoutX="103.0" layoutY="491.0" prefHeight="27.0" prefWidth="360.0" text="                             Contact Details" textAlignment="RIGHT">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Separator layoutX="34.0" layoutY="473.0" prefHeight="18.0" prefWidth="516.0" />
+      <Label layoutX="7.0" layoutY="538.0" prefHeight="27.0" prefWidth="81.0" text="Home" />
+      <Label layoutX="312.0" layoutY="538.0" prefHeight="27.0" prefWidth="75.0" text="Mobile" />
+      <TextField fx:id="txtHomeTel" layoutX="115.0" layoutY="539.0" />
+      <TextField fx:id="txtMobTel" layoutX="389.0" layoutY="539.0" />
+      <Label layoutX="7.0" layoutY="575.0" prefHeight="27.0" prefWidth="138.0" text="Email address" />
+      <TextField fx:id="txtEmail" layoutX="201.0" layoutY="576.0" prefHeight="31.0" prefWidth="374.0" />
+      <Button fx:id="btnRegStudent" layoutX="136.0" layoutY="627.0" mnemonicParsing="false" text="Register student" />
+      <Button fx:id="btnNotify" layoutX="403.0" layoutY="626.0" mnemonicParsing="false" text="Notify" />
+      <Button fx:id="btnDelete" layoutX="507.0" layoutY="626.0" mnemonicParsing="false" text="Delete" />
+      <Button fx:id="btnUpdate" layoutX="608.0" layoutY="625.0" mnemonicParsing="false" text="Update" />
+      <Button fx:id="btnSearch" layoutX="300.0" layoutY="626.0" mnemonicParsing="false" text="Search" />
+      <Label layoutX="7.0" layoutY="352.0" prefHeight="27.0" prefWidth="110.0" text="Trade 1" />
+      <Label layoutX="7.0" layoutY="391.0" prefHeight="27.0" prefWidth="110.0" text="Trade 2" />
+      <Label layoutX="8.0" layoutY="431.0" prefHeight="27.0" prefWidth="110.0" text="Trade 3" />
+      <TextField fx:id="txtTradeOne" layoutX="133.0" layoutY="348.0" prefHeight="31.0" prefWidth="298.0" />
+      <TextField fx:id="txtTradeThree" layoutX="133.0" layoutY="429.0" prefHeight="31.0" prefWidth="297.0" />
+      <TextField fx:id="txtTradeTwo" layoutX="134.0" layoutY="389.0" prefHeight="31.0" prefWidth="297.0" />
+      <ComboBox fx:id="cmbSex" layoutX="133.0" layoutY="155.0" onMouseClicked="#cmbSexMouseClicked" prefHeight="31.0" prefWidth="235.0" visibleRowCount="2" />
+      <Label layoutX="337.0" layoutY="26.0" prefHeight="27.0" prefWidth="158.0" text="Registration Number" />
+      <TextField fx:id="txtRegYear" layoutX="502.0" layoutY="24.0" prefHeight="25.0" prefWidth="119.0" />
+      <TextField fx:id="txtRegDistrict" layoutX="635.0" layoutY="24.0" prefHeight="25.0" prefWidth="119.0" />
+      <TextField fx:id="txtRegMonth" layoutX="766.0" layoutY="24.0" prefHeight="25.0" prefWidth="119.0" />
+      <TextField fx:id="txtRegNumber" layoutX="899.0" layoutY="24.0" prefHeight="25.0" prefWidth="119.0" />
+   </children>
+</AnchorPane>
