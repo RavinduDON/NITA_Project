@@ -11,11 +11,12 @@ public class Student {
     private String tradeOne;
     private String tradeTwo;
     private String tradeThree;
+    private String trainingType;
 
     public Student() {
     }
 
-    public Student(String regNumber, String name, String date, String email, String telNumber, String nicNumber, String tradeOne, String tradeTwo, String tradeThree) {
+    public Student(String regNumber, String name, String date, String email, String telNumber, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, String trainingType) {
         this.regNumber = regNumber;
         this.name = name;
         this.date = date;
@@ -25,6 +26,7 @@ public class Student {
         this.tradeOne = tradeOne;
         this.tradeTwo = tradeTwo;
         this.tradeThree = tradeThree;
+        this.trainingType = trainingType;
     }
 
     public String getRegNumber() {
@@ -99,6 +101,14 @@ public class Student {
         this.tradeThree = tradeThree;
     }
 
+    public String getTrainingType() {
+        return trainingType;
+    }
+
+    public void setTrainingType(String trainingType) {
+        this.trainingType = trainingType;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -111,6 +121,7 @@ public class Student {
                 ", tradeOne='" + tradeOne + '\'' +
                 ", tradeTwo='" + tradeTwo + '\'' +
                 ", tradeThree='" + tradeThree + '\'' +
+                ", trainingType='" + trainingType + '\'' +
                 '}';
     }
 }
