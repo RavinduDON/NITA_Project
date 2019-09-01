@@ -1,21 +1,39 @@
 package Hibernate.Entity;
 
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+@Entity
 public class Student {
 
-    private String regNumber;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator ="stdRegNum" )
+    @SequenceGenerator(name = "stdRegNum",
+    sequenceName = "student_seq",
+    initialValue = 1,
+    allocationSize = 1)
+    @Id
+    private int regNumber;
     private String name;
-    private String date;
+    @Temporal(TemporalType.DATE)
+    private Date date;
     private String email;
     private String telNumber;
     private String nicNumber;
     private String tradeOne;
     private String tradeTwo;
     private String tradeThree;
+    @Enumerated(value = EnumType.STRING)
+    private TrainingType trainingType;
+
+    @ManyToMany(mappedBy = "studnts")
+    private List<Course> courses=new ArrayList<>();
 
     public Student() {
     }
 
-    public Student(String regNumber, String name, String date, String email, String telNumber, String nicNumber, String tradeOne, String tradeTwo, String tradeThree) {
+    public Student(int regNumber, String name, Date date, String email, String telNumber, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, TrainingType trainingType) {
         this.regNumber = regNumber;
         this.name = name;
         this.date = date;
@@ -25,13 +43,28 @@ public class Student {
         this.tradeOne = tradeOne;
         this.tradeTwo = tradeTwo;
         this.tradeThree = tradeThree;
+        this.trainingType = trainingType;
     }
 
-    public String getRegNumber() {
+    public Student(int regNumber, String name, Date date, String email, String telNumber, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, TrainingType trainingType, List<Course> courses) {
+        this.regNumber = regNumber;
+        this.name = name;
+        this.date = date;
+        this.email = email;
+        this.telNumber = telNumber;
+        this.nicNumber = nicNumber;
+        this.tradeOne = tradeOne;
+        this.tradeTwo = tradeTwo;
+        this.tradeThree = tradeThree;
+        this.trainingType = trainingType;
+        this.courses = courses;
+    }
+
+    public int getRegNumber() {
         return regNumber;
     }
 
-    public void setRegNumber(String regNumber) {
+    public void setRegNumber(int regNumber) {
         this.regNumber = regNumber;
     }
 
@@ -43,11 +76,11 @@ public class Student {
         this.name = name;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
@@ -99,6 +132,22 @@ public class Student {
         this.tradeThree = tradeThree;
     }
 
+    public TrainingType getTrainingType() {
+        return trainingType;
+    }
+
+    public void setTrainingType(TrainingType trainingType) {
+        this.trainingType = trainingType;
+    }
+
+    public List<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -111,6 +160,8 @@ public class Student {
                 ", tradeOne='" + tradeOne + '\'' +
                 ", tradeTwo='" + tradeTwo + '\'' +
                 ", tradeThree='" + tradeThree + '\'' +
+                ", trainingType='" + trainingType + '\'' +
+                ", courses=" + courses +
                 '}';
     }
 }

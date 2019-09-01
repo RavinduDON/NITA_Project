@@ -1,11 +1,16 @@
 package DTO;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Course {
 
     private String courseID;
     private String name;
     private String duration;
     private String trainingCenter;
+
+    private List<Student> students=new ArrayList<>();
 
 
     public Course() {
@@ -16,6 +21,14 @@ public class Course {
         this.name = name;
         this.duration = duration;
         this.trainingCenter = trainingCenter;
+    }
+
+    public Course(String courseID, String name, String duration, String trainingCenter, List<Student> students) {
+        this.courseID = courseID;
+        this.name = name;
+        this.duration = duration;
+        this.trainingCenter = trainingCenter;
+        this.students = students;
     }
 
     public String getCourseID() {
@@ -50,6 +63,14 @@ public class Course {
         this.trainingCenter = trainingCenter;
     }
 
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<Student> students) {
+        this.students = students;
+    }
+
     @Override
     public String toString() {
         return "Course{" +
@@ -57,6 +78,7 @@ public class Course {
                 ", name='" + name + '\'' +
                 ", duration='" + duration + '\'' +
                 ", trainingCenter='" + trainingCenter + '\'' +
+                ", students=" + students +
                 '}';
     }
 }
