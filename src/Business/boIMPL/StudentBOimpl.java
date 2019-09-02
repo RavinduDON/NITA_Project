@@ -3,13 +3,22 @@ package Business.boIMPL;
 import Business.Custom.StudentBO;
 import DTO.Course;
 import DTO.Student;
+import Hibernate.Custom.StudentHIB;
+import Hibernate.Dao.HibernateFactory;
 
 import java.util.List;
 
 public class StudentBOimpl implements StudentBO {
+
+    StudentHIB studentHIB;
+    public StudentBOimpl(){
+        studentHIB= (StudentHIB) HibernateFactory.getHibernateFactory().getSuperDAO(HibernateFactory.HIBFactoryTypes.STUDENT);
+    }
     @Override
     public boolean addStudent(Student dto) throws Exception {
-        return false;
+        Hibernate.Entity.Student student=new Hibernate.Entity.Student()
+
+
     }
 
     @Override
