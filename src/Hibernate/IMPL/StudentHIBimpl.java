@@ -44,7 +44,16 @@ public class StudentHIBimpl implements StudentHIB {
 
     @Override
     public boolean delete(String s) throws Exception {
-        return false;
+        HIBCUDutill.openSession();
+        Student student=HIBCUDutill.session.get(Student.class,s);
+        HIBCUDutill.session.delete(student);
+        if(student!=null){
+            HIBCUDutill.closeSession();
+            return true;
+        }else {
+            return false;
+        }
+
     }
 
     @Override

@@ -148,6 +148,10 @@ public class Student {
         this.courses = courses;
     }
 
+    public void addCourse(Course course){
+        course.getStudents().add(this);
+        this.getCourses().add(course);
+    }
     @Override
     public String toString() {
         return "Student{" +

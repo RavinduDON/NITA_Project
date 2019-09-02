@@ -20,6 +20,11 @@ public class Course {
     private String duration;
     private String trainingCenter;
 
+    @ManyToMany
+    @JoinTable(
+            joinColumns = @JoinColumn(name = "student_ID",referencedColumnName = "regNumber"),
+            inverseJoinColumns = @JoinColumn(name = "course_ID",referencedColumnName = "courseID")
+    )
     private List<Student> students=new ArrayList<>();
 
 
