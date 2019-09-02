@@ -3,13 +3,14 @@ package DTO;
 import Hibernate.Entity.TrainingType;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Student {
 
-    private String regNumber;
+    private int regNumber;
     private String name;
-    private String date;
+    private Date date;
     private String email;
     private String telNumber;
     private String nicNumber;
@@ -23,7 +24,7 @@ public class Student {
     public Student() {
     }
 
-    public Student(String regNumber, String name, String date, String email, String telNumber, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, TrainingType trainingType) {
+    public Student(int regNumber, String name, Date date, String email, String telNumber, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, TrainingType trainingType) {
         this.regNumber = regNumber;
         this.name = name;
         this.date = date;
@@ -36,7 +37,7 @@ public class Student {
         this.trainingType = trainingType;
     }
 
-    public Student(String regNumber, String name, String date, String email, String telNumber, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, TrainingType trainingType, List<Course> courses) {
+    public Student(int regNumber, String name, Date date, String email, String telNumber, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, TrainingType trainingType, List<Course> courses) {
         this.regNumber = regNumber;
         this.name = name;
         this.date = date;
@@ -50,11 +51,11 @@ public class Student {
         this.courses = courses;
     }
 
-    public String getRegNumber() {
+    public int getRegNumber() {
         return regNumber;
     }
 
-    public void setRegNumber(String regNumber) {
+    public void setRegNumber(int regNumber) {
         this.regNumber = regNumber;
     }
 
@@ -66,11 +67,11 @@ public class Student {
         this.name = name;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
