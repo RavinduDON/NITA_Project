@@ -89,7 +89,7 @@ public class StudentHIBimpl implements StudentHIB {
     public List<Student> searchANYthing(String key) throws Exception {
         List<Student> students;
         HIBCUDutill.openSession();
-        students=HIBCUDutill.session.createNativeQuery("SELECT * FROM WHERE " +
+        students=HIBCUDutill.session.createNativeQuery("SELECT * FROM Student WHERE " +
                 "regNumber like '%"+key+"%'or " +
                 "sname like '%"+key+"%'or " +
                 "rdate like '%"+key+"%'or " +
@@ -109,10 +109,16 @@ public class StudentHIBimpl implements StudentHIB {
     }
 
     @Override
-    public boolean addStudentCourse(Student student, Course course) throws Exception {
+    public boolean addStudentCourse(Student student) throws Exception {
 
-        List<Course> courses=new ArrayList<>();
-        courses.add(course);
+        String tradeOne=student.getTradeOne();
+        String tradeTwo=student.getTradeTwo();
+        String tradeThree=student.getTradeThree();
+        List<Course> courses;
+        courses=HIBCUDutill.session.createNativeQuery("SELECT * FROM Course WHERE " +
+                "cname like '%"+tradeOne+"%'or " +
+                "cname like '%"+tradeTwo+"%'or " +
+                "cname like '%"+tradeThree+"%'",Course.class).list();
         HIBCUDutill.openSession();
         student.setCourses(courses);
         Serializable id=HIBCUDutill.session.save(student);

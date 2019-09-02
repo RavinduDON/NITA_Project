@@ -1,7 +1,5 @@
 package Hibernate.Entity;
 
-import com.sun.xml.fastinfoset.util.StringIntMap;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +14,7 @@ public class Course {
             allocationSize = 1)
     @Id
     private int courseID;
-    private String name;
+    private String cname;
     private String duration;
     private String trainingCenter;
 
@@ -31,16 +29,16 @@ public class Course {
     public Course() {
     }
 
-    public Course(int courseID, String name, String duration, String trainingCenter) {
+    public Course(int courseID, String cname, String duration, String trainingCenter) {
         this.courseID = courseID;
-        this.name = name;
+        this.cname = cname;
         this.duration = duration;
         this.trainingCenter = trainingCenter;
     }
 
-    public Course(int courseID, String name, String duration, String trainingCenter, List<Student> students) {
+    public Course(int courseID, String cname, String duration, String trainingCenter, List<Student> students) {
         this.courseID = courseID;
-        this.name = name;
+        this.cname = cname;
         this.duration = duration;
         this.trainingCenter = trainingCenter;
         this.students = students;
@@ -54,12 +52,12 @@ public class Course {
         this.courseID = courseID;
     }
 
-    public String getName() {
-        return name;
+    public String getCname() {
+        return cname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCname(String cname) {
+        this.cname = cname;
     }
 
     public String getDuration() {
@@ -90,7 +88,7 @@ public class Course {
     public String toString() {
         return "Course{" +
                 "courseID='" + courseID + '\'' +
-                ", name='" + name + '\'' +
+                ", cname='" + cname + '\'' +
                 ", duration='" + duration + '\'' +
                 ", trainingCenter='" + trainingCenter + '\'' +
                 ", students=" + students +
