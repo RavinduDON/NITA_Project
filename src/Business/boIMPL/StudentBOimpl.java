@@ -6,6 +6,7 @@ import DTO.Student;
 import Hibernate.Custom.StudentHIB;
 import Hibernate.Dao.HibernateFactory;
 
+import java.util.Date;
 import java.util.List;
 
 public class StudentBOimpl implements StudentBO {
@@ -16,9 +17,8 @@ public class StudentBOimpl implements StudentBO {
     }
     @Override
     public boolean addStudent(Student dto) throws Exception {
-        Hibernate.Entity.Student student=new Hibernate.Entity.Student()
-
-
+        Hibernate.Entity.Student student=new Hibernate.Entity.Student(dto.getName(),new Date(),dto.getEmail(),dto.getTelNumber(),dto.getNicNumber(),dto.getTradeOne(),dto.getTradeTwo(),dto.getTradeThree(),dto.getTrainingType());
+        return studentHIB.add(student);
     }
 
     @Override

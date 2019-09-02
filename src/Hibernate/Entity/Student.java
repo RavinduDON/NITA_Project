@@ -60,6 +60,31 @@ public class Student {
         this.courses = courses;
     }
 
+    public Student(String sname, Date rdate, String email, String telNumber, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, TrainingType trainingType, List<Course> courses) {
+        this.sname = sname;
+        this.rdate = rdate;
+        this.email = email;
+        this.telNumber = telNumber;
+        this.nicNumber = nicNumber;
+        this.tradeOne = tradeOne;
+        this.tradeTwo = tradeTwo;
+        this.tradeThree = tradeThree;
+        this.trainingType = trainingType;
+        this.courses = courses;
+    }
+
+    public Student(String sname, Date rdate, String email, String telNumber, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, TrainingType trainingType) {
+        this.sname = sname;
+        this.rdate = rdate;
+        this.email = email;
+        this.telNumber = telNumber;
+        this.nicNumber = nicNumber;
+        this.tradeOne = tradeOne;
+        this.tradeTwo = tradeTwo;
+        this.tradeThree = tradeThree;
+        this.trainingType = trainingType;
+    }
+
     public int getRegNumber() {
         return regNumber;
     }

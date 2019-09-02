@@ -1,5 +1,7 @@
 package DTO;
 
+import Hibernate.Entity.TrainingType;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,14 +16,14 @@ public class Student {
     private String tradeOne;
     private String tradeTwo;
     private String tradeThree;
-    private String trainingType;
+    private TrainingType trainingType;
 
     private List<Course> courses=new ArrayList<>();
 
     public Student() {
     }
 
-    public Student(String regNumber, String name, String date, String email, String telNumber, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, String trainingType) {
+    public Student(String regNumber, String name, String date, String email, String telNumber, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, TrainingType trainingType) {
         this.regNumber = regNumber;
         this.name = name;
         this.date = date;
@@ -34,7 +36,7 @@ public class Student {
         this.trainingType = trainingType;
     }
 
-    public Student(String regNumber, String name, String date, String email, String telNumber, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, String trainingType, List<Course> courses) {
+    public Student(String regNumber, String name, String date, String email, String telNumber, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, TrainingType trainingType, List<Course> courses) {
         this.regNumber = regNumber;
         this.name = name;
         this.date = date;
@@ -120,11 +122,11 @@ public class Student {
         this.tradeThree = tradeThree;
     }
 
-    public String getTrainingType() {
+    public TrainingType getTrainingType() {
         return trainingType;
     }
 
-    public void setTrainingType(String trainingType) {
+    public void setTrainingType(TrainingType trainingType) {
         this.trainingType = trainingType;
     }
 
