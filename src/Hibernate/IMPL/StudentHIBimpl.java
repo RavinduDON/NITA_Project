@@ -2,6 +2,7 @@ package Hibernate.IMPL;
 
 import Hibernate.Custom.StudentHIB;
 import Hibernate.Dao.HIBCUDutill;
+import Hibernate.Entity.Course;
 import Hibernate.Entity.Student;
 
 import java.io.Serializable;
@@ -103,6 +104,19 @@ public class StudentHIBimpl implements StudentHIB {
             return students;
         }else {
             return null;
+        }
+    }
+
+    @Override
+    public boolean addStudentCourse(Student student, Course course) throws Exception {
+
+        HIBCUDutill.openSession();
+        Serializable id=HIBCUDutill.session.save(course);
+        if(id!=null){
+            HIBCUDutill.closeSession();
+            return true;
+        }else {
+            return false;
         }
     }
 }
