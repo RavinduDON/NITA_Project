@@ -6,6 +6,7 @@ import Hibernate.Entity.Course;
 import Hibernate.Entity.Student;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class StudentHIBimpl implements StudentHIB {
@@ -110,8 +111,11 @@ public class StudentHIBimpl implements StudentHIB {
     @Override
     public boolean addStudentCourse(Student student, Course course) throws Exception {
 
+        List<Course> courses=new ArrayList<>();
+        courses.add(course);
         HIBCUDutill.openSession();
-        Serializable id=HIBCUDutill.session.save(course);
+        student.setCourses(courses);
+        Serializable id=HIBCUDutill.session.save(student);
         if(id!=null){
             HIBCUDutill.closeSession();
             return true;
