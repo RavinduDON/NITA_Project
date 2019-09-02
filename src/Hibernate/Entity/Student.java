@@ -15,9 +15,9 @@ public class Student {
     allocationSize = 1)
     @Id
     private int regNumber;
-    private String name;
+    private String sname;
     @Temporal(TemporalType.DATE)
-    private Date date;
+    private Date rdate;
     private String email;
     private String telNumber;
     private String nicNumber;
@@ -33,10 +33,10 @@ public class Student {
     public Student() {
     }
 
-    public Student(int regNumber, String name, Date date, String email, String telNumber, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, TrainingType trainingType) {
+    public Student(int regNumber, String sname, Date rdate, String email, String telNumber, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, TrainingType trainingType) {
         this.regNumber = regNumber;
-        this.name = name;
-        this.date = date;
+        this.sname = sname;
+        this.rdate = rdate;
         this.email = email;
         this.telNumber = telNumber;
         this.nicNumber = nicNumber;
@@ -46,10 +46,10 @@ public class Student {
         this.trainingType = trainingType;
     }
 
-    public Student(int regNumber, String name, Date date, String email, String telNumber, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, TrainingType trainingType, List<Course> courses) {
+    public Student(int regNumber, String sname, Date rdate, String email, String telNumber, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, TrainingType trainingType, List<Course> courses) {
         this.regNumber = regNumber;
-        this.name = name;
-        this.date = date;
+        this.sname = sname;
+        this.rdate = rdate;
         this.email = email;
         this.telNumber = telNumber;
         this.nicNumber = nicNumber;
@@ -68,20 +68,20 @@ public class Student {
         this.regNumber = regNumber;
     }
 
-    public String getName() {
-        return name;
+    public String getSname() {
+        return sname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSname(String sname) {
+        this.sname = sname;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getRdate() {
+        return rdate;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setRdate(Date rdate) {
+        this.rdate = rdate;
     }
 
     public String getEmail() {
@@ -156,8 +156,8 @@ public class Student {
     public String toString() {
         return "Student{" +
                 "regNumber='" + regNumber + '\'' +
-                ", name='" + name + '\'' +
-                ", date='" + date + '\'' +
+                ", sname='" + sname + '\'' +
+                ", rdate='" + rdate + '\'' +
                 ", email='" + email + '\'' +
                 ", telNumber='" + telNumber + '\'' +
                 ", nicNumber='" + nicNumber + '\'' +

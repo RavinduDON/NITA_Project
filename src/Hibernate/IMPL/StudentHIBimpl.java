@@ -24,8 +24,8 @@ public class StudentHIBimpl implements StudentHIB {
     public boolean update(Student dto) throws Exception {
         HIBCUDutill.openSession();
         Student student=HIBCUDutill.session.get(Student.class,dto.getRegNumber());
-        student.setName(dto.getName());
-        student.setDate(dto.getDate());
+        student.setSname(dto.getSname());
+        student.setRdate(dto.getRdate());
         student.setEmail(dto.getEmail());
         student.setTelNumber(dto.getTelNumber());
         student.setEmail(dto.getEmail());
@@ -58,11 +58,51 @@ public class StudentHIBimpl implements StudentHIB {
 
     @Override
     public Student search(String s) throws Exception {
-        return null;
+        HIBCUDutill.openSession();
+        Student student=HIBCUDutill.session.load(Student.class,s);
+        if(student!=null){
+            HIBCUDutill.closeSession();
+            return student;
+        }else {
+            return null;
+        }
+
     }
 
     @Override
     public List<Student> getAll() throws Exception {
-        return null;
+        List<Student> students;
+        HIBCUDutill.openSession();
+        students=HIBCUDutill.session.createNativeQuery("SELECT * FROM Student",Student.class).list();
+        if(students.size()>0){
+            HIBCUDutill.closeSession();
+            return students;
+        }else {
+            return null;
+        }
+    }
+
+
+    @Override
+    public List<Student> searchANYthing(String key) throws Exception {
+        List<Student> students;
+        HIBCUDutill.openSession();
+        students=HIBCUDutill.session.createNativeQuery("SELECT * FROM WHERE " +
+                "regNumber like '%"+key+"%'or " +
+                "sname like '%"+key+"%'or " +
+                "rdate like '%"+key+"%'or " +
+                "email like '%"+key+"%'or " +
+                "telNumber like '%"+key+"%'or " +
+                "nicNumber like '%"+key+"%'or " +
+                "tradeOne like '%"+key+"%'or " +
+                "tradeTwo like '%"+key+"%'or" +
+                "tradeThree like '%"+key+"%'or" +
+                "trainingType like '%"+key+"%'",Student.class).list();
+        if(students.size()>0){
+            HIBCUDutill.closeSession();
+            return students;
+        }else {
+            return null;
+        }
     }
 }
