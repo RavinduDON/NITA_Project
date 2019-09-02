@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.input.MouseEvent;
 
@@ -92,6 +93,10 @@ public class StudentRegisterController implements Initializable {
 
     }
 
+    @FXML
+    void txtanyKeyRelesed(KeyEvent event) {
+
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 

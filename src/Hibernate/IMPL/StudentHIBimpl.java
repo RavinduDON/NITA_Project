@@ -30,6 +30,7 @@ public class StudentHIBimpl implements StudentHIB {
         student.setRdate(dto.getRdate());
         student.setEmail(dto.getEmail());
         student.setTelNumber(dto.getTelNumber());
+        student.setAddress(dto.getAddress());
         student.setEmail(dto.getEmail());
         student.setTradeOne(dto.getTradeOne());
         student.setTradeTwo(dto.getTradeTwo());
@@ -95,10 +96,11 @@ public class StudentHIBimpl implements StudentHIB {
                 "rdate like '%"+key+"%'or " +
                 "email like '%"+key+"%'or " +
                 "telNumber like '%"+key+"%'or " +
+                "address like '%"+key+"%'or "+
                 "nicNumber like '%"+key+"%'or " +
                 "tradeOne like '%"+key+"%'or " +
-                "tradeTwo like '%"+key+"%'or" +
-                "tradeThree like '%"+key+"%'or" +
+                "tradeTwo like '%"+key+"%'or " +
+                "tradeThree like '%"+key+"%'or " +
                 "trainingType like '%"+key+"%'",Student.class).list();
         if(students.size()>0){
             HIBCUDutill.closeSession();

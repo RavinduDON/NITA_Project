@@ -47,9 +47,9 @@
       <Label layoutX="7.0" layoutY="352.0" prefHeight="27.0" prefWidth="110.0" text="Trade 1" />
       <Label layoutX="7.0" layoutY="391.0" prefHeight="27.0" prefWidth="110.0" text="Trade 2" />
       <Label layoutX="8.0" layoutY="431.0" prefHeight="27.0" prefWidth="110.0" text="Trade 3" />
-      <TextField fx:id="txtTradeOne" layoutX="133.0" layoutY="348.0" prefHeight="31.0" prefWidth="298.0" />
-      <TextField fx:id="txtTradeThree" layoutX="133.0" layoutY="429.0" prefHeight="31.0" prefWidth="297.0" />
-      <TextField fx:id="txtTradeTwo" layoutX="134.0" layoutY="389.0" prefHeight="31.0" prefWidth="297.0" />
+      <TextField fx:id="txtTradeOne" layoutX="133.0" layoutY="348.0" onKeyReleased="#txtanyKeyRelesed" prefHeight="31.0" prefWidth="298.0" />
+      <TextField fx:id="txtTradeThree" layoutX="133.0" layoutY="429.0" onKeyReleased="#txtanyKeyRelesed" prefHeight="31.0" prefWidth="297.0" />
+      <TextField fx:id="txtTradeTwo" layoutX="134.0" layoutY="389.0" onKeyReleased="#txtanyKeyRelesed" prefHeight="31.0" prefWidth="297.0" />
       <ComboBox fx:id="cmbSex" layoutX="133.0" layoutY="155.0" onMouseClicked="#cmbSexMouseClicked" prefHeight="31.0" prefWidth="235.0" visibleRowCount="2" />
       <Label layoutX="337.0" layoutY="26.0" prefHeight="27.0" prefWidth="158.0" text="Registration Number" />
       <TextField fx:id="txtRegYear" layoutX="502.0" layoutY="24.0" prefHeight="25.0" prefWidth="119.0" />
