@@ -2,7 +2,9 @@ package Hibernate.IMPL;
 
 import Hibernate.Custom.StudentHIB;
 import Hibernate.Dao.HIBCUDutill;
+import Hibernate.Dao.HibernateFactory;
 import Hibernate.Entity.Course;
+import Hibernate.Entity.NextStdID;
 import Hibernate.Entity.Student;
 
 import java.io.Serializable;
@@ -16,6 +18,7 @@ public class StudentHIBimpl implements StudentHIB {
         Serializable id=HIBCUDutill.session.save(dto);
         if(id!=null){
             HIBCUDutill.closeSession();
+
             return true;
         }else {
             return false;
@@ -100,7 +103,8 @@ public class StudentHIBimpl implements StudentHIB {
                 "nicNumber like '%"+key+"%'or " +
                 "tradeOne like '%"+key+"%'or " +
                 "tradeTwo like '%"+key+"%'or " +
-                "tradeThree like '%"+key+"%'or " +
+                "tradeThree like '%"+key+"%'or" +
+                "fullRegId like '%"+key+"%'or " +
                 "trainingType like '%"+key+"%'",Student.class).list();
         if(students.size()>0){
             HIBCUDutill.closeSession();
@@ -122,7 +126,7 @@ public class StudentHIBimpl implements StudentHIB {
                 "cname like '%"+tradeTwo+"%'or " +
                 "cname like '%"+tradeThree+"%'",Course.class).list();
         HIBCUDutill.openSession();
-        student.setCourses(courses);
+//        student.setCourses(courses);
         Serializable id=HIBCUDutill.session.save(student);
         if(id!=null){
             HIBCUDutill.closeSession();
@@ -130,5 +134,34 @@ public class StudentHIBimpl implements StudentHIB {
         }else {
             return false;
         }
+    }
+
+    @Override
+    public List<NextStdID> getNextStudentID() throws Exception {
+//        return String.valueOf(HIBCUDutill.session.createNativeQuery("SELECT * FROM student_seq"));
+        List<NextStdID> nextStdIDS;
+        HIBCUDutill.openSession();
+        nextStdIDS=HIBCUDutill.session.createNativeQuery("SELECT * FROM student_seq").list();
+        if(nextStdIDS.size()>0){
+            HIBCUDutill.closeSession();
+            return nextStdIDS;
+        }else {
+            return null;
+        }
+
+
+    }
+
+    @Override
+    public String getNextSTDid() throws Exception {
+        HIBCUDutill.openSession();
+        String id;
+        NextStdID nextStdID= (NextStdID) HIBCUDutill.session.createNativeQuery("SELECT * FROM student_seq");
+        if(nextStdID!=null){
+            HIBCUDutill.closeSession();
+            id= String.valueOf(nextStdID.getNextstdID());
+            return id;
+        }
+        return null;
     }
 }

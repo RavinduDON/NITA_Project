@@ -1,4 +1,6 @@
 package Business.boIMPL;
 
-public class CourseBOimpl {
+import Business.Custom.CourseBO;
+
+public class CourseBOimpl implements CourseBO {
 }

@@ -18,12 +18,12 @@ public class Course {
     private String duration;
     private String trainingCenter;
 
-    @ManyToMany
-    @JoinTable(
-            joinColumns = @JoinColumn(name = "student_ID",referencedColumnName = "regNumber"),
-            inverseJoinColumns = @JoinColumn(name = "course_ID",referencedColumnName = "courseID")
-    )
-    private List<Student> students=new ArrayList<>();
+//    @ManyToMany
+//    @JoinTable(
+//            joinColumns = @JoinColumn(name = "student_ID",referencedColumnName = "regNumber"),
+//            inverseJoinColumns = @JoinColumn(name = "course_ID",referencedColumnName = "courseID")
+//    )
+//    private List<Student> students=new ArrayList<>();
 
 
     public Course() {
@@ -41,7 +41,7 @@ public class Course {
         this.cname = cname;
         this.duration = duration;
         this.trainingCenter = trainingCenter;
-        this.students = students;
+//        this.students = students;
     }
 
     public int getCourseID() {
@@ -75,14 +75,14 @@ public class Course {
     public void setTrainingCenter(String trainingCenter) {
         this.trainingCenter = trainingCenter;
     }
-
-    public List<Student> getStudents() {
-        return students;
-    }
-
-    public void setStudents(List<Student> students) {
-        this.students = students;
-    }
+//
+//    public List<Student> getStudents() {
+//        return students;
+//    }
+//
+//    public void setStudents(List<Student> students) {
+//        this.students = students;
+//    }
 
     @Override
     public String toString() {
@@ -91,7 +91,7 @@ public class Course {
                 ", cname='" + cname + '\'' +
                 ", duration='" + duration + '\'' +
                 ", trainingCenter='" + trainingCenter + '\'' +
-                ", students=" + students +
+//                ", students=" + students +
                 '}';
     }
 }

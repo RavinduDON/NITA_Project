@@ -25,11 +25,12 @@ public class Student {
     private String tradeOne;
     private String tradeTwo;
     private String tradeThree;
+    private String fullRegId;
     @Enumerated(value = EnumType.STRING)
     private TrainingType trainingType;
 
-    @ManyToMany(mappedBy = "studnts")
-    private List<Course> courses=new ArrayList<>();
+//    @ManyToMany(mappedBy = "studnts")
+//    private List<Course> courses=new ArrayList<>();
 
     public Student() {
     }
@@ -45,10 +46,10 @@ public class Student {
         this.tradeTwo = tradeTwo;
         this.tradeThree = tradeThree;
         this.trainingType = trainingType;
-        this.courses = courses;
+//        this.courses = courses;
     }
 
-    public Student(String sname, Date rdate, String email, String telNumber, String address, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, TrainingType trainingType) {
+    public Student(String sname, Date rdate, String email, String telNumber, String address, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, String fullRegId, TrainingType trainingType) {
         this.sname = sname;
         this.rdate = rdate;
         this.email = email;
@@ -58,7 +59,16 @@ public class Student {
         this.tradeOne = tradeOne;
         this.tradeTwo = tradeTwo;
         this.tradeThree = tradeThree;
+        this.fullRegId = fullRegId;
         this.trainingType = trainingType;
+    }
+
+    public String getFullRegId() {
+        return fullRegId;
+    }
+
+    public void setFullRegId(String fullRegId) {
+        this.fullRegId = fullRegId;
     }
 
     public String getAddress() {
@@ -149,18 +159,18 @@ public class Student {
         this.trainingType = trainingType;
     }
 
-    public List<Course> getCourses() {
-        return courses;
-    }
+//    public List<Course> getCourses() {
+//        return courses;
+//    }
+//
+//    public void setCourses(List<Course> courses) {
+//        this.courses = courses;
+//    }
 
-    public void setCourses(List<Course> courses) {
-        this.courses = courses;
-    }
-
-    public void addCourse(Course course){
-        course.getStudents().add(this);
-        this.getCourses().add(course);
-    }
+//    public void addCourse(Course course){
+//        course.getStudents().add(this);
+//        this.getCourses().add(course);
+//    }
     @Override
     public String toString() {
         return "Student{" +
@@ -174,7 +184,7 @@ public class Student {
                 ", tradeTwo='" + tradeTwo + '\'' +
                 ", tradeThree='" + tradeThree + '\'' +
                 ", trainingType='" + trainingType + '\'' +
-                ", courses=" + courses +
+//                ", courses=" + courses +
                 '}';
     }
 }

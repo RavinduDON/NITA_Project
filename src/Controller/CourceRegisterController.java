@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class CourceRegisterController {
+public class CourceRegisterController implements Initializable {
     @FXML
     private AnchorPane courceRegistrationPane;
 
@@ -69,4 +69,8 @@ public class CourceRegisterController {
 
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
 }

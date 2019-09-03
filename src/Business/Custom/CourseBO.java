@@ -1,4 +1,6 @@
 package Business.Custom;
 
-public interface CourseBO {
+import Business.SuperBO;
+
+public interface CourseBO extends SuperBO {
 }

@@ -1,5 +1,5 @@
 package Hibernate.Entity;
 
 public enum TrainingType {
-    Bsic_Training,Direct_Interview;
+    Basic_Training,Direct_Interview;
 }
