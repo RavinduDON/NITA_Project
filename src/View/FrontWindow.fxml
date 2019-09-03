@@ -1,14 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Controller.FrontWindowController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane fx:id="windowPane" prefHeight="751.0" prefWidth="1059.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FrontWindowController">
+   <children>
+      <Button fx:id="btnStReg" layoutX="242.0" layoutY="197.0" mnemonicParsing="false" onAction="#buttonStudentRegistry" prefHeight="65.0" prefWidth="159.0" text="Student registry">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Label layoutX="273.0" layoutY="73.0" text="NITA Student Registry System">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnCouReg" layoutX="401.0" layoutY="328.0" mnemonicParsing="false" onAction="#buttonCourceRegistry" prefHeight="65.0" prefWidth="159.0" text="Cource registry">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnStDetails" layoutX="242.0" layoutY="464.0" mnemonicParsing="false" onAction="#buttonStudentDetails" prefHeight="65.0" prefWidth="159.0" text="Student details">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnCouDetails" layoutX="401.0" layoutY="598.0" mnemonicParsing="false" onAction="#buttonCourceDetails" prefHeight="65.0" prefWidth="159.0" text="Courrce details">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+   </children>
 </AnchorPane>

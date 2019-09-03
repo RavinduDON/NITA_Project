@@ -9,17 +9,16 @@
    <children>
       <Label layoutX="435.0" layoutY="100.0" prefHeight="27.0" prefWidth="110.0" text="Cource ID" />
       <TextField fx:id="txtCourceID" layoutX="579.0" layoutY="98.0" prefHeight="31.0" prefWidth="224.0" />
-      <Button fx:id="btnSave" layoutX="119.0" layoutY="478.0" mnemonicParsing="false" text="Save " />
-      <Button fx:id="btnCancel" layoutX="361.0" layoutY="478.0" mnemonicParsing="false" text="Cancel" />
-      <Button fx:id="btnUpdate" layoutX="240.0" layoutY="478.0" mnemonicParsing="false" text="Update" />
+      <Button fx:id="btnSave" layoutX="119.0" layoutY="478.0" mnemonicParsing="false" onAction="#save" text="Save " />
+      <Button fx:id="btnCancel" layoutX="361.0" layoutY="478.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
+      <Button fx:id="btnUpdate" layoutX="240.0" layoutY="478.0" mnemonicParsing="false" onAction="#update" text="Update" />
       <Label layoutX="8.0" layoutY="240.0" prefHeight="27.0" prefWidth="110.0" text="Cource cname" />
       <Label layoutX="8.0" layoutY="302.0" prefHeight="27.0" prefWidth="110.0" text="Duration" />
       <Label layoutX="8.0" layoutY="362.0" prefHeight="27.0" prefWidth="110.0" text="Training center" />
       <TextField fx:id="txtcourceName" layoutX="118.0" layoutY="238.0" prefHeight="31.0" prefWidth="298.0" />
       <TextField fx:id="txtTrainingCenter" layoutX="119.0" layoutY="360.0" prefHeight="31.0" prefWidth="297.0" />
       <TextField fx:id="txtDate" layoutX="119.0" layoutY="300.0" prefHeight="31.0" prefWidth="297.0" />
-      <TextField fx:id="txtRegNumber" layoutX="899.0" layoutY="24.0" prefHeight="25.0" prefWidth="119.0" />
-      <Button fx:id="btnNotify" layoutX="490.0" layoutY="478.0" mnemonicParsing="false" text="Notify" />
-      <Button fx:id="btnBack" layoutX="448.0" layoutY="561.0" mnemonicParsing="false" onAction="#click_Student_Registry" text="Student Register" />
+      <Button fx:id="btnNotify" layoutX="466.0" layoutY="478.0" mnemonicParsing="false" onAction="#notify" text="Notify" />
+      <Button fx:id="btnBack" layoutX="571.0" layoutY="478.0" mnemonicParsing="false" onAction="#clickBack" text="Main window" />
    </children>
 </AnchorPane>

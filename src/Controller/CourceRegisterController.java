@@ -12,44 +12,61 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class CourceRegisterController implements Initializable {
-
+public class CourceRegisterController {
     @FXML
-    public void click_Student_Registry(ActionEvent event) throws IOException {
-        AnchorPane anchor = FXMLLoader.load(this.getClass().getResource("../View/StudentRegister.fxml"));
-        CourceRegiAnchorPane.getChildren().setAll(anchor);
-    }
-
-
-    @FXML
-    private AnchorPane CourceRegiAnchorPane;
+    private AnchorPane courceRegistrationPane;
 
     @FXML
     private TextField txtCourceID;
 
     @FXML
-    private TextField txtcourceName;
-
-    @FXML
-    private TextField txtDate;
-
-    @FXML
-    private TextField txtTrainingCenter;
-
-    @FXML
     private Button btnSave;
-
-    @FXML
-    private Button btnUpdate;
 
     @FXML
     private Button btnCancel;
 
     @FXML
+    private Button btnUpdate;
+
+    @FXML
+    private TextField txtcourceName;
+
+    @FXML
+    private TextField txtTrainingCenter;
+
+    @FXML
+    private TextField txtDate;
+
+    @FXML
     private Button btnNotify;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    @FXML
+    private Button btnBack;
+
+    @FXML
+    void cancel(ActionEvent event) {
 
     }
+
+    @FXML
+    void clickBack(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("../View/FrontWindow.fxml"));
+        courceRegistrationPane.getChildren().setAll(pane);
+    }
+
+    @FXML
+    void notify(ActionEvent event) {
+
+    }
+
+    @FXML
+    void save(ActionEvent event) {
+
+    }
+
+    @FXML
+    void update(ActionEvent event) {
+
+    }
+
 }

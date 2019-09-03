@@ -1,6 +1,8 @@
 package Controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -10,12 +12,12 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.input.MouseEvent;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class StudentRegisterController implements Initializable {
-
+public class StudentRegisterController {
     @FXML
     private AnchorPane StudantRegistration;
 
@@ -89,7 +91,36 @@ public class StudentRegisterController implements Initializable {
     private TextField txtRegNumber;
 
     @FXML
+    private Button btnBack;
+
+    @FXML
+    void Delete(ActionEvent event) {
+
+    }
+
+    @FXML
+    void clickBack(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("../View/FrontWindow.fxml"));
+        StudantRegistration.getChildren().setAll(pane);
+    }
+
+    @FXML
     void cmbSexMouseClicked(MouseEvent event) {
+
+    }
+
+    @FXML
+    void notify(ActionEvent event) {
+
+    }
+
+    @FXML
+    void register(ActionEvent event) {
+
+    }
+
+    @FXML
+    void search(ActionEvent event) {
 
     }
 
@@ -97,8 +128,9 @@ public class StudentRegisterController implements Initializable {
     void txtanyKeyRelesed(KeyEvent event) {
 
     }
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+
+    @FXML
+    void update(ActionEvent event) {
 
     }
 }

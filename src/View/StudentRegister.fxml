@@ -39,11 +39,11 @@
       <TextField fx:id="txtMobTel" layoutX="389.0" layoutY="539.0" />
       <Label layoutX="7.0" layoutY="575.0" prefHeight="27.0" prefWidth="138.0" text="Email address" />
       <TextField fx:id="txtEmail" layoutX="201.0" layoutY="576.0" prefHeight="31.0" prefWidth="374.0" />
-      <Button fx:id="btnRegStudent" layoutX="136.0" layoutY="627.0" mnemonicParsing="false" text="Register student" />
-      <Button fx:id="btnNotify" layoutX="403.0" layoutY="626.0" mnemonicParsing="false" text="Notify" />
-      <Button fx:id="btnDelete" layoutX="507.0" layoutY="626.0" mnemonicParsing="false" text="Delete" />
-      <Button fx:id="btnUpdate" layoutX="608.0" layoutY="625.0" mnemonicParsing="false" text="Update" />
-      <Button fx:id="btnSearch" layoutX="300.0" layoutY="626.0" mnemonicParsing="false" text="Search" />
+      <Button fx:id="btnRegStudent" layoutX="136.0" layoutY="627.0" mnemonicParsing="false" onAction="#register" text="Register student" />
+      <Button fx:id="btnNotify" layoutX="403.0" layoutY="626.0" mnemonicParsing="false" onAction="#notify" text="Notify" />
+      <Button fx:id="btnDelete" layoutX="507.0" layoutY="626.0" mnemonicParsing="false" onAction="#Delete" text="Delete" />
+      <Button fx:id="btnUpdate" layoutX="608.0" layoutY="625.0" mnemonicParsing="false" onAction="#update" text="Update" />
+      <Button fx:id="btnSearch" layoutX="300.0" layoutY="626.0" mnemonicParsing="false" onAction="#search" text="Search" />
       <Label layoutX="7.0" layoutY="352.0" prefHeight="27.0" prefWidth="110.0" text="Trade 1" />
       <Label layoutX="7.0" layoutY="391.0" prefHeight="27.0" prefWidth="110.0" text="Trade 2" />
       <Label layoutX="8.0" layoutY="431.0" prefHeight="27.0" prefWidth="110.0" text="Trade 3" />
@@ -56,5 +56,6 @@
       <TextField fx:id="txtRegDistrict" layoutX="635.0" layoutY="24.0" prefHeight="25.0" prefWidth="119.0" />
       <TextField fx:id="txtRegMonth" layoutX="766.0" layoutY="24.0" prefHeight="25.0" prefWidth="119.0" />
       <TextField fx:id="txtRegNumber" layoutX="899.0" layoutY="24.0" prefHeight="25.0" prefWidth="119.0" />
+      <Button fx:id="btnBack" layoutX="703.0" layoutY="626.0" mnemonicParsing="false" onAction="#clickBack" text="Main window" />
    </children>
 </AnchorPane>
