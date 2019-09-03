@@ -28,7 +28,7 @@ public class FrontWindowController implements Initializable {
     private Button btnCouDetails;
 
     @FXML
-    void buttonCourceDetails(ActionEvent event) throws IOException {
+    void buttonCourseDetails(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(this.getClass().getResource("../View/CourceDetails.fxml"));
         windowPane.getChildren().setAll(pane);
 
