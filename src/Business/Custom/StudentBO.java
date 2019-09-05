@@ -15,6 +15,5 @@ public interface StudentBO extends SuperBO {
     public boolean addStudentCourse(Student student)throws Exception;
     public Student searchStudent(String id)throws Exception;
     public List<Student> searchANYthing(String key) throws Exception;
-    public List<NextStdID> getNextStdID()throws Exception;
-    public String getNextSTDid() throws Exception;
+    public Long getNextSTDid() throws Exception;
 }

@@ -44,6 +44,12 @@ public class Course {
 //        this.students = students;
     }
 
+    public Course(String cname, String duration, String trainingCenter) {
+        this.cname = cname;
+        this.duration = duration;
+        this.trainingCenter = trainingCenter;
+    }
+
     public int getCourseID() {
         return courseID;
     }

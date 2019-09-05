@@ -234,10 +234,9 @@ public class StudentRegisterController implements Initializable {
         }
     }
     public void loadSTDnumber() throws Exception {
-        nextStdIDS=studentBO.getNextStdID();
 
-        for (NextStdID nextStdID:nextStdIDS){
-            txtRegNumber.setText(String.valueOf(nextStdID.getNextstdID()));
-        }
+        long stdId=studentBO.getNextSTDid();
+        txtRegNumber.setText(String.valueOf(stdId));
+
     }
 }

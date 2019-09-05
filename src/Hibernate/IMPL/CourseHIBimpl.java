@@ -1,34 +1,95 @@
 package Hibernate.IMPL;
 
 import Hibernate.Custom.CourseHIB;
+import Hibernate.Dao.HIBCUDutill;
 import Hibernate.Entity.Course;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class CourseHIBimpl implements CourseHIB {
 
     @Override
     public boolean add(Course dto) throws Exception {
-        return false;
+        HIBCUDutill.openSession();
+        Serializable id=HIBCUDutill.session.save(dto);
+        if(id!=null){
+            HIBCUDutill.closeSession();
+
+            return true;
+        }else {
+            return false;
+        }
     }
 
     @Override
     public boolean update(Course dto) throws Exception {
-        return false;
+        HIBCUDutill.openSession();
+        Course course=HIBCUDutill.session.get(Course.class,dto.getCourseID());
+        course.setCname(dto.getCname());
+        course.setDuration(dto.getDuration());
+        course.setTrainingCenter(dto.getTrainingCenter());
+
+        if(course!=null){
+            HIBCUDutill.closeSession();
+            return true;
+        }else {
+            return false;
+        }
     }
 
     @Override
     public boolean delete(String s) throws Exception {
-        return false;
+        HIBCUDutill.openSession();
+        Course course=HIBCUDutill.session.get(Course.class,s);
+        HIBCUDutill.session.delete(course);
+        if(course!=null){
+            HIBCUDutill.closeSession();
+            return true;
+        }else {
+            return false;
+        }
     }
 
     @Override
     public Course search(String s) throws Exception {
-        return null;
+        HIBCUDutill.openSession();
+        Course course=HIBCUDutill.session.load(Course.class,s);
+        if(course!=null){
+            HIBCUDutill.closeSession();
+            return course;
+        }else {
+            return null;
+        }
     }
 
     @Override
     public List<Course> getAll() throws Exception {
-        return null;
+        List<Course> courses;
+        HIBCUDutill.openSession();
+        courses=HIBCUDutill.session.createNativeQuery("SELECT * FROM Course",Course.class).list();
+        if(courses.size()>0){
+            HIBCUDutill.closeSession();
+            return courses;
+        }else {
+            return null;
+        }
+    }
+
+    @Override
+    public List<Course> searchANYthing(String key) throws Exception {
+        List<Course> courses;
+        HIBCUDutill.openSession();
+        courses=HIBCUDutill.session.createNativeQuery("SELECT * FROM Course WHERE " +
+                        "courseID like '%"+key+"%'or " +
+                        "cname like '%"+key+"%'or " +
+                        "duration like '%"+key+"%'or " +
+                "trainingCenter like '%"+key+"%'",Course.class).list();
+        if(courses.size()>0){
+            HIBCUDutill.closeSession();
+            return courses;
+        }else {
+            return null;
+        }
     }
 }

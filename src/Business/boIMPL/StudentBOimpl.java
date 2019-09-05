@@ -71,21 +71,11 @@ public class StudentBOimpl implements StudentBO {
         return students;
     }
 
-    @Override
-    public List<NextStdID> getNextStdID() throws Exception {
-        List<Hibernate.Entity.NextStdID> nextStdIDS=studentHIB.getNextStudentID();
-        List<NextStdID> stdIDS=new ArrayList<>();
-        for(Hibernate.Entity.NextStdID stdID:nextStdIDS){
-            NextStdID dto=new NextStdID(stdID.getNextstdID());
-            stdIDS.add(dto);
-        }
-        return stdIDS;
-    }
+
 
     @Override
-    public String getNextSTDid() throws Exception {
-        String id=studentHIB.getNextSTDid();
-        return id;
+    public Long getNextSTDid() throws Exception {
+        return studentHIB.getNextSTDid();
     }
 
 

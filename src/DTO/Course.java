@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Course {
 
-    private String courseID;
+    private int courseID;
     private String name;
     private String duration;
     private String trainingCenter;
@@ -16,14 +16,14 @@ public class Course {
     public Course() {
     }
 
-    public Course(String courseID, String name, String duration, String trainingCenter) {
+    public Course(int courseID, String name, String duration, String trainingCenter) {
         this.courseID = courseID;
         this.name = name;
         this.duration = duration;
         this.trainingCenter = trainingCenter;
     }
 
-    public Course(String courseID, String name, String duration, String trainingCenter, List<Student> students) {
+    public Course(int courseID, String name, String duration, String trainingCenter, List<Student> students) {
         this.courseID = courseID;
         this.name = name;
         this.duration = duration;
@@ -31,11 +31,17 @@ public class Course {
         this.students = students;
     }
 
-    public String getCourseID() {
+    public Course(String name, String duration, String trainingCenter) {
+        this.name = name;
+        this.duration = duration;
+        this.trainingCenter = trainingCenter;
+    }
+
+    public int getCourseID() {
         return courseID;
     }
 
-    public void setCourseID(String courseID) {
+    public void setCourseID(int courseID) {
         this.courseID = courseID;
     }
 

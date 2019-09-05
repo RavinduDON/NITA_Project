@@ -6,8 +6,12 @@ import Hibernate.Dao.HibernateFactory;
 import Hibernate.Entity.Course;
 import Hibernate.Entity.NextStdID;
 import Hibernate.Entity.Student;
+import org.hibernate.query.Query;
+import org.hibernate.type.StandardBasicTypes;
+import Hibernate.*;
 
 import java.io.Serializable;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -136,32 +140,13 @@ public class StudentHIBimpl implements StudentHIB {
         }
     }
 
-    @Override
-    public List<NextStdID> getNextStudentID() throws Exception {
-//        return String.valueOf(HIBCUDutill.session.createNativeQuery("SELECT * FROM student_seq"));
-        List<NextStdID> nextStdIDS;
-        HIBCUDutill.openSession();
-        nextStdIDS=HIBCUDutill.session.createNativeQuery("SELECT * FROM student_seq").list();
-        if(nextStdIDS.size()>0){
-            HIBCUDutill.closeSession();
-            return nextStdIDS;
-        }else {
-            return null;
-        }
 
-
-    }
 
     @Override
-    public String getNextSTDid() throws Exception {
-        HIBCUDutill.openSession();
-        String id;
-        NextStdID nextStdID= (NextStdID) HIBCUDutill.session.createNativeQuery("SELECT * FROM student_seq");
-        if(nextStdID!=null){
-            HIBCUDutill.closeSession();
-            id= String.valueOf(nextStdID.getNextstdID());
-            return id;
-        }
+    public Long getNextSTDid() throws Exception {
+//        HIBCUDutill.openSession();
+//       Object result=HIBCUDutill.session.createSQLQuery("SELECT student_seq.next_val");
         return null;
+
     }
 }
