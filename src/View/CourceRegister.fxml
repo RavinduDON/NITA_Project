@@ -17,8 +17,8 @@
       <Label layoutX="8.0" layoutY="362.0" prefHeight="27.0" prefWidth="110.0" text="Training center" />
       <TextField fx:id="txtcourceName" layoutX="118.0" layoutY="238.0" prefHeight="31.0" prefWidth="298.0" />
       <TextField fx:id="txtTrainingCenter" layoutX="119.0" layoutY="360.0" prefHeight="31.0" prefWidth="297.0" />
-      <TextField fx:id="txtDate" layoutX="119.0" layoutY="300.0" prefHeight="31.0" prefWidth="297.0" />
-      <Button fx:id="btnNotify" layoutX="466.0" layoutY="478.0" mnemonicParsing="false" onAction="#notify" text="Notify" />
+      <TextField fx:id="txtDuration" layoutX="119.0" layoutY="300.0" prefHeight="31.0" prefWidth="297.0" />
+      <Button fx:id="btnSearch" layoutX="466.0" layoutY="478.0" mnemonicParsing="false" onAction="#notify" text="seach" />
       <Button fx:id="btnBack" layoutX="571.0" layoutY="478.0" mnemonicParsing="false" onAction="#clickBack" text="Main window" />
    </children>
 </AnchorPane>

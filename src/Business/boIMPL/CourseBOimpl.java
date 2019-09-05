@@ -45,6 +45,7 @@ public class CourseBOimpl implements CourseBO {
     @Override
     public Course searchCourse(String id) throws Exception {
         Hibernate.Entity.Course search=courseHIB.search(id);
+        System.out.println("testBAO");
         Course course=new Course(search.getCourseID(),search.getCname(),search.getDuration(),search.getTrainingCenter());
         return course;
     }

@@ -1,50 +1,68 @@
 package Controller;
 
+import Business.BOFactory;
+import Business.Custom.CourseBO;
+import Business.SuperBO;
+import DTO.Course;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+//import javafx.scene.Business
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class CourceRegisterController implements Initializable {
-    @FXML
-    private AnchorPane courceRegistrationPane;
+    CourseBO bo;
 
     @FXML
     private TextField txtCourceID;
 
     @FXML
-    private Button btnSave;
-
-    @FXML
-    private Button btnCancel;
-
-    @FXML
-    private Button btnUpdate;
+    private AnchorPane courceRegistrationPane;
 
     @FXML
     private TextField txtcourceName;
 
     @FXML
+    private TextField txtDuration;
+
+    @FXML
     private TextField txtTrainingCenter;
 
     @FXML
-    private TextField txtDate;
+    private Button btnSave;
+
+
+
+
 
     @FXML
-    private Button btnNotify;
+    private Button btnUpdate;
+
+    @FXML
+    private Button btnSearch;
 
     @FXML
     private Button btnBack;
 
     @FXML
+    private Button btnCancel;
+
+    Stage stage;
+
+    @FXML
     void cancel(ActionEvent event) {
+        stage=(Stage)((Button)event.getSource()).getScene().getWindow();
+        stage.close();
 
     }
 
@@ -55,22 +73,49 @@ public class CourceRegisterController implements Initializable {
     }
 
     @FXML
-    void notify(ActionEvent event) {
+    void notify(ActionEvent event) throws Exception {
+        //this is search method
+        System.out.println("this is testing level one point sero");
+        Course course=bo.searchCourse(txtCourceID.getText());
+        System.out.println("this is testing level one");
+        if(course!=null){
+            System.out.println("this is testing level two");
+            txtcourceName.setText(course.getName());
+            txtDuration.setText(course.getDuration());
+            txtTrainingCenter.setText(course.getTrainingCenter());
 
+        }else{
+            Alert alert=new Alert(Alert.AlertType.INFORMATION,"Invalid cource ID",ButtonType.OK);
+            alert.show();
+        }
     }
 
     @FXML
-    void save(ActionEvent event) {
-
+    void save(ActionEvent event) throws Exception {
+        if(bo.addCourse(new Course(txtcourceName.getText(),txtDuration.getText(),txtTrainingCenter.getText()))){
+            Alert alert=new Alert(Alert.AlertType.INFORMATION,"Cource Successfully Registered", ButtonType.OK);
+            alert.show();
+        }else {
+            Alert alert=new Alert(Alert.AlertType.INFORMATION,"Cource registration Failed",ButtonType.OK);
+            alert.show();
+        }
     }
 
     @FXML
-    void update(ActionEvent event) {
+    void update(ActionEvent event) throws Exception {
+        if(bo.updateCourse(new Course(txtcourceName.getText(),txtDuration.getText(),txtTrainingCenter.getText()))){
+            Alert alert=new Alert(Alert.AlertType.INFORMATION,"Cource Successfully updated", ButtonType.OK);
+            alert.show();
+        }else{
+            Alert alert=new Alert(Alert.AlertType.INFORMATION,"Update process was irrupted", ButtonType.OK);
+            alert.show();
+        }
 
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        bo=(CourseBO)BOFactory.getBoFactory().getSuperBO(BOFactory.boTypes.COURSE);
 
     }
 }

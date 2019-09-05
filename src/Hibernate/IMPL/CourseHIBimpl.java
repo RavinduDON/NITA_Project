@@ -3,6 +3,7 @@ package Hibernate.IMPL;
 import Hibernate.Custom.CourseHIB;
 import Hibernate.Dao.HIBCUDutill;
 import Hibernate.Entity.Course;
+import org.hibernate.query.NativeQuery;
 
 import java.io.Serializable;
 import java.util.List;
@@ -54,8 +55,10 @@ public class CourseHIBimpl implements CourseHIB {
     @Override
     public Course search(String s) throws Exception {
         HIBCUDutill.openSession();
-        Course course=HIBCUDutill.session.load(Course.class,s);
+        Course course=HIBCUDutill.session.get(Course.class,s);
+
         if(course!=null){
+
             HIBCUDutill.closeSession();
             return course;
         }else {
