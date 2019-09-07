@@ -1,10 +1,12 @@
 package Controller;
+import DTO.Course;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
@@ -18,6 +20,9 @@ public class CourceDetailsController implements Initializable {
 
     @FXML
     private TextField txtCourceSearch;
+
+    @FXML
+    private TableView<Course> tblCourse;
 
     @FXML
     private ScrollPane scrlPane;

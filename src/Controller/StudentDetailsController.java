@@ -1,9 +1,12 @@
 package Controller;
+import DTO.Student;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -14,6 +17,12 @@ public class StudentDetailsController implements Initializable {
 
     @FXML
     private AnchorPane studentDetail;
+
+    @FXML
+    private TextField txtStudentSearch;
+
+    @FXML
+    private TableView<Student> tblStudent;
 
     @FXML
     private Button btnDelete;

@@ -99,7 +99,7 @@ public class CourceRegisterController implements Initializable {
     @FXML
     void update(ActionEvent event) throws Exception {
         if(bo.updateCourse(new Course(Integer.parseInt(txtCourceID.getText()),txtcourceName.getText(),txtDuration.getText(),txtTrainingCenter.getText()))){
-            Alert alert=new Alert(Alert.AlertType.INFORMATION,"Cource Successfully updated", ButtonType.OK);
+            Alert alert=new Alert(Alert.AlertType.INFORMATION,"Course Successfully updated", ButtonType.OK);
             alert.show();
         }else{
             Alert alert=new Alert(Alert.AlertType.INFORMATION,"Update process was irrupted", ButtonType.OK);
