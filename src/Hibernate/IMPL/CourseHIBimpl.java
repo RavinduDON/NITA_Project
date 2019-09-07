@@ -45,7 +45,7 @@ public class CourseHIBimpl implements CourseHIB {
     @Override
     public boolean delete(String s) throws Exception {
         HIBCUDutill.openSession();
-        Course course=HIBCUDutill.session.get(Course.class,s);
+        Course course=HIBCUDutill.session.get(Course.class,Integer.parseInt(s));
         HIBCUDutill.session.delete(course);
         if(course!=null){
             HIBCUDutill.closeSession();
@@ -86,11 +86,12 @@ public class CourseHIBimpl implements CourseHIB {
     public List<Course> searchANYthing(String key) throws Exception {
         List<Course> courses;
         HIBCUDutill.openSession();
-        courses=HIBCUDutill.session.createNativeQuery("SELECT * FROM Course WHERE " +
+        courses=HIBCUDutill.session.createNativeQuery("SELECT * FROM course WHERE " +
                         "courseID like '%"+key+"%'or " +
                         "cname like '%"+key+"%'or " +
                         "duration like '%"+key+"%'or " +
                 "trainingCenter like '%"+key+"%'",Course.class).list();
+        System.out.println(courses.size());
         if(courses.size()>0){
             HIBCUDutill.closeSession();
             return courses;

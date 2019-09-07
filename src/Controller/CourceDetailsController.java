@@ -14,6 +14,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -24,6 +25,7 @@ import java.util.ResourceBundle;
 
 public class CourceDetailsController implements Initializable {
     CourseBO bo;
+    Course delcourse;
     @FXML
     private AnchorPane courceDetails;
 
@@ -59,17 +61,57 @@ public class CourceDetailsController implements Initializable {
     @FXML
     void delete(ActionEvent event) {
 
+        try {
+            bo.deletCourse(String.valueOf(delcourse.getCourseID()));
+            tblCourse.getItems().clear();
+            courseList.clear();
+            courseList=bo.getAllCourses();
+            for(Course course:courseList){
+                tblCourse.setItems(FXCollections.observableArrayList(courseList));
+
+                tblCourse.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("courseID"));
+                tblCourse.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("name"));
+                tblCourse.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("duration"));
+                tblCourse.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("trainingCenter"));
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     @FXML
     void ok(ActionEvent event) {
 
     }
+    @FXML
+    void txtSearchKeyRelesed(KeyEvent event) {
+        tblCourse.getItems().clear();
+        courseList.clear();
+        try {
+            courseList=bo.searchANYthing( txtCourceSearch.getText());
+            for(Course course:courseList){
+                tblCourse.setItems(FXCollections.observableArrayList(courseList));
+
+                tblCourse.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("courseID"));
+                tblCourse.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("name"));
+                tblCourse.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("duration"));
+                tblCourse.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("trainingCenter"));
+
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        loadAllCourses();
+
         bo=(CourseBO) BOFactory.getBoFactory().getSuperBO(BOFactory.boTypes.COURSE);
+        loadAllCourses();
 
         tblCourse.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("courseID"));
         tblCourse.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -83,6 +125,12 @@ public class CourceDetailsController implements Initializable {
 //
 //            }
 //        });
+        tblCourse.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Course>() {
+            @Override
+            public void changed(ObservableValue<? extends Course> observable, Course oldValue, Course newValue) {
+                delcourse=observable.getValue();
+            }
+        });
 
     }
 
