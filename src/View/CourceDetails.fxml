@@ -21,10 +21,10 @@
         <content>
             <TableView prefHeight="441.0" prefWidth="846.0">
               <columns>
-                <TableColumn prefWidth="171.0" text="Cource ID" />
-                <TableColumn minWidth="0.0" prefWidth="194.0" text="Cource Name" />
-                  <TableColumn minWidth="0.0" prefWidth="212.0" text="Training Center" />
-                  <TableColumn minWidth="0.0" prefWidth="232.0" text="Duration" />
+                <TableColumn fx:id="colmID" prefWidth="171.0" text="Cource ID" />
+                <TableColumn fx:id="colmName" minWidth="0.0" prefWidth="194.0" text="Cource Name" />
+                  <TableColumn fx:id="colmTrainingCenter" minWidth="0.0" prefWidth="212.0" text="Training Center" />
+                  <TableColumn fx:id="colmduration" minWidth="0.0" prefWidth="232.0" text="Duration" />
               </columns>
             </TableView>
         </content>

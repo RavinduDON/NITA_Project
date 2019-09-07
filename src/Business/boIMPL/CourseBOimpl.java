@@ -22,7 +22,7 @@ public class CourseBOimpl implements CourseBO {
 
     @Override
     public boolean updateCourse(Course dto) throws Exception {
-        Hibernate.Entity.Course course=new Hibernate.Entity.Course(dto.getName(),dto.getDuration(),dto.getTrainingCenter());
+        Hibernate.Entity.Course course=new Hibernate.Entity.Course(dto.getCourseID(),dto.getName(),dto.getDuration(),dto.getTrainingCenter());
         return courseHIB.update(course);
     }
 

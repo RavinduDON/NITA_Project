@@ -26,10 +26,13 @@ public class CourseHIBimpl implements CourseHIB {
     @Override
     public boolean update(Course dto) throws Exception {
         HIBCUDutill.openSession();
-        Course course=HIBCUDutill.session.get(Course.class,dto.getCourseID());
+        Course course=HIBCUDutill.session.load(Course.class,dto.getCourseID());
+        System.out.println(course.getCourseID());
         course.setCname(dto.getCname());
         course.setDuration(dto.getDuration());
         course.setTrainingCenter(dto.getTrainingCenter());
+
+
 
         if(course!=null){
             HIBCUDutill.closeSession();

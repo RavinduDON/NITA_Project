@@ -72,11 +72,8 @@ public class CourceRegisterController implements Initializable {
     @FXML
     void notify(ActionEvent event) throws Exception {
         //this is search method
-        System.out.println("this is testing level one point sero");
         Course course=bo.searchCourse(txtCourceID.getText());
-        System.out.println("this is testing level one");
         if(course!=null){
-            System.out.println("this is testing level two");
             txtcourceName.setText(course.getName());
             txtDuration.setText(course.getDuration());
             txtTrainingCenter.setText(course.getTrainingCenter());
@@ -101,7 +98,7 @@ public class CourceRegisterController implements Initializable {
 
     @FXML
     void update(ActionEvent event) throws Exception {
-        if(bo.updateCourse(new Course(txtcourceName.getText(),txtDuration.getText(),txtTrainingCenter.getText()))){
+        if(bo.updateCourse(new Course(Integer.parseInt(txtCourceID.getText()),txtcourceName.getText(),txtDuration.getText(),txtTrainingCenter.getText()))){
             Alert alert=new Alert(Alert.AlertType.INFORMATION,"Cource Successfully updated", ButtonType.OK);
             alert.show();
         }else{
