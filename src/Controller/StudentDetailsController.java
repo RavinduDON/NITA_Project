@@ -22,6 +22,7 @@ import java.util.ResourceBundle;
 
 public class StudentDetailsController implements Initializable {
     StudentBO bo;
+    List<Student> allStudents;
     @FXML
     private AnchorPane studentDetail;
 
@@ -48,7 +49,30 @@ public class StudentDetailsController implements Initializable {
     }
     @FXML
     void searchKeyword(KeyEvent event) {
+        tblStudent.getItems().clear();
+        allStudents.clear();
 
+        try {
+            allStudents = bo.searchANYthing(txtStudentSearch.getText());
+            for (Student student : allStudents) {
+                tblStudent.setItems(FXCollections.observableArrayList(allStudents));
+                tblStudent.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>(Integer.toString(student.getRegNumber())));
+                tblStudent.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>(student.getName()));
+                tblStudent.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>(student.getDate()+""));
+                tblStudent.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>(student.getEmail()));
+                tblStudent.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>(student.getTelNumber()));
+                tblStudent.getColumns().get(5).setCellValueFactory(new PropertyValueFactory<>(student.getAddress()));
+                tblStudent.getColumns().get(6).setCellValueFactory(new PropertyValueFactory<>(student.getNicNumber()));
+                tblStudent.getColumns().get(7).setCellValueFactory(new PropertyValueFactory<>(student.getTradeOne()));
+                tblStudent.getColumns().get(8).setCellValueFactory(new PropertyValueFactory<>(student.getTradeTwo()));
+                tblStudent.getColumns().get(9).setCellValueFactory(new PropertyValueFactory<>(student.getTradeThree()));
+                tblStudent.getColumns().get(10).setCellValueFactory(new PropertyValueFactory<>(student.getTrainingType()+""));
+
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -63,7 +87,7 @@ public class StudentDetailsController implements Initializable {
     }
     public void setAll(){
         try {
-            List<Student> allStudents = bo.getAllStudents();
+            allStudents = bo.getAllStudents();
             for (Student student : allStudents) {
                 tblStudent.setItems(FXCollections.observableArrayList(allStudents));
                 tblStudent.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>(Integer.toString(student.getRegNumber())));
