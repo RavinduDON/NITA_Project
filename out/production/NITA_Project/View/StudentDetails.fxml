@@ -11,7 +11,7 @@
 
 <AnchorPane fx:id="studentDetail" prefHeight="751.0" prefWidth="1059.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.StudentDetailsController">
    <children>
-      <TextField layoutX="468.0" layoutY="61.0" prefHeight="25.0" prefWidth="241.0" />
+      <TextField fx:id="txtStudentSearch" layoutX="468.0" layoutY="61.0" prefHeight="25.0" prefWidth="241.0" />
       <Label layoutX="316.0" layoutY="61.0" prefHeight="25.0" prefWidth="141.0" text="Search here">
          <font>
             <Font size="14.0" />
@@ -19,7 +19,7 @@
       </Label>
       <ScrollPane layoutX="28.0" layoutY="199.0" prefHeight="403.0" prefWidth="981.0">
         <content>
-            <TableView prefHeight="401.0" prefWidth="958.0">
+            <TableView fx:id="tblStudent" prefHeight="401.0" prefWidth="974.0">
               <columns>
                 <TableColumn prefWidth="75.0" text="Reg Number" />
                 <TableColumn prefWidth="105.0" text="Name" />
@@ -31,7 +31,7 @@
                   <TableColumn prefWidth="77.0" text="Trade One" />
                   <TableColumn prefWidth="70.0" text="Trade Two" />
                   <TableColumn prefWidth="66.0" text="Trade Three" />
-                  <TableColumn prefWidth="86.0" text="Training Type" />
+                  <TableColumn prefWidth="104.0" text="Training Type" />
               </columns>
             </TableView>
         </content>

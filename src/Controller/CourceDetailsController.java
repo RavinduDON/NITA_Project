@@ -1,5 +1,10 @@
 package Controller;
+import Business.BOFactory;
+import Business.Custom.CourseBO;
 import DTO.Course;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,13 +13,17 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class CourceDetailsController implements Initializable {
+    CourseBO bo;
     @FXML
     private AnchorPane courceDetails;
 
@@ -23,6 +32,7 @@ public class CourceDetailsController implements Initializable {
 
     @FXML
     private TableView<Course> tblCourse;
+    List<Course> courseList=new ArrayList<>();
 
     @FXML
     private ScrollPane scrlPane;
@@ -38,6 +48,7 @@ public class CourceDetailsController implements Initializable {
 
     @FXML
     private Button btnBack;
+
 
     @FXML
     void clickBack(ActionEvent event) throws IOException {
@@ -57,6 +68,39 @@ public class CourceDetailsController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        loadAllCourses();
+        bo=(CourseBO) BOFactory.getBoFactory().getSuperBO(BOFactory.boTypes.COURSE);
+
+        tblCourse.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("courseID"));
+        tblCourse.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("name"));
+        tblCourse.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("duration"));
+        tblCourse.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("trainingCenter"));
+
+//        tblCourse.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Course>() {
+//            @Override
+//            public void changed(ObservableValue<? extends Course> observable, Course oldValue, Course newValue) {
+//                Course value=observable.getValue();
+//
+//            }
+//        });
 
     }
+
+    private void loadAllCourses(){
+        try {
+            courseList=bo.getAllCourses();
+            for(Course course:courseList){
+                tblCourse.setItems(FXCollections.observableArrayList(courseList));
+
+                tblCourse.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>(Integer.toString(course.getCourseID())));
+                tblCourse.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>(course.getName()));
+                tblCourse.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>(course.getDuration()));
+                tblCourse.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>(course.getTrainingCenter()));
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }

@@ -19,12 +19,12 @@
       <TextField fx:id="txtCourceSearch" layoutX="303.0" layoutY="49.0" prefHeight="25.0" prefWidth="262.0" />
       <ScrollPane fx:id="scrlPane" layoutX="56.0" layoutY="133.0" prefHeight="446.0" prefWidth="852.0">
         <content>
-            <TableView prefHeight="441.0" prefWidth="846.0">
+            <TableView fx:id="tblCourse" prefHeight="441.0" prefWidth="846.0">
               <columns>
-                <TableColumn fx:id="colmID" prefWidth="171.0" text="Cource ID" />
-                <TableColumn fx:id="colmName" minWidth="0.0" prefWidth="194.0" text="Cource Name" />
-                  <TableColumn fx:id="colmTrainingCenter" minWidth="0.0" prefWidth="212.0" text="Training Center" />
-                  <TableColumn fx:id="colmduration" minWidth="0.0" prefWidth="232.0" text="Duration" />
+                <TableColumn prefWidth="171.0" text="Cource ID" />
+                <TableColumn minWidth="0.0" prefWidth="194.0" text="Cource Name" />
+                  <TableColumn minWidth="0.0" prefWidth="212.0" text="Training Center" />
+                  <TableColumn minWidth="0.0" prefWidth="232.0" text="Duration" />
               </columns>
             </TableView>
         </content>

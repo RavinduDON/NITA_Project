@@ -38,6 +38,8 @@ public class CourseBOimpl implements CourseBO {
         for(Hibernate.Entity.Course course:allcoCourses){
             Course dto=new Course(course.getCourseID(),course.getCname(),course.getDuration(),course.getTrainingCenter());
             courses.add(dto);
+            System.out.println(course.getCourseID());
+            System.out.println(course.getCname());
         }
         return courses;
     }
