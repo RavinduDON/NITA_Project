@@ -16,6 +16,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -81,10 +82,12 @@ public class CourceDetailsController implements Initializable {
         }
 
     }
+    Stage stage;
 
     @FXML
     void ok(ActionEvent event) {
-
+        stage=(Stage)((Button)event.getSource()).getScene().getWindow();
+        stage.close();
     }
     @FXML
     void txtSearchKeyRelesed(KeyEvent event) {
