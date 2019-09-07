@@ -2,17 +2,10 @@ package Hibernate.IMPL;
 
 import Hibernate.Custom.StudentHIB;
 import Hibernate.Dao.HIBCUDutill;
-import Hibernate.Dao.HibernateFactory;
 import Hibernate.Entity.Course;
-import Hibernate.Entity.NextStdID;
 import Hibernate.Entity.Student;
-import org.hibernate.query.Query;
-import org.hibernate.type.StandardBasicTypes;
-import Hibernate.*;
 
 import java.io.Serializable;
-import java.math.BigInteger;
-import java.util.ArrayList;
 import java.util.List;
 
 public class StudentHIBimpl implements StudentHIB {
@@ -69,7 +62,7 @@ public class StudentHIBimpl implements StudentHIB {
     @Override
     public Student search(String s) throws Exception {
         HIBCUDutill.openSession();
-        Student student=HIBCUDutill.session.load(Student.class,s);
+        Student student=HIBCUDutill.session.load(Student.class,Integer.parseInt(s));
         if(student!=null){
             HIBCUDutill.closeSession();
             return student;
@@ -143,10 +136,11 @@ public class StudentHIBimpl implements StudentHIB {
 
 
     @Override
-    public Long getNextSTDid() throws Exception {
-//        HIBCUDutill.openSession();
+    public Student getNextSTDid(String nic) throws Exception {
+       HIBCUDutill.openSession();
 //       Object result=HIBCUDutill.session.createSQLQuery("SELECT student_seq.next_val");
-        return null;
+        Student student= (Student) HIBCUDutill.session.createNativeQuery("SELECT regNumber from Student where nicNumber like'%"+nic+"%'",Student.class);
+        return student;
 
     }
 }

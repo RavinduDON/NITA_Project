@@ -8,7 +8,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 public class SendTextMail {
-    public static void composeMail(String recipient,String regNumber) throws Exception {
+    public static void composeMail(String recipient,String regNumber,String stdName) throws Exception {
         Properties properties = new Properties();
 
         properties.put("mail.smtp.auth","true");
@@ -24,14 +24,14 @@ public class SendTextMail {
                 return new PasswordAuthentication(myEmail,password);
             }
         });
-        Message message=prareMassage(session,myEmail,recipient,regNumber);
+        Message message=prareMassage(session,myEmail,recipient,regNumber,stdName);
 
         Transport.send(message);
         System.out.println("Message sent successful");
 
     }
 
-    public static Message prareMassage(Session session,String myEmail,String recipiant,String regNumber){
+    public static Message prareMassage(Session session,String myEmail,String recipiant,String regNumber,String stdName){
         try {
             Message message=new MimeMessage(session);
 
@@ -39,8 +39,12 @@ public class SendTextMail {
             message.setRecipient(Message.RecipientType.TO,new InternetAddress(recipiant));
             message.setSubject("NAITA Course Registration");
             message.setText("You have been registered at NAITA Colombo\n" +
+                    "Student Name:'"+stdName+"'\n"+
                     "your registration number is:'"+regNumber+"'\n" +
-                    "We will be called  for an interview within three months");
+                    "We will be called  for an interview as soon as possible.\n\n" +
+                    "M.R.D.A.S Gunarathna\n" +
+                    "District Manager\n" +
+                    "NAITA Colombo");
             return message;
         } catch (Exception e) {
             Logger.getLogger(SendTextMail.class.getName()).log(Level.SEVERE,null,e);

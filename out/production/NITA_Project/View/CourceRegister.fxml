@@ -12,7 +12,7 @@
       <Button fx:id="btnSave" layoutX="119.0" layoutY="478.0" mnemonicParsing="false" onAction="#save" text="Save " />
       <Button fx:id="btnCancel" layoutX="361.0" layoutY="478.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
       <Button fx:id="btnUpdate" layoutX="240.0" layoutY="478.0" mnemonicParsing="false" onAction="#update" text="Update" />
-      <Label layoutX="8.0" layoutY="240.0" prefHeight="27.0" prefWidth="110.0" text="Cource cname" />
+      <Label layoutX="8.0" layoutY="240.0" prefHeight="27.0" prefWidth="110.0" text="Cource name" />
       <Label layoutX="8.0" layoutY="302.0" prefHeight="27.0" prefWidth="110.0" text="Duration" />
       <Label layoutX="8.0" layoutY="362.0" prefHeight="27.0" prefWidth="110.0" text="Training center" />
       <TextField fx:id="txtcourceName" layoutX="118.0" layoutY="238.0" prefHeight="31.0" prefWidth="298.0" />

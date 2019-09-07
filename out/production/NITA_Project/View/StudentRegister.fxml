@@ -54,7 +54,7 @@
       <ComboBox fx:id="cmbSex" layoutX="133.0" layoutY="155.0" onMouseClicked="#cmbSexMouseClicked" prefHeight="31.0" prefWidth="235.0" visibleRowCount="2" />
       <Label layoutX="337.0" layoutY="26.0" prefHeight="27.0" prefWidth="158.0" text="Registration Number" />
       <TextField fx:id="txtRegYear" layoutX="502.0" layoutY="24.0" prefHeight="25.0" prefWidth="119.0" />
-      <TextField fx:id="txtRegDistrict" layoutX="635.0" layoutY="24.0" prefHeight="25.0" prefWidth="119.0" />
+      <TextField fx:id="txtRegDistrict" layoutX="635.0" layoutY="24.0" prefHeight="25.0" prefWidth="119.0" text="C" />
       <TextField fx:id="txtRegMonth" layoutX="766.0" layoutY="24.0" prefHeight="25.0" prefWidth="119.0" />
       <TextField fx:id="txtRegNumber" layoutX="899.0" layoutY="24.0" prefHeight="25.0" prefWidth="119.0" />
       <Button fx:id="btnBack" layoutX="703.0" layoutY="697.0" mnemonicParsing="false" onAction="#clickBack" text="Main window" />

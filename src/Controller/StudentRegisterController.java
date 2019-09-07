@@ -175,7 +175,9 @@ public class StudentRegisterController implements Initializable {
     }
 
     @FXML
-    void notify(ActionEvent event) {
+    void notify(ActionEvent event) throws Exception {
+        String email;
+        loadSTDnumber();
 
     }
 
@@ -234,9 +236,9 @@ public class StudentRegisterController implements Initializable {
         }
     }
     public void loadSTDnumber() throws Exception {
-
-        long stdId=studentBO.getNextSTDid();
-        txtRegNumber.setText(String.valueOf(stdId));
+        String nic=txtNic.getText();
+        Student student=studentBO.getNextSTDid(nic);
+        txtRegNumber.setText(Integer.toString(student.getRegNumber()));
 
     }
 }

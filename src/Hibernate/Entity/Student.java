@@ -35,6 +35,7 @@ public class Student {
     public Student() {
     }
 
+
     public Student(String sname, Date rdate, String email, String telNumber, String address, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, TrainingType trainingType, List<Course> courses) {
         this.sname = sname;
         this.rdate = rdate;

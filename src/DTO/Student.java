@@ -26,6 +26,10 @@ public class Student {
     public Student() {
     }
 
+    public Student(int regNumber) {
+        this.regNumber = regNumber;
+    }
+
     public Student(int regNumber, String name, Date date, String email, String telNumber, String address, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, TrainingType trainingType, List<Course> courses) {
         this.regNumber = regNumber;
         this.name = name;

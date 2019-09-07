@@ -55,7 +55,7 @@ public class CourseHIBimpl implements CourseHIB {
     @Override
     public Course search(String s) throws Exception {
         HIBCUDutill.openSession();
-        Course course=HIBCUDutill.session.get(Course.class,s);
+        Course course=HIBCUDutill.session.get(Course.class,Integer.parseInt(s));
 
         if(course!=null){
 

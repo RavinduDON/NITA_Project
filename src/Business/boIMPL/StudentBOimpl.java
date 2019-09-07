@@ -74,8 +74,10 @@ public class StudentBOimpl implements StudentBO {
 
 
     @Override
-    public Long getNextSTDid() throws Exception {
-        return studentHIB.getNextSTDid();
+    public Student getNextSTDid(String nic) throws Exception {
+        Hibernate.Entity.Student student=studentHIB.getNextSTDid(nic);
+        Student dto= new Student(student.getRegNumber());
+        return dto;
     }
 
 

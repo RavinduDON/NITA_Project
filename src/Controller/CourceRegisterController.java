@@ -4,6 +4,7 @@ import Business.BOFactory;
 import Business.Custom.CourseBO;
 import Business.SuperBO;
 import DTO.Course;
+import DTO.Student;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -40,10 +41,6 @@ public class CourceRegisterController implements Initializable {
 
     @FXML
     private Button btnSave;
-
-
-
-
 
     @FXML
     private Button btnUpdate;
@@ -89,6 +86,7 @@ public class CourceRegisterController implements Initializable {
             alert.show();
         }
     }
+
 
     @FXML
     void save(ActionEvent event) throws Exception {
