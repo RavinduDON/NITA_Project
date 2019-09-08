@@ -55,7 +55,6 @@
       <TextField fx:id="txtRegDistrict" layoutX="681.0" layoutY="15.0" prefHeight="25.0" prefWidth="119.0" text="c" />
       <TextField fx:id="txtRegMonth" layoutX="812.0" layoutY="15.0" prefHeight="25.0" prefWidth="119.0" promptText="month" />
       <TextField fx:id="txtRegNumber" layoutX="945.0" layoutY="15.0" prefHeight="25.0" prefWidth="119.0" promptText="stid" />
-      <Button fx:id="btnBack" layoutX="635.0" layoutY="649.0" minHeight="57.0" mnemonicParsing="false" onAction="#clickBack" text="Main window" />
       <ComboBox fx:id="cmbTrainingType" layoutX="184.0" layoutY="449.0" onMouseClicked="#cmbTrainigTypeMouseClicked" prefHeight="31.0" prefWidth="297.0" promptText="Training type" />
       <Label layoutX="57.0" layoutY="454.0" prefHeight="21.0" prefWidth="110.0" text="Training Type" textFill="#8096eb" />
       <DatePicker fx:id="regDatePic" layoutX="94.0" layoutY="15.0" promptText="Date" />

@@ -13,6 +13,9 @@ import java.util.ResourceBundle;
 
 public class FrontWindowController implements Initializable {
     @FXML
+    private AnchorPane loadPane;
+
+    @FXML
     private AnchorPane windowPane;
 
     @FXML
@@ -30,28 +33,27 @@ public class FrontWindowController implements Initializable {
     @FXML
     void buttonCourseDetails(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(this.getClass().getResource("../View/CourceDetails.fxml"));
-        windowPane.getChildren().setAll(pane);
+        loadPane.getChildren().setAll(pane);
 
     }
 
     @FXML
     void buttonCourceRegistry(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(this.getClass().getResource("../View/CourceRegister.fxml"));
-        windowPane.getChildren().setAll(pane);
+        loadPane.getChildren().setAll(pane);
 
     }
 
     @FXML
     void buttonStudentDetails(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(this.getClass().getResource("../View/StudentDetails.fxml"));
-        windowPane.getChildren().setAll(pane);
-
+        loadPane.getChildren().setAll(pane);
     }
 
     @FXML
     void buttonStudentRegistry(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(this.getClass().getResource("../View/StudentRegister.fxml"));
-        windowPane.getChildren().setAll(pane);
+        loadPane.getChildren().setAll(pane);
 
     }
 
