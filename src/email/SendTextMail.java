@@ -1,5 +1,8 @@
 package email;
 
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,8 +19,8 @@ public class SendTextMail {
         properties.put("mail.smtp.host","smtp.gmail.com");
         properties.put("mail.smtp.port","25");
 
-        String myEmail="ravindugunarathna@gmail.com";
-        String password="19980924";
+        String myEmail="colombostudent.nita@gmail.com";
+        String password="DMCol2505231";
         Session session=Session.getInstance(properties, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
@@ -27,7 +30,8 @@ public class SendTextMail {
         Message message=prareMassage(session,myEmail,recipient,regNumber,stdName);
 
         Transport.send(message);
-        System.out.println("Message sent successful");
+        Alert alert=new Alert(Alert.AlertType.INFORMATION,"Email Successfully Sent", ButtonType.OK);
+        alert.show();
 
     }
 
@@ -41,7 +45,7 @@ public class SendTextMail {
             message.setText("You have been registered at NAITA Colombo\n" +
                     "Student Name:'"+stdName+"'\n"+
                     "your registration number is:'"+regNumber+"'\n" +
-                    "We will be called  for an interview as soon as possible.\n\n" +
+                    "We you will be called  for an interview as soon as possible.\n\n" +
                     "M.R.D.A.S Gunarathna\n" +
                     "District Manager\n" +
                     "NAITA Colombo");

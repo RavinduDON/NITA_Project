@@ -79,7 +79,7 @@ public class StudentHIBimpl implements StudentHIB {
         students=HIBCUDutill.session.createNativeQuery("SELECT * FROM Student",Student.class).list();
         if(students.size()>0){
             HIBCUDutill.closeSession();
-            System.out.println(students.size());
+
             return students;
         }else {
             return null;

@@ -7,6 +7,7 @@ import DTO.NextStdID;
 import DTO.Sex;
 import DTO.Student;
 import Hibernate.Entity.TrainingType;
+import email.SendTextMail;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -129,7 +130,7 @@ public class StudentRegisterController implements Initializable {
     private String fullRegId;
     private TrainingType trainingType;
 
-    List<NextStdID> nextStdIDS=new ArrayList<>();
+    List<Student> allStudents=new ArrayList<>();
 
     private void loadAllData() throws Exception {
 
@@ -176,8 +177,10 @@ public class StudentRegisterController implements Initializable {
 
     @FXML
     void notify(ActionEvent event) throws Exception {
-        String email;
-        loadSTDnumber();
+        String email=txtEmail.getText();
+        String stdNumber=loadSTDnumber();
+        String name=txtfullName.getText();
+        SendTextMail.composeMail(email,stdNumber,name);
 
     }
 
@@ -197,6 +200,10 @@ public class StudentRegisterController implements Initializable {
 
         Student student=new Student(name,new Date(),email,telNumber,address,nicNumber,tradeOne,tradeTwo,tradeThree,fullRegId,trainingType);
         boolean isAdded=studentBO.addStudent(student);
+        allStudents=studentBO.searchANYthing(txtNic.getText());
+        for(Student studentAF : allStudents){
+            txtRegNumber.setText(Integer.toString(studentAF.getRegNumber()));
+        }
 
         if(isAdded){
             Alert alert=new Alert(Alert.AlertType.INFORMATION,"Student Successfully Registered",ButtonType.OK);
@@ -235,10 +242,10 @@ public class StudentRegisterController implements Initializable {
             e.printStackTrace();
         }
     }
-    public void loadSTDnumber() throws Exception {
-        String nic=txtNic.getText();
-        Student student=studentBO.getNextSTDid(nic);
-        txtRegNumber.setText(Integer.toString(student.getRegNumber()));
+    public String loadSTDnumber() throws Exception {
+
+        String fullRegNumber=txtRegYear.getText()+"/"+txtRegDistrict.getText()+"/"+txtRegMonth.getText()+"/"+txtRegNumber.getText();
+        return fullRegNumber;
 
     }
 }

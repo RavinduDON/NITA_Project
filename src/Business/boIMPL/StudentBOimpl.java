@@ -44,7 +44,6 @@ public class StudentBOimpl implements StudentBO {
             Student dto=new Student(student.getRegNumber(),student.getSname(),student.getRdate(),student.getEmail(),student.getTelNumber(),student.getAddress(),student.getNicNumber(),student.getTradeOne(),student.getTradeTwo(),student.getTradeThree(),student.getFullRegId(),student.getTrainingType());
             students.add(dto);
         }
-        System.out.println(students.size());
         return students;
     }
 

@@ -137,6 +137,7 @@ public class StudentDetailsController implements Initializable {
                 tblStudent.getColumns().get(11).setCellValueFactory(new PropertyValueFactory<>(student.getTrainingType()+""));
 
 
+
             }
         } catch (Exception e) {
             e.printStackTrace();
