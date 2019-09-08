@@ -10,24 +10,21 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="StudantRegistration" prefHeight="813.0" prefWidth="1059.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.StudentRegisterController">
+<AnchorPane fx:id="StudantRegistration" prefHeight="710.0" prefWidth="1120.0" stylesheets="@../Styles/front_style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.StudentRegisterController">
    <children>
-      <TextField fx:id="txtfullName" layoutX="157.0" layoutY="86.0" prefHeight="31.0" prefWidth="637.0" />
+      <TextField fx:id="txtfullName" layoutX="134.0" layoutY="83.0" prefHeight="31.0" prefWidth="637.0" promptText="Full name" />
       <Label layoutX="8.0" layoutY="85.0" prefHeight="27.0" prefWidth="110.0" text="Full Name" />
-      <TextField fx:id="txtnameWithInitials" layoutX="157.0" layoutY="123.0" prefHeight="31.0" prefWidth="637.0" />
+      <TextField fx:id="txtnameWithInitials" layoutX="134.0" layoutY="120.0" prefHeight="31.0" prefWidth="637.0" promptText="Name with initials" />
       <Label layoutX="7.0" layoutY="122.0" prefHeight="27.0" prefWidth="134.0" text="Name with initials" />
       <Label layoutX="7.0" layoutY="157.0" prefHeight="27.0" prefWidth="110.0" text="Sex" />
       <Label layoutX="8.0" layoutY="193.0" prefHeight="27.0" prefWidth="110.0" text="Date of Birth" />
-      <Label layoutX="134.0" layoutY="193.0" prefHeight="27.0" prefWidth="30.0" text="Year" />
-      <TextField fx:id="txtdobYear" layoutX="173.0" layoutY="194.0" prefHeight="25.0" prefWidth="119.0" />
-      <TextField fx:id="txtdobMonth" layoutX="379.0" layoutY="194.0" prefHeight="25.0" prefWidth="61.0" />
-      <TextField fx:id="txtdobDay" layoutX="496.0" layoutY="194.0" prefHeight="25.0" prefWidth="61.0" />
-      <Label layoutX="466.0" layoutY="193.0" prefHeight="27.0" prefWidth="30.0" text="Day" />
-      <Label layoutX="319.0" layoutY="193.0" prefHeight="27.0" prefWidth="52.0" text="Month" />
+      <TextField fx:id="txtdobYear" layoutX="142.0" layoutY="194.0" prefHeight="25.0" prefWidth="119.0" promptText="YYYY" />
+      <TextField fx:id="txtdobMonth" layoutX="282.0" layoutY="194.0" prefHeight="25.0" prefWidth="61.0" promptText="MM" />
+      <TextField fx:id="txtdobDay" layoutX="359.0" layoutY="194.0" prefHeight="25.0" prefWidth="61.0" promptText="DD" />
       <Label layoutX="8.0" layoutY="228.0" prefHeight="27.0" prefWidth="110.0" text="Address" />
-      <TextArea fx:id="txtAddress" layoutX="134.0" layoutY="233.0" prefHeight="51.0" prefWidth="435.0" />
+      <TextArea fx:id="txtAddress" layoutX="134.0" layoutY="233.0" prefHeight="51.0" prefWidth="435.0" promptText="No , Lane , Town" />
       <Label layoutX="8.0" layoutY="298.0" prefHeight="27.0" prefWidth="110.0" text="NIC" />
-      <TextField fx:id="txtNic" layoutX="134.0" layoutY="295.0" prefHeight="31.0" prefWidth="224.0" />
+      <TextField fx:id="txtNic" layoutX="134.0" layoutY="295.0" prefHeight="31.0" prefWidth="224.0" promptText="nic" />
       <Label layoutX="103.0" layoutY="562.0" prefHeight="27.0" prefWidth="360.0" text="                             Contact Details" textAlignment="RIGHT">
          <font>
             <Font size="14.0" />
@@ -36,30 +33,30 @@
       <Separator layoutX="34.0" layoutY="544.0" prefHeight="18.0" prefWidth="516.0" />
       <Label layoutX="7.0" layoutY="609.0" prefHeight="27.0" prefWidth="81.0" text="Home" />
       <Label layoutX="312.0" layoutY="610.0" prefHeight="27.0" prefWidth="75.0" text="Mobile" />
-      <TextField fx:id="txtHomeTel" layoutX="115.0" layoutY="610.0" />
-      <TextField fx:id="txtMobTel" layoutX="389.0" layoutY="610.0" />
+      <TextField fx:id="txtHomeTel" layoutX="115.0" layoutY="610.0" promptText="01232456789" />
+      <TextField fx:id="txtMobTel" layoutX="389.0" layoutY="610.0" promptText="0123456789" />
       <Label layoutX="7.0" layoutY="646.0" prefHeight="27.0" prefWidth="138.0" text="Email address" />
-      <TextField fx:id="txtEmail" layoutX="201.0" layoutY="647.0" prefHeight="31.0" prefWidth="374.0" />
-      <Button fx:id="btnRegStudent" layoutX="136.0" layoutY="698.0" mnemonicParsing="false" onAction="#register" text="Register student" />
-      <Button fx:id="btnNotify" layoutX="403.0" layoutY="697.0" mnemonicParsing="false" onAction="#notify" text="Notify" />
-      <Button fx:id="btnDelete" layoutX="507.0" layoutY="697.0" mnemonicParsing="false" onAction="#Delete" text="Delete" />
-      <Button fx:id="btnUpdate" layoutX="608.0" layoutY="696.0" mnemonicParsing="false" onAction="#update" text="Update" />
-      <Button fx:id="btnSearch" layoutX="300.0" layoutY="697.0" mnemonicParsing="false" onAction="#search" text="Search" />
+      <TextField fx:id="txtEmail" layoutX="201.0" layoutY="647.0" prefHeight="31.0" prefWidth="374.0" promptText="yourmail.@anymail.com" />
+      <Button id="#bevel-grey" fx:id="btnRegStudent" layoutX="136.0" layoutY="698.0" mnemonicParsing="false" onAction="#register" stylesheets="@../Styles/front_style.css" text="Register student" />
+      <Button fx:id="btnNotify" layoutX="569.0" layoutY="698.0" mnemonicParsing="false" onAction="#notify" text="Notify" />
+      <Button fx:id="btnDelete" layoutX="477.0" layoutY="698.0" mnemonicParsing="false" onAction="#Delete" text="Delete" />
+      <Button fx:id="btnUpdate" layoutX="393.0" layoutY="698.0" mnemonicParsing="false" onAction="#update" text="Update" />
+      <Button fx:id="btnSearch" layoutX="286.0" layoutY="698.0" mnemonicParsing="false" onAction="#search" text="Search" />
       <Label layoutX="7.0" layoutY="352.0" prefHeight="27.0" prefWidth="110.0" text="Trade 1" />
       <Label layoutX="7.0" layoutY="391.0" prefHeight="27.0" prefWidth="110.0" text="Trade 2" />
       <Label layoutX="8.0" layoutY="431.0" prefHeight="27.0" prefWidth="110.0" text="Trade 3" />
-      <TextField fx:id="txtTradeOne" layoutX="133.0" layoutY="348.0" onKeyReleased="#txtanyKeyRelesed" prefHeight="31.0" prefWidth="298.0" />
-      <TextField fx:id="txtTradeThree" layoutX="133.0" layoutY="429.0" onKeyReleased="#txtanyKeyRelesed" prefHeight="31.0" prefWidth="297.0" />
-      <TextField fx:id="txtTradeTwo" layoutX="134.0" layoutY="389.0" onKeyReleased="#txtanyKeyRelesed" prefHeight="31.0" prefWidth="297.0" />
-      <ComboBox fx:id="cmbSex" layoutX="133.0" layoutY="155.0" onMouseClicked="#cmbSexMouseClicked" prefHeight="31.0" prefWidth="235.0" visibleRowCount="2" />
+      <TextField fx:id="txtTradeOne" layoutX="133.0" layoutY="348.0" onKeyReleased="#txtanyKeyRelesed" prefHeight="31.0" prefWidth="298.0" promptText="Trade 1" />
+      <TextField fx:id="txtTradeThree" layoutX="133.0" layoutY="429.0" onKeyReleased="#txtanyKeyRelesed" prefHeight="31.0" prefWidth="297.0" promptText="Trade 3" />
+      <TextField fx:id="txtTradeTwo" layoutX="134.0" layoutY="389.0" onKeyReleased="#txtanyKeyRelesed" prefHeight="31.0" prefWidth="297.0" promptText="Trade 2" />
+      <ComboBox fx:id="cmbSex" layoutX="133.0" layoutY="155.0" onMouseClicked="#cmbSexMouseClicked" prefHeight="31.0" prefWidth="235.0" promptText="sex" visibleRowCount="2" />
       <Label layoutX="337.0" layoutY="26.0" prefHeight="27.0" prefWidth="158.0" text="Registration Number" />
       <TextField fx:id="txtRegYear" layoutX="502.0" layoutY="24.0" prefHeight="25.0" prefWidth="119.0" />
-      <TextField fx:id="txtRegDistrict" layoutX="635.0" layoutY="24.0" prefHeight="25.0" prefWidth="119.0" text="C" />
+      <TextField fx:id="txtRegDistrict" layoutX="635.0" layoutY="24.0" prefHeight="25.0" prefWidth="119.0" />
       <TextField fx:id="txtRegMonth" layoutX="766.0" layoutY="24.0" prefHeight="25.0" prefWidth="119.0" />
       <TextField fx:id="txtRegNumber" layoutX="899.0" layoutY="24.0" prefHeight="25.0" prefWidth="119.0" />
-      <Button fx:id="btnBack" layoutX="703.0" layoutY="697.0" mnemonicParsing="false" onAction="#clickBack" text="Main window" />
-      <ComboBox fx:id="cmbTrainingType" layoutX="134.0" layoutY="480.0" onMouseClicked="#cmbTrainigTypeMouseClicked" prefHeight="31.0" prefWidth="297.0" />
+      <Button fx:id="btnBack" layoutX="643.0" layoutY="698.0" mnemonicParsing="false" onAction="#clickBack" text="Main window" />
+      <ComboBox fx:id="cmbTrainingType" layoutX="134.0" layoutY="480.0" onMouseClicked="#cmbTrainigTypeMouseClicked" prefHeight="31.0" prefWidth="297.0" promptText="Training type" />
       <Label layoutX="7.0" layoutY="485.0" prefHeight="21.0" prefWidth="110.0" text="Training Type" />
-      <DatePicker fx:id="regDatePic" layoutX="48.0" layoutY="24.0" />
+      <DatePicker fx:id="regDatePic" layoutX="48.0" layoutY="24.0" promptText="Date" />
    </children>
 </AnchorPane>
