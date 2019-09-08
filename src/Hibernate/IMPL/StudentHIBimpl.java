@@ -48,7 +48,7 @@ public class StudentHIBimpl implements StudentHIB {
     @Override
     public boolean delete(String s) throws Exception {
         HIBCUDutill.openSession();
-        Student student=HIBCUDutill.session.get(Student.class,s);
+        Student student=HIBCUDutill.session.get(Student.class,Integer.parseInt(s));
         HIBCUDutill.session.delete(student);
         if(student!=null){
             HIBCUDutill.closeSession();
@@ -79,6 +79,7 @@ public class StudentHIBimpl implements StudentHIB {
         students=HIBCUDutill.session.createNativeQuery("SELECT * FROM Student",Student.class).list();
         if(students.size()>0){
             HIBCUDutill.closeSession();
+            System.out.println(students.size());
             return students;
         }else {
             return null;
@@ -100,7 +101,7 @@ public class StudentHIBimpl implements StudentHIB {
                 "nicNumber like '%"+key+"%'or " +
                 "tradeOne like '%"+key+"%'or " +
                 "tradeTwo like '%"+key+"%'or " +
-                "tradeThree like '%"+key+"%'or" +
+                "tradeThree like '%"+key+"%'or " +
                 "fullRegId like '%"+key+"%'or " +
                 "trainingType like '%"+key+"%'",Student.class).list();
         if(students.size()>0){
@@ -121,7 +122,7 @@ public class StudentHIBimpl implements StudentHIB {
         courses=HIBCUDutill.session.createNativeQuery("SELECT * FROM Course WHERE " +
                 "cname like '%"+tradeOne+"%'or " +
                 "cname like '%"+tradeTwo+"%'or " +
-                "cname like '%"+tradeThree+"%'",Course.class).list();
+                "cname like '%"+tradeThree+"%' ",Course.class).list();
         HIBCUDutill.openSession();
 //        student.setCourses(courses);
         Serializable id=HIBCUDutill.session.save(student);

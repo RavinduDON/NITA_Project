@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="studentDetail" prefHeight="751.0" prefWidth="1059.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.StudentDetailsController">
+<AnchorPane fx:id="studentDetail" prefHeight="751.0" prefWidth="1059.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.StudentDetailsController">
    <children>
       <TextField fx:id="txtStudentSearch" layoutX="468.0" layoutY="61.0" onKeyReleased="#searchKeyword" prefHeight="25.0" prefWidth="241.0" />
       <Label layoutX="316.0" layoutY="61.0" prefHeight="25.0" prefWidth="141.0" text="Search here">
@@ -17,9 +17,9 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <ScrollPane layoutX="28.0" layoutY="199.0" prefHeight="403.0" prefWidth="981.0">
+      <ScrollPane layoutX="14.0" layoutY="189.0" prefHeight="403.0" prefWidth="1040.0">
         <content>
-            <TableView fx:id="tblStudent" prefHeight="401.0" prefWidth="974.0">
+            <TableView fx:id="tblStudent" prefHeight="401.0" prefWidth="1038.0">
               <columns>
                 <TableColumn prefWidth="75.0" text="Reg Number" />
                 <TableColumn prefWidth="105.0" text="Name" />
@@ -31,6 +31,7 @@
                   <TableColumn prefWidth="77.0" text="Trade One" />
                   <TableColumn prefWidth="70.0" text="Trade Two" />
                   <TableColumn prefWidth="66.0" text="Trade Three" />
+                  <TableColumn prefWidth="104.0" text="Full ID" />
                   <TableColumn prefWidth="104.0" text="Training Type" />
               </columns>
             </TableView>
