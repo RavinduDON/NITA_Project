@@ -26,6 +26,7 @@ public class Student {
     private String tradeTwo;
     private String tradeThree;
     private String fullRegId;
+    private String dob;
     @Enumerated(value = EnumType.STRING)
     private TrainingType trainingType;
 
@@ -62,6 +63,14 @@ public class Student {
         this.tradeThree = tradeThree;
         this.fullRegId = fullRegId;
         this.trainingType = trainingType;
+    }
+
+    public String getDob() {
+        return dob;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
     }
 
     public String getFullRegId() {
