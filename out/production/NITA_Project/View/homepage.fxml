@@ -13,15 +13,21 @@
             <Image url="@../Image/naita.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="224.0" layoutY="43.0" prefHeight="81.0" prefWidth="712.0" text="Welcome to the student and" textFill="#8096eb">
+      <Label layoutX="224.0" layoutY="13.0" prefHeight="81.0" prefWidth="712.0" text="Welcome to the student and" textFill="#8096eb">
          <font>
             <Font name="Algerian" size="48.0" />
          </font>
       </Label>
-      <Label layoutX="346.0" layoutY="107.0" prefHeight="81.0" prefWidth="428.0" text="Cource registry" textFill="#8096eb">
+      <Label layoutX="346.0" layoutY="77.0" prefHeight="81.0" prefWidth="428.0" text="Cource registry" textFill="#8096eb">
          <font>
             <Font name="Algerian" size="48.0" />
          </font>
       </Label>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="527.0" layoutY="564.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/logo123.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="437.0" layoutY="576.0" prefHeight="17.0" prefWidth="76.0" text="Powered by" />
    </children>
 </AnchorPane>
