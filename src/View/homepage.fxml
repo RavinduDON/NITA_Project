@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="710.0" prefWidth="1120.0" style="-fx-background-color: #bf003c;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.homepageController">
+<AnchorPane prefHeight="710.0" prefWidth="1120.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.homepageController">
    <children>
-      <ImageView id="imgView" fitHeight="698.0" fitWidth="1111.0" layoutX="4.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView id="imgView" fitHeight="698.0" fitWidth="500.0" layoutX="317.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Image/naita.jpg" />
          </image>
       </ImageView>
+      <Label layoutX="224.0" layoutY="43.0" prefHeight="81.0" prefWidth="712.0" text="Welcome to the student and" textFill="#8096eb">
+         <font>
+            <Font name="Algerian" size="48.0" />
+         </font>
+      </Label>
+      <Label layoutX="346.0" layoutY="107.0" prefHeight="81.0" prefWidth="428.0" text="Cource registry" textFill="#8096eb">
+         <font>
+            <Font name="Algerian" size="48.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
