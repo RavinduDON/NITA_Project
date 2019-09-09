@@ -61,7 +61,7 @@ public class FrontWindowController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         AnchorPane pane = null;
         try {
-            pane = FXMLLoader.load(this.getClass().getResource("../View/StudentRegister.fxml"));
+            pane = FXMLLoader.load(this.getClass().getResource("../View/homepage.fxml"));
         } catch (IOException e) {
             e.printStackTrace();
         }

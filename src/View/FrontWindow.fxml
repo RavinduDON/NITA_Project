@@ -29,7 +29,7 @@
                   <Font size="16.0" />
                </font>
             </Button>
-            <Label layoutX="34.0" layoutY="25.0" prefHeight="49.0" prefWidth="213.0" text="Nevigatiob">
+            <Label layoutX="34.0" layoutY="25.0" prefHeight="49.0" prefWidth="213.0" text="Nevigation">
                <font>
                   <Font name="Algerian" size="35.0" />
                </font>
@@ -41,6 +41,6 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="loadPane" layoutX="282.0" prefHeight="710.0" prefWidth="1120.0" />
+      <AnchorPane fx:id="loadPane" layoutX="281.0" prefHeight="710.0" prefWidth="1120.0" />
    </children>
 </AnchorPane>
