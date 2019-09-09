@@ -90,6 +90,10 @@ public class CourceRegisterController implements Initializable {
         if(bo.addCourse(new Course(txtcourceName.getText(),txtDuration.getText(),txtTrainingCenter.getText()))){
             Alert alert=new Alert(Alert.AlertType.INFORMATION,"Cource Successfully Registered", ButtonType.OK);
             alert.show();
+            txtCourceID.setText("");
+            txtcourceName.setText("");
+            txtDuration.setText("");
+            txtTrainingCenter.setText("");
         }else {
             Alert alert=new Alert(Alert.AlertType.INFORMATION,"Cource registration Failed",ButtonType.OK);
             alert.show();

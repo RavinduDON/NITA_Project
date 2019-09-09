@@ -56,7 +56,7 @@ public class StudentBOimpl implements StudentBO {
     @Override
     public Student searchStudent(String id) throws Exception {
         Hibernate.Entity.Student search=studentHIB.search(id);
-        Student student=new Student(search.getRegNumber(),search.getSname(),search.getRdate(),search.getEmail(),search.getTelNumber(),search.getAddress(),search.getNicNumber(),search.getTradeOne(),search.getTradeTwo(),search.getTradeThree(),search.getTrainingType());
+        Student student=new Student(search.getRegNumber(),search.getSname(),search.getRdate(),search.getEmail(),search.getTelNumber(),search.getAddress(),search.getNicNumber(),search.getTradeOne(),search.getTradeTwo(),search.getTradeThree(),search.getFullRegId(),search.getTrainingType());
         return student;
     }
 

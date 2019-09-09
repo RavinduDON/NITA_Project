@@ -62,7 +62,7 @@ public class StudentHIBimpl implements StudentHIB {
     @Override
     public Student search(String s) throws Exception {
         HIBCUDutill.openSession();
-        Student student=HIBCUDutill.session.load(Student.class,Integer.parseInt(s));
+        Student student=HIBCUDutill.session.get(Student.class,Integer.parseInt(s));
         if(student!=null){
             HIBCUDutill.closeSession();
             return student;

@@ -50,7 +50,7 @@
       <TextField fx:id="txtTradeThree" layoutX="183.0" layoutY="398.0" onKeyReleased="#txtanyKeyRelesed" prefHeight="31.0" prefWidth="297.0" promptText="Trade 3" />
       <TextField fx:id="txtTradeTwo" layoutX="184.0" layoutY="358.0" onKeyReleased="#txtanyKeyRelesed" prefHeight="31.0" prefWidth="297.0" promptText="Trade 2" />
       <ComboBox fx:id="cmbSex" layoutX="183.0" layoutY="124.0" onMouseClicked="#cmbSexMouseClicked" prefHeight="31.0" prefWidth="235.0" promptText="sex" visibleRowCount="2" />
-      <Label layoutX="415.0" layoutY="14.0" prefHeight="27.0" prefWidth="119.0" text="Registration Number" textFill="#8096eb" />
+      <Label layoutX="384.0" layoutY="14.0" prefHeight="27.0" prefWidth="150.0" text="Registration Number" textFill="#8096eb" />
       <TextField fx:id="txtRegYear" layoutX="548.0" layoutY="15.0" prefHeight="25.0" prefWidth="119.0" promptText="yaer" />
       <TextField fx:id="txtRegDistrict" layoutX="681.0" layoutY="15.0" prefHeight="25.0" prefWidth="119.0" text="c" />
       <TextField fx:id="txtRegMonth" layoutX="812.0" layoutY="15.0" prefHeight="25.0" prefWidth="119.0" promptText="month" />

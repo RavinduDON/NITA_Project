@@ -132,6 +132,26 @@ public class StudentRegisterController implements Initializable {
 
     List<Student> allStudents=new ArrayList<>();
 
+    private void clear(){
+        txtRegNumber.setText("");
+        txtRegMonth.setText("");
+        txtRegDistrict.setText("");
+        txtRegYear.setText("");
+        txtAddress.setText("");
+        txtfullName.setText("");
+        txtnameWithInitials.setText("");
+        txtdobDay.setText("");
+        txtEmail.setText("");
+        txtNic.setText("");
+        txtdobMonth.setText("");
+        txtdobYear.setText("");
+        txtHomeTel.setText("");
+        txtMobTel.setText("");
+        txtTradeOne.setText("");
+        txtTradeTwo.setText("");
+        txtTradeThree.setText("");
+    }
+
     private void loadAllData() throws Exception {
 
         StudentBOimpl studentBOimpl=new StudentBOimpl();
@@ -181,6 +201,7 @@ public class StudentRegisterController implements Initializable {
         String stdNumber=loadSTDnumber();
         String name=txtfullName.getText();
         SendTextMail.composeMail(email,stdNumber,name);
+        clear();
 
     }
 
@@ -215,9 +236,24 @@ public class StudentRegisterController implements Initializable {
     }
 
     @FXML
-    void search(ActionEvent event) {
+    void search(ActionEvent event) throws Exception {
 
-        name=txtfullName.getText();
+        Student student=studentBO.searchStudent(txtRegNumber.getText());
+        if(student!=null){
+            txtfullName.setText(student.getName());
+            txtAddress.setText(student.getAddress());
+            txtNic.setText(student.getNicNumber());
+            txtTradeOne.setText(student.getTradeOne());
+            txtTradeTwo.setText(student.getTradeTwo());
+            txtTradeThree.setText(student.getTradeThree());
+            cmbTrainingType.getSelectionModel().select(student.getTrainingType());
+            txtMobTel.setText(student.getTelNumber());
+            txtEmail.setText(student.getEmail());
+        }
+    else{
+        Alert alert=new Alert(Alert.AlertType.INFORMATION,"Invalid Student ID",ButtonType.OK);
+        alert.show();
+    }
 
     }
 
@@ -227,8 +263,15 @@ public class StudentRegisterController implements Initializable {
     }
 
     @FXML
-    void update(ActionEvent event) {
-
+    void update(ActionEvent event) throws Exception {
+        String fullRegId = txtRegYear.getText() + "/" + txtRegDistrict.getText() + "/" + txtRegMonth.getText() + "/" + txtRegNumber.getText();
+        if (studentBO.updateStudent(new Student(Integer.parseInt(txtRegNumber.getText()), txtfullName.getText(), new Date(), txtEmail.getText(), txtMobTel.getText(), txtAddress.getText(), txtNic.getText(), txtTradeOne.getText(), txtTradeTwo.getText(), txtTradeThree.getText(), fullRegId, cmbTrainingType.getSelectionModel().getSelectedItem()))) {
+            Alert alert=new Alert(Alert.AlertType.INFORMATION,"Student Successfully updated", ButtonType.OK);
+            alert.show();
+        } else {
+            Alert alert=new Alert(Alert.AlertType.INFORMATION,"Update process was irrupted", ButtonType.OK);
+            alert.show();
+        }
     }
 
     @Override
