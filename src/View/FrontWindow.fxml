@@ -39,10 +39,11 @@
                   <Font name="Algerian" size="35.0" />
                </font>
             </Label>
-            <Label layoutX="33.0" layoutY="602.0" prefHeight="17.0" prefWidth="185.0" text="powered by" />
-            <Label layoutX="33.0" layoutY="619.0" prefHeight="17.0" prefWidth="185.0" text="SL Soft solutions" />
-            <Label layoutX="33.0" layoutY="636.0" prefHeight="17.0" prefWidth="213.0" text="E mail- slsoftsolutions9897@gmail.com" />
-            <Label layoutX="34.0" layoutY="653.0" prefHeight="17.0" prefWidth="240.0" text="Contacts- +94774883086/ +947634711118" />
+            <Label layoutY="602.0" prefHeight="17.0" prefWidth="185.0" text="powered by" />
+            <Label layoutX="2.0" layoutY="619.0" prefHeight="17.0" prefWidth="185.0" text="SL Soft solutions" />
+            <Label layoutX="1.0" layoutY="636.0" prefHeight="21.0" prefWidth="264.0" text="E mail- slsoftsolutions9897@gmail.com" />
+            <Label layoutX="1.0" layoutY="653.0" prefHeight="28.0" prefWidth="264.0" text="Contacts- +94774883086" />
+            <Label layoutY="676.0" prefHeight="28.0" prefWidth="264.0" text="Contacts- +94763471118" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="loadPane" layoutX="281.0" prefHeight="745.0" prefWidth="1259.0" />
