@@ -203,6 +203,7 @@ public class StudentRegisterController implements Initializable {
         String name=txtfullName.getText();
         SendTextMail.composeMail(email,stdNumber,name);
         clear();
+        btnRegStudent.setDisable(false);
 
     }
 
@@ -226,9 +227,11 @@ public class StudentRegisterController implements Initializable {
         if(txtfullName.getText()!=""){
              student=new Student(name,new Date(),email,telNumber,address,nicNumber,tradeOne,tradeTwo,tradeThree,fullRegId,dob,trainingType);
              isAdded=studentBO.addStudent(student);
+            btnRegStudent.setDisable(true);
             if(isAdded){
                 Alert alert=new Alert(Alert.AlertType.INFORMATION,"Student Successfully Registered",ButtonType.OK);
                 alert.show();
+
             }else {
                 Alert alert=new Alert(Alert.AlertType.INFORMATION,"Registration Failed",ButtonType.OK);
                 alert.show();
@@ -268,6 +271,9 @@ public class StudentRegisterController implements Initializable {
             txtdobYear.setText(student.getDob());
             txtMobTel.setText(student.getTelNumber());
             txtEmail.setText(student.getEmail());
+
+            btnNotify.setDisable(true);
+            btnRegStudent.setDisable(true);
         }
     else{
         Alert alert=new Alert(Alert.AlertType.INFORMATION,"Invalid Student ID",ButtonType.OK);
