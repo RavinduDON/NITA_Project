@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="studentDetail" prefHeight="745.0" prefWidth="1259.0" stylesheets="@../Styles/textField_style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.StudentDetailsController">
+<AnchorPane fx:id="studentDetail" prefHeight="710.0" prefWidth="1120.0" stylesheets="@../Styles/textField_style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.StudentDetailsController">
    <children>
       <TextField fx:id="txtStudentSearch" layoutX="468.0" layoutY="61.0" onKeyReleased="#searchKeyword" prefHeight="25.0" prefWidth="241.0" promptText="search student">
          <font>
@@ -24,8 +24,8 @@
         <content>
             <TableView fx:id="tblStudent" prefHeight="440.0" prefWidth="1254.0" stylesheets="@../Styles/table_style.css">
               <columns>
-                <TableColumn prefWidth="90.0" text="Reg Number" />
-                  <TableColumn prefWidth="75.0" text="Name" />
+                <TableColumn prefWidth="75.00003051757812" text="Reg Number" />
+                  <TableColumn prefWidth="90.0" text="Name" />
                   <TableColumn prefWidth="85.0" text="Reg Date" />
                   <TableColumn prefWidth="94.0" text="Email" />
                   <TableColumn prefWidth="93.0" text="Tel Number" />
@@ -34,9 +34,9 @@
                   <TableColumn minWidth="8.0" prefWidth="94.0" text="Trade One" />
                   <TableColumn minWidth="8.0" prefWidth="94.0" text="Trade Two" />
                   <TableColumn prefWidth="94.0" text="Trade Three" />
-                  <TableColumn prefWidth="103.0" text="Full ID" />
-                  <TableColumn prefWidth="104.0" text="Training Type" />
-                  <TableColumn prefWidth="107.0" text="Date Of Birth " />
+                  <TableColumn prefWidth="115.0" text="Full ID" />
+                  <TableColumn prefWidth="92.0" text="Training Type" />
+                  <TableColumn prefWidth="123.0" text="Date Of Birth" />
               </columns>
             </TableView>
         </content>
