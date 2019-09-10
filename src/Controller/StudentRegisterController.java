@@ -128,6 +128,7 @@ public class StudentRegisterController implements Initializable {
     private String tradeTwo;
     private String tradeThree;
     private String fullRegId;
+    private String dob;
     private TrainingType trainingType;
 
     List<Student> allStudents=new ArrayList<>();
@@ -217,22 +218,39 @@ public class StudentRegisterController implements Initializable {
         tradeTwo=txtTradeTwo.getText();
         tradeThree=txtTradeThree.getText();
         fullRegId=txtRegYear.getText()+"/"+txtRegDistrict.getText()+"/"+txtRegMonth.getText()+"/"+txtRegNumber.getText();
+        dob=txtdobYear.getText()+"/"+txtdobMonth.getText()+"/"+txtdobDay.getText();
         trainingType=cmbTrainingType.getSelectionModel().getSelectedItem();
 
-        Student student=new Student(name,new Date(),email,telNumber,address,nicNumber,tradeOne,tradeTwo,tradeThree,fullRegId,trainingType);
-        boolean isAdded=studentBO.addStudent(student);
+        boolean isAdded;
+        Student student;
+        if(txtfullName.getText()!=null){
+             student=new Student(name,new Date(),email,telNumber,address,nicNumber,tradeOne,tradeTwo,tradeThree,fullRegId,dob,trainingType);
+             isAdded=studentBO.addStudent(student);
+            if(isAdded){
+                Alert alert=new Alert(Alert.AlertType.INFORMATION,"Student Successfully Registered",ButtonType.OK);
+                alert.show();
+            }else {
+                Alert alert=new Alert(Alert.AlertType.INFORMATION,"Registration Failed",ButtonType.OK);
+                alert.show();
+            }
+        }else {
+            Alert alert=new Alert(Alert.AlertType.INFORMATION,"Name Field Cannot Be Empty",ButtonType.OK);
+            alert.show();
+        }
+        //Student student=new Student(name,new Date(),email,telNumber,address,nicNumber,tradeOne,tradeTwo,tradeThree,fullRegId,dob,trainingType);
+        //boolean isAdded=studentBO.addStudent(student);
         allStudents=studentBO.searchANYthing(txtNic.getText());
         for(Student studentAF : allStudents){
             txtRegNumber.setText(Integer.toString(studentAF.getRegNumber()));
         }
 
-        if(isAdded){
-            Alert alert=new Alert(Alert.AlertType.INFORMATION,"Student Successfully Registered",ButtonType.OK);
-            alert.show();
-        }else {
-            Alert alert=new Alert(Alert.AlertType.INFORMATION,"Registration Failed",ButtonType.OK);
-            alert.show();
-        }
+//        if(isAdded){
+//            Alert alert=new Alert(Alert.AlertType.INFORMATION,"Student Successfully Registered",ButtonType.OK);
+//            alert.show();
+//        }else {
+//            Alert alert=new Alert(Alert.AlertType.INFORMATION,"Registration Failed",ButtonType.OK);
+//            alert.show();
+//        }
     }
 
     @FXML
@@ -247,6 +265,7 @@ public class StudentRegisterController implements Initializable {
             txtTradeTwo.setText(student.getTradeTwo());
             txtTradeThree.setText(student.getTradeThree());
             cmbTrainingType.getSelectionModel().select(student.getTrainingType());
+            txtdobYear.setText(student.getDob());
             txtMobTel.setText(student.getTelNumber());
             txtEmail.setText(student.getEmail());
         }
@@ -264,8 +283,9 @@ public class StudentRegisterController implements Initializable {
 
     @FXML
     void update(ActionEvent event) throws Exception {
+        String dob=txtdobYear.getText()+"/"+txtdobMonth.getText()+"/"+txtdobDay.getText();
         String fullRegId = txtRegYear.getText() + "/" + txtRegDistrict.getText() + "/" + txtRegMonth.getText() + "/" + txtRegNumber.getText();
-        if (studentBO.updateStudent(new Student(Integer.parseInt(txtRegNumber.getText()), txtfullName.getText(), new Date(), txtEmail.getText(), txtMobTel.getText(), txtAddress.getText(), txtNic.getText(), txtTradeOne.getText(), txtTradeTwo.getText(), txtTradeThree.getText(), fullRegId, cmbTrainingType.getSelectionModel().getSelectedItem()))) {
+        if (studentBO.updateStudent(new Student(Integer.parseInt(txtRegNumber.getText()), txtfullName.getText(), new Date(), txtEmail.getText(), txtMobTel.getText(), txtAddress.getText(), txtNic.getText(), txtTradeOne.getText(), txtTradeTwo.getText(), txtTradeThree.getText(), fullRegId,dob, cmbTrainingType.getSelectionModel().getSelectedItem()))) {
             Alert alert=new Alert(Alert.AlertType.INFORMATION,"Student Successfully updated", ButtonType.OK);
             alert.show();
         } else {

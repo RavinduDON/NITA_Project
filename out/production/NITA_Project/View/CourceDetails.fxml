@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="courceDetails" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="1120.0" stylesheets="@../Styles/front_style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CourceDetailsController">
+<AnchorPane fx:id="courceDetails" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="745.0" prefWidth="1259.0" stylesheets="@../Styles/front_style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CourceDetailsController">
    <children>
       <Label layoutX="364.0" layoutY="46.0" prefHeight="30.0" prefWidth="96.0" text="Search here " textFill="#8096eb">
          <font>
@@ -17,7 +17,7 @@
          </font>
       </Label>
       <TextField fx:id="txtCourceSearch" layoutX="528.0" layoutY="49.0" onKeyReleased="#txtSearchKeyRelesed" prefHeight="25.0" prefWidth="262.0" promptText="Search Cource" />
-      <ScrollPane fx:id="scrlPane" layoutX="46.0" layoutY="133.0" prefHeight="446.0" prefWidth="1038.0">
+      <ScrollPane fx:id="scrlPane" layoutX="140.0" layoutY="129.0" prefHeight="446.0" prefWidth="1038.0">
         <content>
             <TableView fx:id="tblCourse" prefHeight="441.0" prefWidth="1030.0" stylesheets="@../Styles/table_style.css">
               <columns>

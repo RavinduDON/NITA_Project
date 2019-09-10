@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="StudantRegistration" prefHeight="710.0" prefWidth="1120.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.StudentRegisterController">
+<AnchorPane fx:id="StudantRegistration" prefHeight="745.0" prefWidth="1259.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.StudentRegisterController">
    <children>
       <TextField fx:id="txtfullName" layoutX="184.0" layoutY="52.0" prefHeight="31.0" prefWidth="637.0" promptText="Full name" />
       <Label layoutX="58.0" layoutY="54.0" prefHeight="27.0" prefWidth="110.0" text="Full Name" textFill="#8096eb" />

@@ -19,6 +19,7 @@ public class Student {
     private String tradeTwo;
     private String tradeThree;
     private String fullRegId;
+    private String dob;
     private TrainingType trainingType;
 
     private List<Course> courses=new ArrayList<>();
@@ -30,7 +31,7 @@ public class Student {
         this.regNumber = regNumber;
     }
 
-    public Student(int regNumber, String name, Date date, String email, String telNumber, String address, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, TrainingType trainingType, List<Course> courses) {
+    public Student(int regNumber, String name, Date date, String email, String telNumber, String address, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, String dob,TrainingType trainingType, List<Course> courses) {
         this.regNumber = regNumber;
         this.name = name;
         this.date = date;
@@ -41,68 +42,80 @@ public class Student {
         this.tradeOne = tradeOne;
         this.tradeTwo = tradeTwo;
         this.tradeThree = tradeThree;
+        this.trainingType = trainingType;
+        this.dob=dob;
+        this.courses = courses;
+    }
+
+    public Student(int regNumber, String name, Date date, String email, String telNumber, String address, String nicNumber, String tradeOne, String tradeTwo, String tradeThree,String dob, TrainingType trainingType) {
+        this.regNumber = regNumber;
+        this.name = name;
+        this.date = date;
+        this.email = email;
+        this.telNumber = telNumber;
+        this.address = address;
+        this.nicNumber = nicNumber;
+        this.tradeOne = tradeOne;
+        this.tradeTwo = tradeTwo;
+        this.tradeThree = tradeThree;
+        this.dob=dob;
+        this.trainingType = trainingType;
+    }
+
+    public Student(int regNumber, String name, Date date, String email, String telNumber, String address, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, String fullRegId,String dob, TrainingType trainingType) {
+        this.regNumber = regNumber;
+        this.name = name;
+        this.date = date;
+        this.email = email;
+        this.telNumber = telNumber;
+        this.address = address;
+        this.nicNumber = nicNumber;
+        this.tradeOne = tradeOne;
+        this.tradeTwo = tradeTwo;
+        this.tradeThree = tradeThree;
+        this.fullRegId = fullRegId;
+        this.dob=dob;
+        this.trainingType = trainingType;
+    }
+
+    public Student(String name, Date date, String email, String telNumber, String address, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, String fullRegId,String dob, TrainingType trainingType) {
+        this.name = name;
+        this.date = date;
+        this.email = email;
+        this.telNumber = telNumber;
+        this.address = address;
+        this.nicNumber = nicNumber;
+        this.tradeOne = tradeOne;
+        this.tradeTwo = tradeTwo;
+        this.tradeThree = tradeThree;
+        this.fullRegId = fullRegId;
+        this.dob=dob;
+        this.trainingType = trainingType;
+    }
+
+    public Student(String name, Date date, String email, String telNumber, String address, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, String fullRegId,String dob, TrainingType trainingType, List<Course> courses) {
+        this.name = name;
+        this.date = date;
+        this.email = email;
+        this.telNumber = telNumber;
+        this.address = address;
+        this.nicNumber = nicNumber;
+        this.tradeOne = tradeOne;
+        this.tradeTwo = tradeTwo;
+        this.tradeThree = tradeThree;
+        this.fullRegId = fullRegId;
+        this.dob=dob;
         this.trainingType = trainingType;
         this.courses = courses;
     }
 
-    public Student(int regNumber, String name, Date date, String email, String telNumber, String address, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, TrainingType trainingType) {
-        this.regNumber = regNumber;
-        this.name = name;
-        this.date = date;
-        this.email = email;
-        this.telNumber = telNumber;
-        this.address = address;
-        this.nicNumber = nicNumber;
-        this.tradeOne = tradeOne;
-        this.tradeTwo = tradeTwo;
-        this.tradeThree = tradeThree;
-        this.trainingType = trainingType;
+    public String getDob() {
+        return dob;
     }
 
-    public Student(int regNumber, String name, Date date, String email, String telNumber, String address, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, String fullRegId, TrainingType trainingType) {
-        this.regNumber = regNumber;
-        this.name = name;
-        this.date = date;
-        this.email = email;
-        this.telNumber = telNumber;
-        this.address = address;
-        this.nicNumber = nicNumber;
-        this.tradeOne = tradeOne;
-        this.tradeTwo = tradeTwo;
-        this.tradeThree = tradeThree;
-        this.fullRegId = fullRegId;
-        this.trainingType = trainingType;
+    public void setDob(String dob) {
+        this.dob = dob;
     }
-
-    public Student(String name, Date date, String email, String telNumber, String address, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, String fullRegId, TrainingType trainingType) {
-        this.name = name;
-        this.date = date;
-        this.email = email;
-        this.telNumber = telNumber;
-        this.address = address;
-        this.nicNumber = nicNumber;
-        this.tradeOne = tradeOne;
-        this.tradeTwo = tradeTwo;
-        this.tradeThree = tradeThree;
-        this.fullRegId = fullRegId;
-        this.trainingType = trainingType;
-    }
-
-    public Student(String name, Date date, String email, String telNumber, String address, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, String fullRegId, TrainingType trainingType, List<Course> courses) {
-        this.name = name;
-        this.date = date;
-        this.email = email;
-        this.telNumber = telNumber;
-        this.address = address;
-        this.nicNumber = nicNumber;
-        this.tradeOne = tradeOne;
-        this.tradeTwo = tradeTwo;
-        this.tradeThree = tradeThree;
-        this.fullRegId = fullRegId;
-        this.trainingType = trainingType;
-        this.courses = courses;
-    }
-
 
     public String getFullRegId() {
         return fullRegId;

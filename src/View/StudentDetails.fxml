@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="studentDetail" prefHeight="710.0" prefWidth="1120.0" stylesheets="@../Styles/textField_style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.StudentDetailsController">
+<AnchorPane fx:id="studentDetail" prefHeight="745.0" prefWidth="1259.0" stylesheets="@../Styles/textField_style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.StudentDetailsController">
    <children>
       <TextField fx:id="txtStudentSearch" layoutX="468.0" layoutY="61.0" onKeyReleased="#searchKeyword" prefHeight="25.0" prefWidth="241.0" promptText="search student">
          <font>
@@ -20,12 +20,12 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <ScrollPane layoutX="14.0" layoutY="189.0" prefHeight="403.0" prefWidth="1040.0">
+      <ScrollPane layoutX="4.0" layoutY="194.0" prefHeight="470.0" prefWidth="1254.0">
         <content>
-            <TableView fx:id="tblStudent" prefHeight="401.0" prefWidth="1038.0" stylesheets="@../Styles/table_style.css">
+            <TableView fx:id="tblStudent" prefHeight="440.0" prefWidth="1254.0" stylesheets="@../Styles/table_style.css">
               <columns>
                 <TableColumn prefWidth="90.0" text="Reg Number" />
-                <TableColumn prefWidth="98.0" text="Name" />
+                  <TableColumn prefWidth="75.0" text="Name" />
                   <TableColumn prefWidth="85.0" text="Reg Date" />
                   <TableColumn prefWidth="94.0" text="Email" />
                   <TableColumn prefWidth="93.0" text="Tel Number" />
@@ -36,11 +36,12 @@
                   <TableColumn prefWidth="94.0" text="Trade Three" />
                   <TableColumn prefWidth="103.0" text="Full ID" />
                   <TableColumn prefWidth="104.0" text="Training Type" />
+                  <TableColumn prefWidth="107.0" text="Date Of Birth " />
               </columns>
             </TableView>
         </content>
       </ScrollPane>
-      <Button fx:id="btnDelete" layoutX="820.0" layoutY="638.0" mnemonicParsing="false" onAction="#delete" prefHeight="57.0" prefWidth="75.0" stylesheets="@../Styles/front_style.css" text="Delete" />
-      <Button fx:id="btnOk" layoutX="928.0" layoutY="638.0" mnemonicParsing="false" onAction="#ok" prefHeight="57.0" prefWidth="75.0" stylesheets="@../Styles/front_style.css" text="Ok" />
+      <Button fx:id="btnDelete" layoutX="819.0" layoutY="667.0" mnemonicParsing="false" onAction="#delete" prefHeight="57.0" prefWidth="75.0" stylesheets="@../Styles/front_style.css" text="Delete" />
+      <Button fx:id="btnOk" layoutX="932.0" layoutY="667.0" mnemonicParsing="false" onAction="#ok" prefHeight="57.0" prefWidth="75.0" stylesheets="@../Styles/front_style.css" text="Ok" />
    </children>
 </AnchorPane>

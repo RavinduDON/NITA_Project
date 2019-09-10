@@ -1,5 +1,7 @@
 package Hibernate.Entity;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -15,10 +17,13 @@ public class Student {
     allocationSize = 1)
     @Id
     private int regNumber;
+    @NotNull
     private String sname;
     @Temporal(TemporalType.DATE)
     private Date rdate;
+    @NotNull
     private String email;
+    @NotNull
     private String telNumber;
     private String address;
     private String nicNumber;
@@ -37,7 +42,7 @@ public class Student {
     }
 
 
-    public Student(String sname, Date rdate, String email, String telNumber, String address, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, TrainingType trainingType, List<Course> courses) {
+    public Student(String sname, Date rdate, String email, String telNumber, String address, String nicNumber, String tradeOne, String tradeTwo, String tradeThree,String fullRegId,String dob, TrainingType trainingType, List<Course> courses) {
         this.sname = sname;
         this.rdate = rdate;
         this.email = email;
@@ -47,11 +52,13 @@ public class Student {
         this.tradeOne = tradeOne;
         this.tradeTwo = tradeTwo;
         this.tradeThree = tradeThree;
+        this.fullRegId=fullRegId;
+        this.dob=dob;
         this.trainingType = trainingType;
 //        this.courses = courses;
     }
 
-    public Student(String sname, Date rdate, String email, String telNumber, String address, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, String fullRegId, TrainingType trainingType) {
+    public Student(String sname, Date rdate, String email, String telNumber, String address, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, String fullRegId,String dob, TrainingType trainingType) {
         this.sname = sname;
         this.rdate = rdate;
         this.email = email;
@@ -62,6 +69,7 @@ public class Student {
         this.tradeTwo = tradeTwo;
         this.tradeThree = tradeThree;
         this.fullRegId = fullRegId;
+        this.dob=dob;
         this.trainingType = trainingType;
     }
 

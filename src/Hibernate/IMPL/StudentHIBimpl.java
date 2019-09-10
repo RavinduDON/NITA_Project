@@ -36,6 +36,8 @@ public class StudentHIBimpl implements StudentHIB {
         student.setTradeTwo(dto.getTradeTwo());
         student.setTradeThree(dto.getTradeThree());
         student.setNicNumber(dto.getNicNumber());
+        student.setFullRegId(dto.getFullRegId());
+        student.setDob(dto.getDob());
         student.setTrainingType(dto.getTrainingType());
         if(student!=null){
             HIBCUDutill.closeSession();
@@ -103,6 +105,7 @@ public class StudentHIBimpl implements StudentHIB {
                 "tradeTwo like '%"+key+"%'or " +
                 "tradeThree like '%"+key+"%'or " +
                 "fullRegId like '%"+key+"%'or " +
+                "dob like '%"+key+"%'or "+
                 "trainingType like '%"+key+"%'",Student.class).list();
         if(students.size()>0){
             HIBCUDutill.closeSession();
