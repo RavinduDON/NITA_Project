@@ -20,7 +20,11 @@
             <Font size="14.0" />
          </font>
       </Label>
+<<<<<<< HEAD
       <ScrollPane layoutX="4.0" layoutY="208.0" maxHeight="460.0" maxWidth="110.0" minHeight="460.0" minWidth="1100.0" prefHeight="460.0" prefWidth="110.0">
+=======
+      <ScrollPane layoutX="2.0" layoutY="144.0" prefHeight="470.0" prefWidth="1254.0">
+>>>>>>> 57a69832a858e75ddb883ccba408ddc8a6461829
         <content>
             <TableView fx:id="tblStudent" maxHeight="460.0" maxWidth="1120.0" minHeight="440.0" minWidth="1120.0" prefHeight="460.0" prefWidth="1120.0" stylesheets="@../Styles/table_style.css">
               <columns>
@@ -41,7 +45,7 @@
             </TableView>
         </content>
       </ScrollPane>
-      <Button fx:id="btnDelete" layoutX="819.0" layoutY="667.0" mnemonicParsing="false" onAction="#delete" prefHeight="57.0" prefWidth="75.0" stylesheets="@../Styles/front_style.css" text="Delete" />
-      <Button fx:id="btnOk" layoutX="932.0" layoutY="667.0" mnemonicParsing="false" onAction="#ok" prefHeight="57.0" prefWidth="75.0" stylesheets="@../Styles/front_style.css" text="Ok" />
+      <Button fx:id="btnDelete" layoutX="819.0" layoutY="634.0" mnemonicParsing="false" onAction="#delete" prefHeight="57.0" prefWidth="75.0" stylesheets="@../Styles/front_style.css" text="Delete" />
+      <Button fx:id="btnOk" layoutX="932.0" layoutY="633.0" mnemonicParsing="false" onAction="#ok" prefHeight="57.0" prefWidth="75.0" stylesheets="@../Styles/front_style.css" text="Ok" />
    </children>
 </AnchorPane>

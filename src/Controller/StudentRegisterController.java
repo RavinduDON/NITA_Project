@@ -223,7 +223,7 @@ public class StudentRegisterController implements Initializable {
 
         boolean isAdded;
         Student student;
-        if(txtfullName.getText()!=null){
+        if(txtfullName.getText()!=""){
              student=new Student(name,new Date(),email,telNumber,address,nicNumber,tradeOne,tradeTwo,tradeThree,fullRegId,dob,trainingType);
              isAdded=studentBO.addStudent(student);
             if(isAdded){
