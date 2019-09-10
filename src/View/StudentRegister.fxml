@@ -39,10 +39,9 @@
       <Label layoutX="60.0" layoutY="591.0" prefHeight="27.0" prefWidth="138.0" text="Email address" textFill="#8096eb" />
       <TextField fx:id="txtEmail" layoutX="239.0" layoutY="589.0" prefHeight="31.0" prefWidth="374.0" promptText="yourmail.@anymail.com" />
       <Button id="#bevel-grey" fx:id="btnRegStudent" layoutX="107.0" layoutY="649.0" minHeight="57.0" mnemonicParsing="false" onAction="#register" stylesheets="@../Styles/front_style.css" text="Register student" />
-      <Button fx:id="btnNotify" layoutX="544.0" layoutY="649.0" minHeight="57.0" mnemonicParsing="false" onAction="#notify" text="Notify" />
-      <Button fx:id="btnDelete" layoutX="451.0" layoutY="649.0" minHeight="57.0" mnemonicParsing="false" onAction="#Delete" text="Delete" />
-      <Button fx:id="btnUpdate" layoutX="354.0" layoutY="649.0" minHeight="57.0" mnemonicParsing="false" onAction="#update" text="Update" />
-      <Button fx:id="btnSearch" layoutX="255.0" layoutY="649.0" minHeight="57.0" mnemonicParsing="false" onAction="#search" text="Search" />
+      <Button fx:id="btnNotify" layoutX="456.0" layoutY="649.0" minHeight="57.0" mnemonicParsing="false" onAction="#notify" text="Notify" />
+      <Button fx:id="btnUpdate" layoutX="355.0" layoutY="649.0" minHeight="57.0" mnemonicParsing="false" onAction="#update" text="Update" />
+      <Button fx:id="btnSearch" layoutX="256.0" layoutY="649.0" minHeight="57.0" mnemonicParsing="false" onAction="#search" text="Search" />
       <Label layoutX="57.0" layoutY="321.0" prefHeight="27.0" prefWidth="110.0" text="Trade 1" textFill="#8096eb" />
       <Label layoutX="57.0" layoutY="360.0" prefHeight="27.0" prefWidth="110.0" text="Trade 2" textFill="#8096eb" />
       <Label layoutX="58.0" layoutY="400.0" prefHeight="27.0" prefWidth="110.0" text="Trade 3" textFill="#8096eb" />
