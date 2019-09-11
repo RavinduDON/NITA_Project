@@ -10,7 +10,7 @@ public class URLReader {
 
             String msg="You+have+been+registered+at+NAITA+Colombo" +
                     "your+registration+number+is:'"+regNumber+"'";
-            URL textit = new URL("http://textit.biz/sendmsg/index.php?id=94763471118&pw=9507&to='"+recipiant+"'&text='"+msg+"'");
+            URL textit = new URL("http://textit.biz/sendmsg/index.php?id=94718705365&pw=6012&to='"+recipiant+"'&text='"+msg+"'");
             BufferedReader in = new BufferedReader(
                     new InputStreamReader(textit.openStream()));
 
