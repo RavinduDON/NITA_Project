@@ -77,7 +77,7 @@ public class CourceRegisterController implements Initializable {
             txtcourceName.setText(course.getName());
             txtDuration.setText(course.getDuration());
             txtTrainingCenter.setText(course.getTrainingCenter());
-
+            btnSave.setDisable(true);
         }else{
             Alert alert=new Alert(Alert.AlertType.INFORMATION,"Invalid cource ID",ButtonType.OK);
             alert.show();

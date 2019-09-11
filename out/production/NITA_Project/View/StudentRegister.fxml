@@ -15,7 +15,7 @@
    <children>
       <DatePicker fx:id="regDatePic" layoutX="94.0" layoutY="15.0" promptText="Date" />
       <TextField fx:id="txtRegYear" layoutX="548.0" layoutY="15.0" prefHeight="25.0" prefWidth="119.0" promptText="year" />
-      <TextField fx:id="txtRegDistrict" layoutX="681.0" layoutY="15.0" prefHeight="25.0" prefWidth="119.0" text="c" />
+      <TextField fx:id="txtRegDistrict" layoutX="681.0" layoutY="15.0" prefHeight="25.0" prefWidth="119.0" text="C" />
       <TextField fx:id="txtRegMonth" layoutX="812.0" layoutY="15.0" prefHeight="25.0" prefWidth="119.0" promptText="month" />
       <TextField fx:id="txtRegNumber" layoutX="945.0" layoutY="15.0" prefHeight="25.0" prefWidth="119.0" promptText="stid" />
       <TextField fx:id="txtfullName" layoutX="184.0" layoutY="52.0" prefHeight="31.0" prefWidth="637.0" promptText="Full name" />
