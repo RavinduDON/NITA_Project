@@ -4,6 +4,7 @@ import Business.Custom.CourseBO;
 import Business.Custom.StudentBO;
 import DTO.Course;
 import DTO.Student;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -12,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -66,7 +68,7 @@ public class StudentDetailsController implements Initializable {
                 tblStudent.setItems(FXCollections.observableArrayList(allStudents));
                 tblStudent.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("regNumber"));
                 tblStudent.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("name"));
-                tblStudent.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("rdate"));
+                tblStudent.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("date"));
                 tblStudent.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("email"));
                 tblStudent.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("telNumber"));
                 tblStudent.getColumns().get(5).setCellValueFactory(new PropertyValueFactory<>("address"));
@@ -76,7 +78,7 @@ public class StudentDetailsController implements Initializable {
                 tblStudent.getColumns().get(9).setCellValueFactory(new PropertyValueFactory<>("tradeThree"));
                 tblStudent.getColumns().get(10).setCellValueFactory(new PropertyValueFactory<>("fullRegId"));
                 tblStudent.getColumns().get(11).setCellValueFactory(new PropertyValueFactory<>("trainingType"));
-                tblStudent.getColumns().get(10).setCellValueFactory(new PropertyValueFactory<>("dob"));
+                tblStudent.getColumns().get(12).setCellValueFactory(new PropertyValueFactory<>("dob"));
 
 
             }
@@ -98,7 +100,7 @@ public class StudentDetailsController implements Initializable {
 
                 tblStudent.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("regNumber"));
                 tblStudent.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("name"));
-                tblStudent.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("rdate"));
+                tblStudent.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("date"));
                 tblStudent.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("email"));
                 tblStudent.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("telNumber"));
                 tblStudent.getColumns().get(5).setCellValueFactory(new PropertyValueFactory<>("address"));
@@ -108,7 +110,7 @@ public class StudentDetailsController implements Initializable {
                 tblStudent.getColumns().get(9).setCellValueFactory(new PropertyValueFactory<>("tradeThree"));
                 tblStudent.getColumns().get(10).setCellValueFactory(new PropertyValueFactory<>("fullRegId"));
                 tblStudent.getColumns().get(11).setCellValueFactory(new PropertyValueFactory<>("trainingType"));
-                tblStudent.getColumns().get(10).setCellValueFactory(new PropertyValueFactory<>("dob"));
+                tblStudent.getColumns().get(12).setCellValueFactory(new PropertyValueFactory<>("dob"));
             }
 
         } catch (Exception e) {
@@ -141,19 +143,20 @@ public class StudentDetailsController implements Initializable {
 //                tblStudent.getColumns().get(10).setCellValueFactory(new PropertyValueFactory<>(student.getFullRegId()));
 //                tblStudent.getColumns().get(11).setCellValueFactory(new PropertyValueFactory<>(student.getTrainingType()+""));
 //                tblStudent.getColumns().get(12).setCellValueFactory(new PropertyValueFactory<>(student.getDob()));
+
                 tblStudent.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("regNumber"));
                 tblStudent.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("name"));
-                tblStudent.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("Regdate"));
+                tblStudent.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("date"));
                 tblStudent.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("email"));
                 tblStudent.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("telNumber"));
                 tblStudent.getColumns().get(5).setCellValueFactory(new PropertyValueFactory<>("address"));
-                tblStudent.getColumns().get(6).setCellValueFactory(new PropertyValueFactory<>("nic"));
+                tblStudent.getColumns().get(6).setCellValueFactory(new PropertyValueFactory<>("nicNumber"));
                 tblStudent.getColumns().get(7).setCellValueFactory(new PropertyValueFactory<>("tradeOne"));
                 tblStudent.getColumns().get(8).setCellValueFactory(new PropertyValueFactory<>("tradeTwo"));
                 tblStudent.getColumns().get(9).setCellValueFactory(new PropertyValueFactory<>("tradeThree"));
                 tblStudent.getColumns().get(10).setCellValueFactory(new PropertyValueFactory<>("fullRegId"));
                 tblStudent.getColumns().get(11).setCellValueFactory(new PropertyValueFactory<>("trainingType"));
-                tblStudent.getColumns().get(10).setCellValueFactory(new PropertyValueFactory<>("dateofbirth"));
+                tblStudent.getColumns().get(12).setCellValueFactory(new PropertyValueFactory<>("dob"));
 
 
 
@@ -171,17 +174,17 @@ public class StudentDetailsController implements Initializable {
 
         tblStudent.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("regNumber"));
         tblStudent.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("name"));
-        tblStudent.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("Regdate"));
+        tblStudent.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("date"));
         tblStudent.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("email"));
         tblStudent.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("telNumber"));
         tblStudent.getColumns().get(5).setCellValueFactory(new PropertyValueFactory<>("address"));
-        tblStudent.getColumns().get(6).setCellValueFactory(new PropertyValueFactory<>("nic"));
+        tblStudent.getColumns().get(6).setCellValueFactory(new PropertyValueFactory<>("nicNumber"));
         tblStudent.getColumns().get(7).setCellValueFactory(new PropertyValueFactory<>("tradeOne"));
         tblStudent.getColumns().get(8).setCellValueFactory(new PropertyValueFactory<>("tradeTwo"));
         tblStudent.getColumns().get(9).setCellValueFactory(new PropertyValueFactory<>("tradeThree"));
         tblStudent.getColumns().get(10).setCellValueFactory(new PropertyValueFactory<>("fullRegId"));
         tblStudent.getColumns().get(11).setCellValueFactory(new PropertyValueFactory<>("trainingType"));
-        tblStudent.getColumns().get(10).setCellValueFactory(new PropertyValueFactory<>("dateofbirth"));
+        tblStudent.getColumns().get(12).setCellValueFactory(new PropertyValueFactory<>("dob"));
 
         tblStudent.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Student>() {
             @Override

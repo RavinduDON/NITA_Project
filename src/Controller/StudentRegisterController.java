@@ -3,6 +3,7 @@ package Controller;
 import Business.BOFactory;
 import Business.Custom.StudentBO;
 import Business.boIMPL.StudentBOimpl;
+import Business.sms.URLReader;
 import DTO.NextStdID;
 import DTO.Sex;
 import DTO.Student;
@@ -201,7 +202,9 @@ public class StudentRegisterController implements Initializable {
         String email=txtEmail.getText();
         String stdNumber=loadSTDnumber();
         String name=txtfullName.getText();
+        String telNumber=txtMobTel.getText();
         SendTextMail.composeMail(email,stdNumber,name);
+        URLReader.SendSMS(telNumber,stdNumber);
         clear();
         btnRegStudent.setDisable(false);
 

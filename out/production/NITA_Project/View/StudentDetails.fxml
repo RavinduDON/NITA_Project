@@ -21,17 +21,17 @@
          </font>
       </Label>
 
-      <ScrollPane layoutX="2.0" layoutY="144.0" prefHeight="470.0" prefWidth="1254.0">
+      <ScrollPane layoutX="2.0" layoutY="144.0" prefHeight="470.0" prefWidth="1120.0">
 
         <content>
-            <TableView fx:id="tblStudent" maxHeight="460.0" maxWidth="1252.0" minHeight="440.0" minWidth="1120.0" prefHeight="460.0" prefWidth="1252.0" stylesheets="@../Styles/table_style.css">
+            <TableView fx:id="tblStudent" maxHeight="516.0" maxWidth="1284.0" minHeight="436.0" minWidth="1120.0" prefHeight="467.0" prefWidth="1255.0" stylesheets="@../Styles/table_style.css">
               <columns>
                 <TableColumn prefWidth="75.00003051757812" text="Reg Number" />
-                  <TableColumn prefWidth="90.0" text="Name" />
-                  <TableColumn prefWidth="85.0" text="Reg Date" />
-                  <TableColumn prefWidth="94.0" text="Email" />
-                  <TableColumn prefWidth="93.0" text="Tel Number" />
-                  <TableColumn prefWidth="103.0" text="Address" />
+                  <TableColumn prefWidth="93.0" text="Name" />
+                  <TableColumn prefWidth="88.0" text="Reg Date" />
+                  <TableColumn prefWidth="88.0" text="Email" />
+                  <TableColumn prefWidth="109.0" text="Tel Number" />
+                  <TableColumn prefWidth="87.0" text="Address" />
                   <TableColumn prefWidth="94.0" text="NIC" />
                   <TableColumn minWidth="8.0" prefWidth="94.0" text="Trade One" />
                   <TableColumn minWidth="8.0" prefWidth="94.0" text="Trade Two" />
