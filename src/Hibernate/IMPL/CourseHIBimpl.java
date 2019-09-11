@@ -27,7 +27,6 @@ public class CourseHIBimpl implements CourseHIB {
     public boolean update(Course dto) throws Exception {
         HIBCUDutill.openSession();
         Course course=HIBCUDutill.session.load(Course.class,dto.getCourseID());
-        System.out.println(course.getCourseID());
         course.setCname(dto.getCname());
         course.setDuration(dto.getDuration());
         course.setTrainingCenter(dto.getTrainingCenter());

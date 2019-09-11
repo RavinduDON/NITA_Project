@@ -25,7 +25,8 @@ public class StudentHIBimpl implements StudentHIB {
     @Override
     public boolean update(Student dto) throws Exception {
         HIBCUDutill.openSession();
-        Student student=HIBCUDutill.session.get(Student.class,dto.getRegNumber());
+        Student student=HIBCUDutill.session.load(Student.class,dto.getRegNumber());
+
         student.setSname(dto.getSname());
         student.setRdate(dto.getRdate());
         student.setEmail(dto.getEmail());

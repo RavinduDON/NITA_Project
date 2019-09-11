@@ -72,6 +72,21 @@ public class Student {
         this.dob=dob;
         this.trainingType = trainingType;
     }
+    public Student(int regNumber,String sname, Date rdate, String email, String telNumber, String address, String nicNumber, String tradeOne, String tradeTwo, String tradeThree, String fullRegId,String dob, TrainingType trainingType) {
+        this.regNumber=regNumber;
+        this.sname = sname;
+        this.rdate = rdate;
+        this.email = email;
+        this.telNumber = telNumber;
+        this.address = address;
+        this.nicNumber = nicNumber;
+        this.tradeOne = tradeOne;
+        this.tradeTwo = tradeTwo;
+        this.tradeThree = tradeThree;
+        this.fullRegId = fullRegId;
+        this.dob=dob;
+        this.trainingType = trainingType;
+    }
 
     public String getDob() {
         return dob;

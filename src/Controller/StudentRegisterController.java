@@ -292,9 +292,20 @@ public class StudentRegisterController implements Initializable {
 
     @FXML
     void update(ActionEvent event) throws Exception {
-        String dob=txtdobYear.getText()+"/"+txtdobMonth.getText()+"/"+txtdobDay.getText();
-        String fullRegId = txtRegYear.getText() + "/" + txtRegDistrict.getText() + "/" + txtRegMonth.getText() + "/" + txtRegNumber.getText();
-        if (studentBO.updateStudent(new Student(Integer.parseInt(txtRegNumber.getText()), txtfullName.getText(), new Date(), txtEmail.getText(), txtMobTel.getText(), txtAddress.getText(), txtNic.getText(), txtTradeOne.getText(), txtTradeTwo.getText(), txtTradeThree.getText(), fullRegId,dob, cmbTrainingType.getSelectionModel().getSelectedItem()))) {
+
+        name=txtfullName.getText();
+        email=txtEmail.getText();
+        telNumber=txtMobTel.getText();
+        address=txtAddress.getText();
+        nicNumber=txtNic.getText();
+        tradeOne=txtTradeOne.getText();
+        tradeTwo=txtTradeTwo.getText();
+        tradeThree=txtTradeThree.getText();
+        fullRegId=txtRegYear.getText()+"/"+txtRegDistrict.getText()+"/"+txtRegMonth.getText()+"/"+txtRegNumber.getText();
+        dob=txtdobYear.getText()+"/"+txtdobMonth.getText()+"/"+txtdobDay.getText();
+        trainingType=cmbTrainingType.getSelectionModel().getSelectedItem();
+
+        if (studentBO.updateStudent(new Student(Integer.parseInt(txtRegNumber.getText()),name,new Date(),email,telNumber,address,nicNumber,tradeOne,tradeTwo,tradeThree,fullRegId,dob,trainingType))) {
             Alert alert=new Alert(Alert.AlertType.INFORMATION,"Student Successfully updated", ButtonType.OK);
             alert.show();
         } else {

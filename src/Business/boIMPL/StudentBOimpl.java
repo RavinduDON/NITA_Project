@@ -27,7 +27,7 @@ public class StudentBOimpl implements StudentBO {
 
     @Override
     public boolean updateStudent(Student dto) throws Exception {
-        Hibernate.Entity.Student student=new Hibernate.Entity.Student(dto.getName(),new Date(),dto.getEmail(),dto.getTelNumber(),dto.getAddress(),dto.getNicNumber(),dto.getTradeOne(),dto.getTradeTwo(),dto.getTradeThree(),dto.getFullRegId(),dto.getDob(),dto.getTrainingType());
+        Hibernate.Entity.Student student=new Hibernate.Entity.Student(dto.getRegNumber(),dto.getName(),new Date(),dto.getEmail(),dto.getTelNumber(),dto.getAddress(),dto.getNicNumber(),dto.getTradeOne(),dto.getTradeTwo(),dto.getTradeThree(),dto.getFullRegId(),dto.getDob(),dto.getTrainingType());
         return studentHIB.update(student);
     }
 
