@@ -53,7 +53,7 @@ public class StudentDetailsController implements Initializable {
 
     @FXML
     void clickBack(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("../View/FrontWindow.fxml"));
+        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/View/FrontWindow.fxml"));
         studentDetail.getChildren().setAll(pane);
 
     }

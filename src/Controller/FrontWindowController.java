@@ -32,27 +32,27 @@ public class FrontWindowController implements Initializable {
 
     @FXML
     void buttonCourseDetails(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("../View/CourceDetails.fxml"));
+        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/View/CourceDetails.fxml"));
         loadPane.getChildren().setAll(pane);
 
     }
 
     @FXML
     void buttonCourceRegistry(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("../View/CourceRegister.fxml"));
+        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/View/CourceRegister.fxml"));
         loadPane.getChildren().setAll(pane);
 
     }
 
     @FXML
     void buttonStudentDetails(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("../View/StudentDetails.fxml"));
+        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/View/StudentDetails.fxml"));
         loadPane.getChildren().setAll(pane);
     }
 
     @FXML
     void buttonStudentRegistry(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("../View/StudentRegister.fxml"));
+        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/View/StudentRegister.fxml"));
         loadPane.getChildren().setAll(pane);
 
     }
@@ -61,7 +61,7 @@ public class FrontWindowController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         AnchorPane pane = null;
         try {
-            pane = FXMLLoader.load(this.getClass().getResource("../View/homepage.fxml"));
+            pane = FXMLLoader.load(this.getClass().getResource("/View/homepage.fxml"));
         } catch (IOException e) {
             e.printStackTrace();
         }

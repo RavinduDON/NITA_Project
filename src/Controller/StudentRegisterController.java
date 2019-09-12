@@ -183,7 +183,7 @@ public class StudentRegisterController implements Initializable {
 
     @FXML
     void clickBack(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("../View/FrontWindow.fxml"));
+        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/View/FrontWindow.fxml"));
         StudantRegistration.getChildren().setAll(pane);
     }
 
