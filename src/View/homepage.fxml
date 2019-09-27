@@ -6,24 +6,24 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane minHeight="710.0" minWidth="1120.0" prefHeight="710.0" prefWidth="1120.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.homepageController">
+<AnchorPane minHeight="710.0" minWidth="1120.0" prefHeight="1000.0" prefWidth="1640.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.homepageController">
    <children>
-      <ImageView fitHeight="270.0" fitWidth="500.0" layoutX="294.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="270.0" fitWidth="500.0" layoutX="640.0" layoutY="359.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Image/naita.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="540.0" layoutY="612.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="886.0" layoutY="744.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Image/logo123.png" />
          </image>
       </ImageView>
-      <Label layoutX="8.0" layoutY="37.0" prefHeight="107.0" prefWidth="1102.0" text="Welcome to NAITA Student Registration System" textFill="#571fff">
+      <Label layoutX="391.0" layoutY="169.0" prefHeight="107.0" prefWidth="941.0" text="Welcome to NAITA Student Registration System" textFill="#571fff">
          <font>
             <Font name="Algerian" size="44.0" />
          </font>
       </Label>
-      <Label layoutX="409.0" layoutY="601.0" prefHeight="32.0" prefWidth="131.0" text="Powered By...." textFill="#4400ff">
+      <Label layoutX="755.0" layoutY="712.0" prefHeight="32.0" prefWidth="131.0" text="Powered By...." textFill="#4400ff">
          <font>
             <Font name="Segoe Print" size="18.0" />
          </font>

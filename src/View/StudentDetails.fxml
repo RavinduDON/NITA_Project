@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="studentDetail" prefHeight="710.0" prefWidth="1120.0" stylesheets="@../Styles/textField_style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.StudentDetailsController">
+<AnchorPane fx:id="studentDetail" prefHeight="1000.0" prefWidth="1640.0" stylesheets="@../Styles/textField_style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.StudentDetailsController">
    <children>
       <TextField fx:id="txtStudentSearch" layoutX="468.0" layoutY="61.0" onKeyReleased="#searchKeyword" prefHeight="25.0" prefWidth="241.0" promptText="search student">
          <font>
@@ -21,29 +21,29 @@
          </font>
       </Label>
 
-      <ScrollPane layoutX="2.0" layoutY="144.0" prefHeight="470.0" prefWidth="1120.0">
+      <ScrollPane layoutX="38.0" layoutY="145.0" prefHeight="657.0" prefWidth="1564.0">
 
         <content>
-            <TableView fx:id="tblStudent" maxHeight="516.0" maxWidth="1284.0" minHeight="436.0" minWidth="1120.0" prefHeight="467.0" prefWidth="1255.0" stylesheets="@../Styles/table_style.css">
+            <TableView fx:id="tblStudent" maxHeight="654.0" maxWidth="1559.0" minHeight="436.0" minWidth="1120.0" prefHeight="654.0" prefWidth="1559.0" stylesheets="@../Styles/table_style.css">
               <columns>
-                <TableColumn prefWidth="75.00003051757812" text="Reg Number" />
-                  <TableColumn prefWidth="93.0" text="Name" />
-                  <TableColumn prefWidth="88.0" text="Reg Date" />
-                  <TableColumn prefWidth="88.0" text="Email" />
-                  <TableColumn prefWidth="109.0" text="Tel Number" />
-                  <TableColumn prefWidth="87.0" text="Address" />
-                  <TableColumn prefWidth="94.0" text="NIC" />
-                  <TableColumn minWidth="8.0" prefWidth="94.0" text="Trade One" />
-                  <TableColumn minWidth="8.0" prefWidth="94.0" text="Trade Two" />
-                  <TableColumn prefWidth="94.0" text="Trade Three" />
-                  <TableColumn prefWidth="115.0" text="Full ID" />
-                  <TableColumn prefWidth="92.0" text="Training Type" />
-                  <TableColumn prefWidth="123.0" text="Date Of Birth" />
+                <TableColumn prefWidth="84.00003051757812" text="Reg Number" />
+                  <TableColumn prefWidth="84.99993896484375" text="Name" />
+                  <TableColumn prefWidth="114.00003051757812" text="Reg Date" />
+                  <TableColumn prefWidth="129.0" text="Email" />
+                  <TableColumn prefWidth="120.0" text="Tel Number" />
+                  <TableColumn prefWidth="120.0" text="Address" />
+                  <TableColumn prefWidth="67.0" text="NIC" />
+                  <TableColumn minWidth="8.0" prefWidth="176.0" text="Trade One" />
+                  <TableColumn minWidth="8.0" prefWidth="172.0" text="Trade Two" />
+                  <TableColumn prefWidth="131.0" text="Trade Three" />
+                  <TableColumn prefWidth="97.0" text="Full ID" />
+                  <TableColumn prefWidth="141.0" text="Training Type" />
+                  <TableColumn prefWidth="122.0" text="Date Of Birth" />
               </columns>
             </TableView>
         </content>
       </ScrollPane>
-      <Button fx:id="btnDelete" layoutX="819.0" layoutY="634.0" mnemonicParsing="false" onAction="#delete" prefHeight="57.0" prefWidth="75.0" stylesheets="@../Styles/front_style.css" text="Delete" />
-      <Button fx:id="btnOk" layoutX="932.0" layoutY="633.0" mnemonicParsing="false" onAction="#ok" prefHeight="57.0" prefWidth="75.0" stylesheets="@../Styles/front_style.css" text="Ok" />
+      <Button fx:id="btnDelete" layoutX="1074.0" layoutY="832.0" mnemonicParsing="false" onAction="#delete" prefHeight="57.0" prefWidth="75.0" stylesheets="@../Styles/front_style.css" text="Delete" />
+      <Button fx:id="btnOk" layoutX="1187.0" layoutY="831.0" mnemonicParsing="false" onAction="#ok" prefHeight="57.0" prefWidth="75.0" stylesheets="@../Styles/front_style.css" text="Ok" />
    </children>
 </AnchorPane>

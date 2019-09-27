@@ -112,7 +112,13 @@ public class StudentRegisterController implements Initializable {
     private Button btnBack;
 
     @FXML
+    private Button btnSendEmail;
+
+    @FXML
     private DatePicker regDatePic;
+
+    @FXML
+    private Button btnClear;
 
 
     @FXML
@@ -137,7 +143,6 @@ public class StudentRegisterController implements Initializable {
     private void clear(){
         txtRegNumber.setText("");
         txtRegMonth.setText("");
-        txtRegDistrict.setText("");
         txtRegYear.setText("");
         txtAddress.setText("");
         txtfullName.setText("");
@@ -203,12 +208,27 @@ public class StudentRegisterController implements Initializable {
         String stdNumber=loadSTDnumber();
         String name=txtfullName.getText();
         String telNumber=txtMobTel.getText();
-        SendTextMail.composeMail(email,stdNumber,name);
         URLReader.SendSMS(telNumber,stdNumber);
-        clear();
         btnRegStudent.setDisable(false);
 
     }
+    @FXML
+    void sendEmail(ActionEvent event) throws Exception {
+        String email=txtEmail.getText();
+        String stdNumber=loadSTDnumber();
+        String name=txtfullName.getText();
+        String telNumber=txtMobTel.getText();
+        SendTextMail.composeMail(email,stdNumber,name);
+        btnRegStudent.setDisable(false);
+    }
+    @FXML
+    void allClear(ActionEvent event) {
+
+        clear();
+    }
+
+
+
 
     @FXML
     void register(ActionEvent event) throws Exception {
