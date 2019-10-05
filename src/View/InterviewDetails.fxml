@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="1000.0" prefWidth="1640.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.InterviewDetailsController">
+   <children>
+      <Label layoutX="617.0" layoutY="29.0" text="Search" />
+      <TextField fx:id="txtSearch" layoutX="683.0" layoutY="24.0" onKeyReleased="#searchKeyRelesed" prefHeight="31.0" prefWidth="373.0" />
+      <ScrollPane layoutX="62.0" layoutY="103.0" prefHeight="726.0" prefWidth="1528.0">
+        <content>
+            <TableView fx:id="tblInterview" prefHeight="724.0" prefWidth="1526.0">
+              <columns>
+                <TableColumn prefWidth="121.00003051757812" text="Interview ID" />
+                <TableColumn prefWidth="156.0" text="Student ID" />
+                  <TableColumn prefWidth="124.0" text="Student NIC" />
+                  <TableColumn prefWidth="167.0" text="Student Name" />
+                  <TableColumn prefWidth="125.0" text="Interview Date" />
+                  <TableColumn prefWidth="136.0" text="Interview Time" />
+                  <TableColumn prefWidth="146.0" text="Interview Place" />
+                  <TableColumn prefWidth="180.0" text="First Interview Results" />
+                  <TableColumn prefWidth="196.0" text="Second Interview Results" />
+                  <TableColumn prefWidth="175.0" text="Third Interview Results" />
+              </columns>
+            </TableView>
+        </content>
+      </ScrollPane>
+      <Button fx:id="btnDelete" layoutX="913.0" layoutY="876.0" mnemonicParsing="false" onAction="#deleteInterview" text="Delete" />
+      <Button fx:id="btnOK" layoutX="1036.0" layoutY="876.0" mnemonicParsing="false" onAction="#ok" text="OK" />
+   </children>
+</AnchorPane>

@@ -32,6 +32,8 @@ public class Student {
     private String tradeThree;
     private String fullRegId;
     private String dob;
+    @OneToMany(mappedBy = "student")
+    private List<Interview> interviews=new ArrayList<>();
     @Enumerated(value = EnumType.STRING)
     private TrainingType trainingType;
 
@@ -192,6 +194,17 @@ public class Student {
         this.trainingType = trainingType;
     }
 
+    public List<Interview> getInterviews() {
+        return interviews;
+    }
+    public void addInterview(Interview interview){
+        interview.setStudent(this);
+        this.getInterviews().add(interview);
+    }
+
+    public void setInterviews(List<Interview> interviews) {
+        this.interviews = interviews;
+    }
 //    public List<Course> getCourses() {
 //        return courses;
 //    }
