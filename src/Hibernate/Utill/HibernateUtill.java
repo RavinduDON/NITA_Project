@@ -1,6 +1,7 @@
 package Hibernate.Utill;
 
 import Hibernate.Entity.Course;
+import Hibernate.Entity.Interview;
 import Hibernate.Entity.Student;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
@@ -17,6 +18,7 @@ public class HibernateUtill {
         Metadata metadata=new MetadataSources(registry)
                 .addAnnotatedClass(Student.class)
                 .addAnnotatedClass(Course.class)
+                .addAnnotatedClass(Interview.class)
                 .buildMetadata();
         return  metadata.getSessionFactoryBuilder().build();
     }

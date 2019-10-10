@@ -39,11 +39,16 @@
                   <Font name="Algerian" size="35.0" />
                </font>
             </Label>
-            <Label layoutX="8.0" layoutY="605.0" prefHeight="17.0" prefWidth="101.0" text="powered by" />
-            <Label layoutX="8.0" layoutY="619.0" prefHeight="17.0" prefWidth="116.0" text="SL Soft solutions" />
-            <Label layoutX="6.0" layoutY="629.0" prefHeight="21.0" prefWidth="265.0" text="E mail- slsoftsolutions9897@gmail.com" />
-            <Label layoutX="8.0" layoutY="642.0" prefHeight="21.0" prefWidth="186.0" text="Contacts- +94774883086" />
-            <Label layoutX="6.0" layoutY="656.0" prefHeight="21.0" prefWidth="193.0" text="Contacts- +94763471118" />
+            <Button fx:id="btnPlaceInterview" layoutX="69.0" layoutY="563.0" mnemonicParsing="false" onAction="#buttonPlaceInterview" prefHeight="65.0" prefWidth="159.0" text="Place Interview">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnInterviewDetails" layoutX="69.0" layoutY="675.0" mnemonicParsing="false" onAction="#buttonInterviewDetails" prefHeight="65.0" prefWidth="159.0" text="Interview Details">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="loadPane" layoutX="281.0" prefHeight="1000.0" prefWidth="1640.0" />

@@ -1,5 +1,8 @@
 package Controller;
 
+import Business.BOFactory;
+import Business.Custom.StudentBO;
+import DTO.Student;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -12,9 +15,11 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class PlaceInterviewController implements Initializable {
+    StudentBO studentBO;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        studentBO= (StudentBO) BOFactory.getBoFactory().getSuperBO(BOFactory.boTypes.STUDENT);
     }
     @FXML
     private TextField txtSearchStudentRegNumber;
@@ -104,10 +109,13 @@ public class PlaceInterviewController implements Initializable {
     @FXML
     void placeInterview(ActionEvent event) {
 
+
     }
 
     @FXML
-    void searchStudent(ActionEvent event) {
+    void searchStudent(ActionEvent event) throws Exception {
+        Student student=studentBO.searchStudent(txtSearchStudentRegNumber.getText());
+
 
     }
 

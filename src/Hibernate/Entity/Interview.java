@@ -2,6 +2,7 @@ package Hibernate.Entity;
 
 import javax.persistence.*;
 
+@Entity
 public class Interview {
 
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator ="interviewRegNum" )
@@ -14,6 +15,8 @@ public class Interview {
     private String fullRegID;
     private String nicNumber;
     private String stdName;
+    private String email;
+    private String telNumber;
     private String interviewDate;
     private String interviewTime;
     private String interviewPlace;
@@ -22,15 +25,17 @@ public class Interview {
     private String thiredInterviewResult;
     @ManyToOne
     @JoinColumn(name="studentregNumber", referencedColumnName = "regNumber")
-    private Student student;
+    private DTO.Student student;
 
     public Interview() {
     }
 
-    public Interview(String fullRegID, String nicNumber, String stdName, String interviewDate, String interviewTime, String interviewPlace, String firstInterviewResult, String secondInterviewResult, String thiredInterviewResult, Student student) {
+    public Interview(String fullRegID, String nicNumber, String stdName, String email, String telNumber, String interviewDate, String interviewTime, String interviewPlace, String firstInterviewResult, String secondInterviewResult, String thiredInterviewResult, DTO.Student student) {
         this.fullRegID = fullRegID;
         this.nicNumber = nicNumber;
         this.stdName = stdName;
+        this.email = email;
+        this.telNumber = telNumber;
         this.interviewDate = interviewDate;
         this.interviewTime = interviewTime;
         this.interviewPlace = interviewPlace;
@@ -40,11 +45,13 @@ public class Interview {
         this.student = student;
     }
 
-    public Interview(int interviewID, String fullRegID, String nicNumber, String stdName, String interviewDate, String interviewTime, String interviewPlace, String firstInterviewResult, String secondInterviewResult, String thiredInterviewResult, Student student) {
+    public Interview(int interviewID, String fullRegID, String nicNumber, String stdName, String email, String telNumber, String interviewDate, String interviewTime, String interviewPlace, String firstInterviewResult, String secondInterviewResult, String thiredInterviewResult, DTO.Student student) {
         this.interviewID = interviewID;
         this.fullRegID = fullRegID;
         this.nicNumber = nicNumber;
         this.stdName = stdName;
+        this.email = email;
+        this.telNumber = telNumber;
         this.interviewDate = interviewDate;
         this.interviewTime = interviewTime;
         this.interviewPlace = interviewPlace;
@@ -52,6 +59,22 @@ public class Interview {
         this.secondInterviewResult = secondInterviewResult;
         this.thiredInterviewResult = thiredInterviewResult;
         this.student = student;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getTelNumber() {
+        return telNumber;
+    }
+
+    public void setTelNumber(String telNumber) {
+        this.telNumber = telNumber;
     }
 
     public String getStdName() {
@@ -134,11 +157,30 @@ public class Interview {
         this.thiredInterviewResult = thiredInterviewResult;
     }
 
-    public Student getStudent() {
+    public DTO.Student getStudent() {
         return student;
     }
 
-    public void setStudent(Student student) {
+    public void setStudent(DTO.Student student) {
         this.student = student;
+    }
+
+    @Override
+    public String toString() {
+        return "Interview{" +
+                "interviewID=" + interviewID +
+                ", fullRegID='" + fullRegID + '\'' +
+                ", nicNumber='" + nicNumber + '\'' +
+                ", stdName='" + stdName + '\'' +
+                ", email='" + email + '\'' +
+                ", telNumber='" + telNumber + '\'' +
+                ", interviewDate='" + interviewDate + '\'' +
+                ", interviewTime='" + interviewTime + '\'' +
+                ", interviewPlace='" + interviewPlace + '\'' +
+                ", firstInterviewResult='" + firstInterviewResult + '\'' +
+                ", secondInterviewResult='" + secondInterviewResult + '\'' +
+                ", thiredInterviewResult='" + thiredInterviewResult + '\'' +
+                ", student=" + student +
+                '}';
     }
 }

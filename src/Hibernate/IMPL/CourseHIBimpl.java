@@ -90,7 +90,6 @@ public class CourseHIBimpl implements CourseHIB {
                         "cname like '%"+key+"%'or " +
                         "duration like '%"+key+"%'or " +
                 "trainingCenter like '%"+key+"%'",Course.class).list();
-        System.out.println(courses.size());
         if(courses.size()>0){
             HIBCUDutill.closeSession();
             return courses;
