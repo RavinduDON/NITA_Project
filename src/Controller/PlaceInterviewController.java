@@ -3,12 +3,14 @@ package Controller;
 import Business.BOFactory;
 import Business.Custom.InterviewBO;
 import Business.Custom.StudentBO;
+import Business.sms.InterviewSMS;
 import DTO.Interview;
 import DTO.Student;
 import Hibernate.Custom.InterviewHIB;
 import Hibernate.Custom.StudentHIB;
 import Hibernate.Dao.HibernateFactory;
 import Hibernate.Entity.TrainingType;
+import email.InterviewEmail;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -199,12 +201,22 @@ public class PlaceInterviewController implements Initializable {
     }
 
     @FXML
-    void senSMS(ActionEvent event) {
-
+    void senSMS(ActionEvent event) throws Exception {
+        fullRegID=txtStdReg.getText();
+        interviewDate=txtInterviewDate.getEditor().getText();
+        telNumber=txtTelNumber.getText();
+        InterviewSMS.SendSMS(telNumber,fullRegID,interviewDate);
     }
 
     @FXML
-    void sendEmail(ActionEvent event) {
+    void sendEmail(ActionEvent event) throws Exception {
+        fullRegID=txtStdReg.getText();
+        stdName=txtstdName.getText();
+        interviewDate=txtInterviewDate.getEditor().getText();
+        interviewPlace=txtInterviewPlace.getText();
+        interviewTime=txtInterviewTime.getText();
+        email=txtEmail.getText();
+        InterviewEmail.composeMail(email,fullRegID,stdName,interviewDate,interviewTime,interviewPlace);
 
     }
 
