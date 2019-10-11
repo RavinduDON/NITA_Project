@@ -228,8 +228,6 @@ public class StudentRegisterController implements Initializable {
     }
 
 
-
-
     @FXML
     void register(ActionEvent event) throws Exception {
 

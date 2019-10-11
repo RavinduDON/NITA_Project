@@ -197,10 +197,10 @@ public class Student {
     public List<Interview> getInterviews() {
         return interviews;
     }
-    public void addInterview(Interview interview){
-        interview.setStudent(this);
-        this.getInterviews().add(interview);
-    }
+//    public void addInterview(Interview interview){
+//        interview.setStudent(this);
+//        this.getInterviews().add(interview);
+//    }
 
     public void setInterviews(List<Interview> interviews) {
         this.interviews = interviews;

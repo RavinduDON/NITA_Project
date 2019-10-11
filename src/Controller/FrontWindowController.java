@@ -37,13 +37,15 @@ public class FrontWindowController implements Initializable {
     private Button btnInterviewDetails;
 
     @FXML
-    void buttonInterviewDetails(ActionEvent event) {
-
+    void buttonInterviewDetails(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/View/InterviewDetails.fxml"));
+        loadPane.getChildren().setAll(pane);
     }
 
     @FXML
-    void buttonPlaceInterview(ActionEvent event) {
-
+    void buttonPlaceInterview(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(this.getClass().getResource("/View/PlaceInterview.fxml"));
+        loadPane.getChildren().setAll(pane);
     }
     @FXML
     void buttonCourseDetails(ActionEvent event) throws IOException {

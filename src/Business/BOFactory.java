@@ -1,6 +1,7 @@
 package Business;
 
 import Business.boIMPL.CourseBOimpl;
+import Business.boIMPL.InterviewBOimpl;
 import Business.boIMPL.StudentBOimpl;
 
 public class BOFactory {
@@ -14,7 +15,7 @@ public class BOFactory {
         return boFactory;
     }
     public enum boTypes{
-        STUDENT,COURSE
+        STUDENT,COURSE,INTERVIEW
     }
     public SuperBO getSuperBO(boTypes types){
         switch (types){
@@ -22,6 +23,8 @@ public class BOFactory {
                 return new StudentBOimpl();
             case COURSE:
                 return new CourseBOimpl();
+            case INTERVIEW:
+                return new InterviewBOimpl();
                 default:
                     return null;
         }

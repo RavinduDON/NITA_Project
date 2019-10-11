@@ -108,4 +108,18 @@ public class InterviewHIBimpl implements InterviewHIB {
             return null;
         }
     }
+
+    @Override
+    public List<Interview> searchInterviews(String key) throws Exception {
+        List<Interview> interviews;
+        HIBCUDutill.openSession();
+        interviews=HIBCUDutill.session.createNativeQuery("SELECT * FROM Interview WHERE " +
+                "studentregNumber='"+key+"'",Interview.class).list();
+        if (interviews.size()>0){
+            HIBCUDutill.closeSession();
+            return interviews;
+        }else {
+            return null;
+        }
+    }
 }

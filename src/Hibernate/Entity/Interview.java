@@ -25,12 +25,12 @@ public class Interview {
     private String thiredInterviewResult;
     @ManyToOne
     @JoinColumn(name="studentregNumber", referencedColumnName = "regNumber")
-    private DTO.Student student;
+    private Student student;
 
     public Interview() {
     }
 
-    public Interview(String fullRegID, String nicNumber, String stdName, String email, String telNumber, String interviewDate, String interviewTime, String interviewPlace, String firstInterviewResult, String secondInterviewResult, String thiredInterviewResult, DTO.Student student) {
+    public Interview(String fullRegID, String nicNumber, String stdName, String email, String telNumber, String interviewDate, String interviewTime, String interviewPlace, String firstInterviewResult, String secondInterviewResult, String thiredInterviewResult, Student student) {
         this.fullRegID = fullRegID;
         this.nicNumber = nicNumber;
         this.stdName = stdName;
@@ -45,7 +45,7 @@ public class Interview {
         this.student = student;
     }
 
-    public Interview(int interviewID, String fullRegID, String nicNumber, String stdName, String email, String telNumber, String interviewDate, String interviewTime, String interviewPlace, String firstInterviewResult, String secondInterviewResult, String thiredInterviewResult, DTO.Student student) {
+    public Interview(int interviewID, String fullRegID, String nicNumber, String stdName, String email, String telNumber, String interviewDate, String interviewTime, String interviewPlace, String firstInterviewResult, String secondInterviewResult, String thiredInterviewResult, Student student) {
         this.interviewID = interviewID;
         this.fullRegID = fullRegID;
         this.nicNumber = nicNumber;
@@ -59,6 +59,20 @@ public class Interview {
         this.secondInterviewResult = secondInterviewResult;
         this.thiredInterviewResult = thiredInterviewResult;
         this.student = student;
+    }
+
+    public Interview(String fullRegID, String nicNumber, String stdName, String email, String telNumber, String interviewDate, String interviewTime, String interviewPlace, String firstInterviewResult, String secondInterviewResult, String thiredInterviewResult) {
+        this.fullRegID = fullRegID;
+        this.nicNumber = nicNumber;
+        this.stdName = stdName;
+        this.email = email;
+        this.telNumber = telNumber;
+        this.interviewDate = interviewDate;
+        this.interviewTime = interviewTime;
+        this.interviewPlace = interviewPlace;
+        this.firstInterviewResult = firstInterviewResult;
+        this.secondInterviewResult = secondInterviewResult;
+        this.thiredInterviewResult = thiredInterviewResult;
     }
 
     public String getEmail() {
@@ -157,11 +171,11 @@ public class Interview {
         this.thiredInterviewResult = thiredInterviewResult;
     }
 
-    public DTO.Student getStudent() {
+    public Student getStudent() {
         return student;
     }
 
-    public void setStudent(DTO.Student student) {
+    public void setStudent(Student student) {
         this.student = student;
     }
 
