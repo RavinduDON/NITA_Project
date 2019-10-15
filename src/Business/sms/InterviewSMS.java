@@ -10,11 +10,11 @@ import java.net.URL;
 public class InterviewSMS {
     public static void SendSMS(String recipiant,String regNumber,String interviewDate) throws Exception {
 
-        String msg="NAITA+Registration+Number"+regNumber+"+" +
+        String msg="NAITA+Registration+Number:"+regNumber+"+" +
                 "Interview+Date:"+interviewDate+"+" +
-                "See+yor+email+for+details+" +
-                "MRDAS+Gunaratne.";
-        URL textit = new URL("http://textit.biz/sendmsg/index.php?id=94718705365&pw=xxxx&to="+recipiant+"&text="+msg+"");
+                "See+your+email+for+details+" +
+                "District+Manager-NAITA+Colombo.";
+        URL textit = new URL("http://textit.biz/sendmsg/index.php?id=94718705365&pw=xxxxxx&to="+recipiant+"&text="+msg+"");
         BufferedReader in = new BufferedReader(
                 new InputStreamReader(textit.openStream()));
 

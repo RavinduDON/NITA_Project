@@ -18,7 +18,7 @@
             <Image url="@../Image/logo123.png" />
          </image>
       </ImageView>
-      <Label layoutX="391.0" layoutY="169.0" prefHeight="107.0" prefWidth="941.0" text="Welcome to NAITA Student Registration System" textFill="#571fff">
+      <Label layoutX="391.0" layoutY="169.0" prefHeight="107.0" prefWidth="1145.0" text="Welcome to NAITA Student Registration System" textFill="#571fff">
          <font>
             <Font name="Algerian" size="44.0" />
          </font>
