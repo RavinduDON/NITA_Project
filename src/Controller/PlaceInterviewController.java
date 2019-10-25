@@ -124,12 +124,44 @@ public class PlaceInterviewController implements Initializable {
     List<Interview> allInterviews=new ArrayList<>();
     @FXML
     void finishPlaceInterview(ActionEvent event) {
-
+        txtStdReg.setText("");
+        txtstdName.setText("");
+        txtStdNIC.setText("");
+        txtTradeOne.setText("");
+        txtTradeTwo.setText("");
+        txtTradeThree.setText("");
+        cmbTrainingType.getSelectionModel().select(null);
+        txtTelNumber.setText("");
+        txtEmail.setText("");
+        txtThiredInterview.setText("");
+        txtSecondInterview.setText("");
+        txtFirstInterview.setText("");
+        txtInterviewTime.setText("");
+        txtInterviewPlace.setText("");
+        txtInterviewDate.getEditor().setText("");
+        txtSearchStudentRegNumber.setText("");
+        txtSearchInterview.setText("");
     }
 
     @FXML
     void finishUpdateInterviewResults(ActionEvent event) {
-
+        txtStdReg.setText("");
+        txtstdName.setText("");
+        txtStdNIC.setText("");
+        txtTradeOne.setText("");
+        txtTradeTwo.setText("");
+        txtTradeThree.setText("");
+        cmbTrainingType.getSelectionModel().select(null);
+        txtTelNumber.setText("");
+        txtEmail.setText("");
+        txtThiredInterview.setText("");
+        txtSecondInterview.setText("");
+        txtFirstInterview.setText("");
+        txtInterviewTime.setText("");
+        txtInterviewPlace.setText("");
+        txtInterviewDate.getEditor().setText("");
+        txtSearchStudentRegNumber.setText("");
+        txtSearchInterview.setText("");
     }
 
     @FXML

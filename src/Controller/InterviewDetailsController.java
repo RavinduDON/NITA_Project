@@ -14,6 +14,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
+import javafx.stage.Stage;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import java.net.URL;
@@ -121,9 +122,11 @@ public class InterviewDetailsController implements Initializable {
 
     }
 
+    Stage stage;
     @FXML
     void ok(ActionEvent event) {
-
+        stage=(Stage)((Button)event.getSource()).getScene().getWindow();
+        stage.close();
     }
 
     @FXML
