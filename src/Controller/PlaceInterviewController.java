@@ -109,6 +109,7 @@ public class PlaceInterviewController implements Initializable {
 
     @FXML
     private TextField txtStdReg;
+    String pattern = "yyyy-MM-dd";
 
     private int interviewID;
     private String fullRegID;
@@ -171,8 +172,6 @@ public class PlaceInterviewController implements Initializable {
     void placeInterview(ActionEvent event) throws Exception {
         String regNumber=txtSearchStudentRegNumber.getText();
         Student student=studentBO.searchStudent(regNumber);
-
-        String pattern = "yyyy-MM-dd";
 
         fullRegID=txtStdReg.getText();
         nicNumber=txtStdNIC.getText();
@@ -265,7 +264,7 @@ public class PlaceInterviewController implements Initializable {
         stdName=txtstdName.getText();
         email=txtEmail.getText();
         telNumber=txtTelNumber.getText();
-        interviewDate=txtInterviewDate.getEditor().getText();
+        interviewDate=txtInterviewDate.getValue().format(DateTimeFormatter.ofPattern(pattern));
         interviewPlace=txtInterviewPlace.getText();
         interviewTime=txtInterviewTime.getText();
         firstInterviewResult=txtFirstInterview.getText();
