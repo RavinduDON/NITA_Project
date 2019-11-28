@@ -8,53 +8,108 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="1000.0" prefWidth="1640.0" stylesheets="@../Styles/front_style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.PlaceInterviewController">
    <children>
-      <Label layoutX="687.0" layoutY="21.0" text="Registration Number " />
+      <Label layoutX="690.0" layoutY="26.0" text="Registration Number ">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
       <TextField fx:id="txtSearchStudentRegNumber" layoutX="851.0" layoutY="16.0" prefHeight="31.0" prefWidth="359.0" />
       <Button fx:id="btnSTDsearch" layoutX="1245.0" layoutY="16.0" mnemonicParsing="false" onAction="#searchStudent" text="Search" />
-      <Label layoutX="37.0" layoutY="78.0" text="Name" />
+      <Label layoutX="40.0" layoutY="83.0" text="Name">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
       <TextField fx:id="txtstdName" layoutX="239.0" layoutY="73.0" prefHeight="31.0" prefWidth="512.0" />
-      <Label layoutX="37.0" layoutY="122.0" text="NIC" />
+      <Label layoutX="40.0" layoutY="127.0" text="NIC">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
       <TextField fx:id="txtStdNIC" layoutX="239.0" layoutY="117.0" prefHeight="31.0" prefWidth="512.0" />
-      <Label layoutX="37.0" layoutY="172.0" text="Trade One" />
+      <Label layoutX="40.0" layoutY="177.0" text="Trade One">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
       <TextField fx:id="txtTradeOne" layoutX="239.0" layoutY="167.0" prefHeight="31.0" prefWidth="512.0" />
-      <Label layoutX="37.0" layoutY="216.0" text="Trade Two" />
+      <Label layoutX="40.0" layoutY="221.0" text="Trade Two">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
       <TextField fx:id="txtTradeTwo" layoutX="239.0" layoutY="211.0" prefHeight="31.0" prefWidth="512.0" />
-      <Label layoutX="37.0" layoutY="265.0" text="Trade Three" />
+      <Label layoutX="40.0" layoutY="270.0" text="Trade Three">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
       <TextField fx:id="txtTradeThree" layoutX="239.0" layoutY="260.0" prefHeight="31.0" prefWidth="512.0" />
-      <Label layoutX="38.0" layoutY="314.0" text="Training Type" />
+      <Label layoutX="41.0" layoutY="319.0" text="Training Type">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
       <ComboBox fx:id="cmbTrainingType" layoutX="239.0" layoutY="309.0" prefHeight="31.0" prefWidth="296.0" />
-      <Label layoutX="38.0" layoutY="370.0" prefHeight="21.0" prefWidth="90.0" text="Tel Number" />
+      <Label layoutX="41.0" layoutY="375.0" prefHeight="21.0" prefWidth="90.0" text="Tel Number">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
       <TextField fx:id="txtTelNumber" layoutX="240.0" layoutY="365.0" prefHeight="31.0" prefWidth="512.0" />
-      <Label layoutX="37.0" layoutY="417.0" prefHeight="21.0" prefWidth="90.0" text="Email" />
+      <Label layoutX="40.0" layoutY="422.0" prefHeight="21.0" prefWidth="90.0" text="Email">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
       <TextField fx:id="txtEmail" layoutX="239.0" layoutY="412.0" prefHeight="31.0" prefWidth="512.0" />
-      <Label layoutX="37.0" layoutY="460.0" prefHeight="21.0" prefWidth="152.0" text="Interview Date" />
-      <Label layoutX="38.0" layoutY="505.0" prefHeight="21.0" prefWidth="152.0" text="Interview Time" />
+      <Label layoutX="40.0" layoutY="465.0" prefHeight="21.0" prefWidth="152.0" text="Interview Date">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <Label layoutX="41.0" layoutY="510.0" prefHeight="21.0" prefWidth="152.0" text="Interview Time">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
       <TextField fx:id="txtInterviewTime" layoutX="240.0" layoutY="500.0" prefHeight="31.0" prefWidth="512.0" />
-      <Label layoutX="38.0" layoutY="548.0" prefHeight="21.0" prefWidth="152.0" text="Interview Place" />
+      <Label layoutX="41.0" layoutY="553.0" prefHeight="21.0" prefWidth="152.0" text="Interview Place">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
       <TextField fx:id="txtInterviewPlace" layoutX="240.0" layoutY="543.0" prefHeight="31.0" prefWidth="512.0" />
       <Button fx:id="btnOK" layoutX="106.0" layoutY="599.0" mnemonicParsing="false" onAction="#placeInterview" text="OK" />
       <Button fx:id="btnSendEmail" layoutX="209.0" layoutY="599.0" mnemonicParsing="false" onAction="#sendEmail" text="Send Email" />
       <Button fx:id="btnSendSMS" layoutX="387.0" layoutY="599.0" mnemonicParsing="false" onAction="#senSMS" text="Send SMS" />
       <Button fx:id="btnFinish" layoutX="549.0" layoutY="599.0" mnemonicParsing="false" onAction="#finishPlaceInterview" text="Finish" />
       <Separator layoutX="28.0" layoutY="657.0" prefHeight="0.0" prefWidth="1258.0" />
-      <Label layoutX="66.0" layoutY="667.0" text="Interview Results" />
-      <Label layoutX="38.0" layoutY="705.0" prefHeight="21.0" prefWidth="152.0" text="First Interview Results" />
-      <TextField fx:id="txtFirstInterview" layoutX="240.0" layoutY="700.0" prefHeight="31.0" prefWidth="512.0" />
-      <Label layoutX="38.0" layoutY="747.0" prefHeight="21.0" prefWidth="169.0" text="Second Interview Results" />
-      <TextField fx:id="txtSecondInterview" layoutX="240.0" layoutY="742.0" prefHeight="31.0" prefWidth="512.0" />
-      <Label layoutX="38.0" layoutY="798.0" prefHeight="21.0" prefWidth="163.0" text="Thired Interview Results" />
-      <TextField fx:id="txtThiredInterview" layoutX="240.0" layoutY="793.0" prefHeight="31.0" prefWidth="512.0" />
+      <Label layoutX="66.0" layoutY="667.0" text="Interview Results">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <Label layoutX="38.0" layoutY="705.0" prefHeight="25.0" prefWidth="190.0" text="First Interview Results">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <TextField fx:id="txtFirstInterview" layoutX="293.0" layoutY="700.0" prefHeight="31.0" prefWidth="512.0" />
+      <Label layoutX="38.0" layoutY="747.0" prefHeight="25.0" prefWidth="190.0" text="Second Interview Results">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <TextField fx:id="txtSecondInterview" layoutX="293.0" layoutY="742.0" prefHeight="31.0" prefWidth="512.0" />
+      <Label layoutX="38.0" layoutY="798.0" prefHeight="25.0" prefWidth="190.0" text="Thired Interview Results">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <TextField fx:id="txtThiredInterview" layoutX="293.0" layoutY="793.0" prefHeight="31.0" prefWidth="512.0" />
       <Button fx:id="btnFinishInterview" layoutX="459.0" layoutY="882.0" mnemonicParsing="false" onAction="#finishUpdateInterviewResults" text="Finish" />
       <Button fx:id="btnUpdateInterview" layoutX="295.0" layoutY="882.0" mnemonicParsing="false" onAction="#updateInterviewResults" text="Update Results" />
       <DatePicker fx:id="txtInterviewDate" layoutX="239.0" layoutY="455.0" prefHeight="31.0" prefWidth="296.0" />
-      <Label layoutX="863.0" layoutY="678.0" text="Registration Number " />
+      <Label layoutX="863.0" layoutY="678.0" text="Registration Number ">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
       <TextField fx:id="txtSearchInterview" layoutX="1027.0" layoutY="673.0" prefHeight="31.0" prefWidth="359.0" />
       <Button fx:id="btnSearchInterview" layoutX="1421.0" layoutY="673.0" mnemonicParsing="false" onAction="#searchInterview" text="Search" />
       <TextField fx:id="txtStdReg" layoutX="240.0" layoutY="26.0" prefHeight="31.0" prefWidth="419.0" />
-      <Label layoutX="38.0" layoutY="31.0" text="Student Registration Number" />
+      <Label layoutX="41.0" layoutY="36.0" text="Student Registration Number">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
    </children>
    <stylesheets>
       <URL value="@../Styles/front_style.css" />

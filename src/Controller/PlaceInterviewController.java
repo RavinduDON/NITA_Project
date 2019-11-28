@@ -15,8 +15,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.util.StringConverter;
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -169,12 +172,15 @@ public class PlaceInterviewController implements Initializable {
         String regNumber=txtSearchStudentRegNumber.getText();
         Student student=studentBO.searchStudent(regNumber);
 
+        String pattern = "yyyy-MM-dd";
+
         fullRegID=txtStdReg.getText();
         nicNumber=txtStdNIC.getText();
         stdName=txtstdName.getText();
         email=txtEmail.getText();
         telNumber=txtTelNumber.getText();
-        interviewDate=txtInterviewDate.getEditor().getText();
+        interviewDate=txtInterviewDate.getValue().format(DateTimeFormatter.ofPattern(pattern));
+        //interviewDate=txtInterviewDate.getEditor().getText();
         interviewPlace=txtInterviewPlace.getText();
         interviewTime=txtInterviewTime.getText();
         firstInterviewResult=txtFirstInterview.getText();

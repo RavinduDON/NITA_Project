@@ -14,7 +14,7 @@ public class InterviewSMS {
                 "Interview+Date:"+interviewDate+"+" +
                 "See+your+email+for+details+" +
                 "District+Manager-NAITA+Colombo.";
-        URL textit = new URL("http://textit.biz/sendmsg/index.php?id=94718705365&pw=xxxxxx&to="+recipiant+"&text="+msg+"");
+        URL textit = new URL("http://textit.biz/sendmsg/index.php?id=94718705365&pw=xxxx&to="+recipiant+"&text="+msg+"");
         BufferedReader in = new BufferedReader(
                 new InputStreamReader(textit.openStream()));
 
