@@ -24,7 +24,8 @@ public class Interview {
     private String secondInterviewResult;
     private String thiredInterviewResult;
     @ManyToOne
-    @JoinColumn(name="studentregNumber", referencedColumnName = "regNumber")
+    @JoinColumns({@JoinColumn(name="studentregNumber", referencedColumnName = "regNumber"),@JoinColumn(name="studentFullregNumber", referencedColumnName = "fullRegId")})
+    //@JoinColumn(name="studentregNumber", referencedColumnName = "regNumber")
     private Student student;
 
     public Interview() {
