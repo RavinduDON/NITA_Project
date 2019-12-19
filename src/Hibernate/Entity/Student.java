@@ -3,12 +3,14 @@ package Hibernate.Entity;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @Entity
-public class Student {
+@IdClass(StudentID.class)
+public class Student{
 
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator ="stdRegNum" )
     @SequenceGenerator(name = "stdRegNum",
@@ -17,6 +19,8 @@ public class Student {
     allocationSize = 1)
     @Id
     private int regNumber;
+    @Id
+    private String fullRegId;
     @NotNull
     private String sname;
     @Temporal(TemporalType.DATE)
@@ -30,7 +34,7 @@ public class Student {
     private String tradeOne;
     private String tradeTwo;
     private String tradeThree;
-    private String fullRegId;
+
     private String dob;
     @OneToMany(mappedBy = "student")
     private List<Interview> interviews=new ArrayList<>();

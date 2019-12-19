@@ -280,18 +280,21 @@ public class StudentRegisterController implements Initializable {
     @FXML
     void search(ActionEvent event) throws Exception {
 
-        Student student=studentBO.searchStudent(txtRegNumber.getText());
-        if(student!=null){
-            txtfullName.setText(student.getName());
-            txtAddress.setText(student.getAddress());
-            txtNic.setText(student.getNicNumber());
-            txtTradeOne.setText(student.getTradeOne());
-            txtTradeTwo.setText(student.getTradeTwo());
-            txtTradeThree.setText(student.getTradeThree());
-            cmbTrainingType.getSelectionModel().select(student.getTrainingType());
-            txtdobYear.setText(student.getDob());
-            txtMobTel.setText(student.getTelNumber());
-            txtEmail.setText(student.getEmail());
+        allStudents=studentBO.searchANYthing(txtRegNumber.getText());
+        if(allStudents!=null){
+            for(Student student : allStudents){
+                txtfullName.setText(student.getName());
+                txtAddress.setText(student.getAddress());
+                txtNic.setText(student.getNicNumber());
+                txtTradeOne.setText(student.getTradeOne());
+                txtTradeTwo.setText(student.getTradeTwo());
+                txtTradeThree.setText(student.getTradeThree());
+                cmbTrainingType.getSelectionModel().select(student.getTrainingType());
+                txtdobYear.setText(student.getDob());
+                txtMobTel.setText(student.getTelNumber());
+                txtEmail.setText(student.getEmail());
+
+            }
 
             btnNotify.setDisable(true);
             btnRegStudent.setDisable(true);

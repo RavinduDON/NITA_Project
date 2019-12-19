@@ -171,47 +171,64 @@ public class PlaceInterviewController implements Initializable {
     @FXML
     void placeInterview(ActionEvent event) throws Exception {
         String regNumber=txtSearchStudentRegNumber.getText();
-        Student student=studentBO.searchStudent(regNumber);
+        allStudents.clear();
+        allStudents=studentBO.searchANYthing(regNumber);
+        for(Student student : allStudents) {
+            fullRegID = txtStdReg.getText();
+            nicNumber = txtStdNIC.getText();
+            stdName = txtstdName.getText();
+            email = txtEmail.getText();
+            telNumber = txtTelNumber.getText();
+            interviewDate = txtInterviewDate.getValue().format(DateTimeFormatter.ofPattern(pattern));
+            //interviewDate=txtInterviewDate.getEditor().getText();
+            interviewPlace = txtInterviewPlace.getText();
+            interviewTime = txtInterviewTime.getText();
+            firstInterviewResult = txtFirstInterview.getText();
+            secondInterviewResult = txtSecondInterview.getText();
+            thiredInterviewResult = txtThiredInterview.getText();
 
-        fullRegID=txtStdReg.getText();
-        nicNumber=txtStdNIC.getText();
-        stdName=txtstdName.getText();
-        email=txtEmail.getText();
-        telNumber=txtTelNumber.getText();
-        interviewDate=txtInterviewDate.getValue().format(DateTimeFormatter.ofPattern(pattern));
-        //interviewDate=txtInterviewDate.getEditor().getText();
-        interviewPlace=txtInterviewPlace.getText();
-        interviewTime=txtInterviewTime.getText();
-        firstInterviewResult=txtFirstInterview.getText();
-        secondInterviewResult=txtSecondInterview.getText();
-        thiredInterviewResult=txtThiredInterview.getText();
+            Interview interview = new Interview(fullRegID, nicNumber, stdName, email, telNumber, interviewDate, interviewTime, interviewPlace, firstInterviewResult, secondInterviewResult, thiredInterviewResult, student);
+            boolean isAdded = interviewBO.addInterview(interview);
+            if (isAdded) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION, "Interview Successfully placed to Student No:" + fullRegID, ButtonType.OK);
+                alert.show();
 
-        Interview interview=new Interview(fullRegID,nicNumber,stdName,email,telNumber,interviewDate,interviewTime,interviewPlace,firstInterviewResult,secondInterviewResult,thiredInterviewResult,student);
-        boolean isAdded=interviewBO.addInterview(interview);
-        if(isAdded){
-            Alert alert=new Alert(Alert.AlertType.INFORMATION,"Interview Successfully placed to Student No:"+fullRegID,ButtonType.OK);
-            alert.show();
-
-        }else {
-            Alert alert=new Alert(Alert.AlertType.INFORMATION,"Registration Failed",ButtonType.OK);
-            alert.show();
+            } else {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION, "Registration Failed", ButtonType.OK);
+                alert.show();
+            }
         }
     }
 
     @FXML
     void searchStudent(ActionEvent event) throws Exception {
         String regNumber=txtSearchStudentRegNumber.getText();
-        Student student=studentBO.searchStudent(regNumber);
-        if(student!=null) {
-            txtStdReg.setText(student.getFullRegId() + "" + student.getRegNumber());
-            txtstdName.setText(student.getName());
-            txtStdNIC.setText(student.getNicNumber());
-            txtTradeOne.setText(student.getTradeOne());
-            txtTradeTwo.setText(student.getTradeTwo());
-            txtTradeThree.setText(student.getTradeThree());
-            cmbTrainingType.getSelectionModel().select(student.getTrainingType());
-            txtTelNumber.setText(student.getTelNumber());
-            txtEmail.setText(student.getEmail());
+        allStudents.clear();
+        allStudents=studentBO.searchANYthing(regNumber);
+        if(allStudents!=null){
+        for(Student studentAF : allStudents){
+            //txtRegNumber.setText(Integer.toString(studentAF.getRegNumber()));
+            txtStdReg.setText(studentAF.getFullRegId()+""+studentAF.getRegNumber());
+            txtstdName.setText(studentAF.getName());
+            txtStdNIC.setText(studentAF.getNicNumber());
+            txtTradeOne.setText(studentAF.getTradeOne());
+            txtTradeTwo.setText(studentAF.getTradeTwo());
+            txtTradeThree.setText(studentAF.getTradeThree());
+            cmbTrainingType.getSelectionModel().select(studentAF.getTrainingType());
+            txtTelNumber.setText(studentAF.getTelNumber());
+            txtEmail.setText(studentAF.getEmail());
+        }
+//        Student student=studentBO.searchStudent(regNumber);
+//        if(student!=null) {
+//            txtStdReg.setText(student.getFullRegId() + "" + student.getRegNumber());
+//            txtstdName.setText(student.getName());
+//            txtStdNIC.setText(student.getNicNumber());
+//            txtTradeOne.setText(student.getTradeOne());
+//            txtTradeTwo.setText(student.getTradeTwo());
+//            txtTradeThree.setText(student.getTradeThree());
+//            cmbTrainingType.getSelectionModel().select(student.getTrainingType());
+//            txtTelNumber.setText(student.getTelNumber());
+//            txtEmail.setText(student.getEmail());
         }else {
             Alert alert=new Alert(Alert.AlertType.INFORMATION,"Invalid Student ID",ButtonType.OK);
             alert.show();

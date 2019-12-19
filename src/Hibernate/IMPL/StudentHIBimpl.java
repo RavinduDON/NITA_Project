@@ -4,11 +4,14 @@ import Hibernate.Custom.StudentHIB;
 import Hibernate.Dao.HIBCUDutill;
 import Hibernate.Entity.Course;
 import Hibernate.Entity.Student;
+import Hibernate.Entity.StudentID;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class StudentHIBimpl implements StudentHIB {
+    List<Student> allStudents=new ArrayList<>();
     @Override
     public boolean add(Student dto) throws Exception {
         HIBCUDutill.openSession();
@@ -24,23 +27,30 @@ public class StudentHIBimpl implements StudentHIB {
 
     @Override
     public boolean update(Student dto) throws Exception {
+        allStudents = searchANYthing(String.valueOf(dto.getRegNumber()));
         HIBCUDutill.openSession();
-        Student student=HIBCUDutill.session.load(Student.class,dto.getRegNumber());
+        for(Student student:allStudents){
 
-        student.setSname(dto.getSname());
-        student.setRdate(dto.getRdate());
-        student.setEmail(dto.getEmail());
-        student.setTelNumber(dto.getTelNumber());
-        student.setAddress(dto.getAddress());
-        student.setEmail(dto.getEmail());
-        student.setTradeOne(dto.getTradeOne());
-        student.setTradeTwo(dto.getTradeTwo());
-        student.setTradeThree(dto.getTradeThree());
-        student.setNicNumber(dto.getNicNumber());
-        student.setFullRegId(dto.getFullRegId());
-        student.setDob(dto.getDob());
-        student.setTrainingType(dto.getTrainingType());
-        if(student!=null){
+        }
+        HIBCUDutill.session.createNativeQuery("UPDATE Student SET sname='"+dto.getSname()+"',email='"+dto.getEmail()+"',telNumber='"+dto.getTelNumber()+"',address='"+dto.getAddress()+"',dob='"+dto.getDob()+"',tradeOne='"+dto.getTradeOne()+"',tradeTwo='"+dto.getTradeTwo()+"',tradeThree='"+dto.getTradeThree()+"',trainingType='"+dto.getTrainingType()+"',nicNumber='"+dto.getNicNumber()+"'WHERE regNumber='"+dto.getRegNumber()+"'").executeUpdate();
+
+        //Student student=HIBCUDutill.session.load(Student.class,dto.getRegNumber());
+//            student.setSname(dto.getSname());
+//            student.setRdate(dto.getRdate());
+//            student.setEmail(dto.getEmail());
+//            student.setTelNumber(dto.getTelNumber());
+//            student.setAddress(dto.getAddress());
+//            student.setEmail(dto.getEmail());
+//            student.setTradeOne(dto.getTradeOne());
+//            student.setTradeTwo(dto.getTradeTwo());
+//            student.setTradeThree(dto.getTradeThree());
+//            student.setNicNumber(dto.getNicNumber());
+//            student.setFullRegId(dto.getFullRegId());
+//            student.setDob(dto.getDob());
+//            student.setTrainingType(dto.getTrainingType());
+//            HIBCUDutill.session.update(student);
+
+        if(allStudents!=null){
             HIBCUDutill.closeSession();
             return true;
         }else {
@@ -50,13 +60,17 @@ public class StudentHIBimpl implements StudentHIB {
 
     @Override
     public boolean delete(String s) throws Exception {
-        HIBCUDutill.openSession();
-        Student student=HIBCUDutill.session.get(Student.class,Integer.parseInt(s));
-        HIBCUDutill.session.delete(student);
-        if(student!=null){
+
+//        Student student=HIBCUDutill.session.get(Student.class,Integer.parseInt(s));
+        allStudents = searchANYthing(s);
+        if (allStudents != null) {
+            HIBCUDutill.openSession();
+        for (Student student : allStudents) {
+            HIBCUDutill.session.delete(student);
+        }
             HIBCUDutill.closeSession();
             return true;
-        }else {
+        } else {
             return false;
         }
 

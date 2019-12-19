@@ -12,10 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
@@ -91,30 +88,38 @@ public class StudentDetailsController implements Initializable {
     @FXML
     void delete(ActionEvent event) {
         try {
-            bo.deletStudent(String.valueOf(delstudent.getRegNumber()));
-            tblStudent.getItems().clear();
-            allStudents.clear();
-            allStudents=bo.getAllStudents();
-            for(Student student:allStudents){
-                tblStudent.setItems(FXCollections.observableArrayList(allStudents));
+            boolean isDeleted=bo.deletStudent(String.valueOf(delstudent.getRegNumber()));
+                tblStudent.getItems().clear();
+                allStudents.clear();
+                allStudents = bo.getAllStudents();
+                for (Student student : allStudents) {
+                    tblStudent.setItems(FXCollections.observableArrayList(allStudents));
 
-                tblStudent.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("regNumber"));
-                tblStudent.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("name"));
-                tblStudent.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("date"));
-                tblStudent.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("email"));
-                tblStudent.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("telNumber"));
-                tblStudent.getColumns().get(5).setCellValueFactory(new PropertyValueFactory<>("address"));
-                tblStudent.getColumns().get(6).setCellValueFactory(new PropertyValueFactory<>("nicNmber"));
-                tblStudent.getColumns().get(7).setCellValueFactory(new PropertyValueFactory<>("tradeOne"));
-                tblStudent.getColumns().get(8).setCellValueFactory(new PropertyValueFactory<>("tradeTwo"));
-                tblStudent.getColumns().get(9).setCellValueFactory(new PropertyValueFactory<>("tradeThree"));
-                tblStudent.getColumns().get(10).setCellValueFactory(new PropertyValueFactory<>("fullRegId"));
-                tblStudent.getColumns().get(11).setCellValueFactory(new PropertyValueFactory<>("trainingType"));
-                tblStudent.getColumns().get(12).setCellValueFactory(new PropertyValueFactory<>("dob"));
+                    tblStudent.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("regNumber"));
+                    tblStudent.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("name"));
+                    tblStudent.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("date"));
+                    tblStudent.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("email"));
+                    tblStudent.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("telNumber"));
+                    tblStudent.getColumns().get(5).setCellValueFactory(new PropertyValueFactory<>("address"));
+                    tblStudent.getColumns().get(6).setCellValueFactory(new PropertyValueFactory<>("nicNmber"));
+                    tblStudent.getColumns().get(7).setCellValueFactory(new PropertyValueFactory<>("tradeOne"));
+                    tblStudent.getColumns().get(8).setCellValueFactory(new PropertyValueFactory<>("tradeTwo"));
+                    tblStudent.getColumns().get(9).setCellValueFactory(new PropertyValueFactory<>("tradeThree"));
+                    tblStudent.getColumns().get(10).setCellValueFactory(new PropertyValueFactory<>("fullRegId"));
+                    tblStudent.getColumns().get(11).setCellValueFactory(new PropertyValueFactory<>("trainingType"));
+                    tblStudent.getColumns().get(12).setCellValueFactory(new PropertyValueFactory<>("dob"));
+                }
+            if(isDeleted) {
+                Alert alert=new Alert(Alert.AlertType.INFORMATION,"Student details successfully deleted.", ButtonType.OK);
+                alert.show();
+            }else {
+                Alert alert=new Alert(Alert.AlertType.INFORMATION,"Can not delete student Details,Check if there is a placed Interview.", ButtonType.OK);
+                alert.show();
             }
 
         } catch (Exception e) {
             e.printStackTrace();
+
         }
     }
     Stage stage;
