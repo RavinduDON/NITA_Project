@@ -50,6 +50,20 @@ public class Interview {
         this.student = student;
     }
 
+    public Interview(String fullRegID, String nicNumber, String stdName, String email, String telNumber, String interviewTime, String interviewPlace, String firstInterviewResult, String secondInterviewResult, String thiredInterviewResult) {
+        this.interviewID = interviewID;
+        this.fullRegID = fullRegID;
+        this.nicNumber = nicNumber;
+        this.stdName = stdName;
+        this.email = email;
+        this.telNumber = telNumber;
+        this.interviewTime = interviewTime;
+        this.interviewPlace = interviewPlace;
+        this.firstInterviewResult = firstInterviewResult;
+        this.secondInterviewResult = secondInterviewResult;
+        this.thiredInterviewResult = thiredInterviewResult;
+    }
+
     public Interview(String fullRegID, String nicNumber, String stdName, String email, String telNumber, String interviewDate, String interviewTime, String interviewPlace, String firstInterviewResult, String secondInterviewResult, String thiredInterviewResult) {
         this.fullRegID = fullRegID;
         this.nicNumber = nicNumber;

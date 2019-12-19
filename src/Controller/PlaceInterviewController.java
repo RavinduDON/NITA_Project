@@ -281,13 +281,13 @@ public class PlaceInterviewController implements Initializable {
         stdName=txtstdName.getText();
         email=txtEmail.getText();
         telNumber=txtTelNumber.getText();
-        interviewDate=txtInterviewDate.getValue().format(DateTimeFormatter.ofPattern(pattern));
+        //interviewDate=txtInterviewDate.getValue().format(DateTimeFormatter.ofPattern(pattern));
         interviewPlace=txtInterviewPlace.getText();
         interviewTime=txtInterviewTime.getText();
         firstInterviewResult=txtFirstInterview.getText();
         secondInterviewResult=txtSecondInterview.getText();
         thiredInterviewResult=txtThiredInterview.getText();
-        Interview interview=new Interview(fullRegID,nicNumber,stdName,email,telNumber,interviewDate,interviewTime,interviewPlace,firstInterviewResult,secondInterviewResult,thiredInterviewResult);
+        Interview interview=new Interview(fullRegID,nicNumber,stdName,email,telNumber,interviewTime,interviewPlace,firstInterviewResult,secondInterviewResult,thiredInterviewResult);
 
         boolean isUpdated=interviewBO.updateInterview(interview);
         if(isUpdated){

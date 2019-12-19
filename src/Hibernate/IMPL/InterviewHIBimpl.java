@@ -30,7 +30,7 @@ public class InterviewHIBimpl implements InterviewHIB {
             interview1=HIBCUDutill.session.load(Interview.class,interview.getInterviewID());
             interview1.setEmail(dto.getEmail());
             interview1.setTelNumber(dto.getTelNumber());
-            interview1.setInterviewDate(dto.getInterviewDate());
+            //interview1.setInterviewDate(dto.getInterviewDate());
             interview1.setInterviewPlace(dto.getInterviewPlace());
             interview1.setInterviewTime(dto.getInterviewTime());
             interview1.setFirstInterviewResult(dto.getFirstInterviewResult()); 

@@ -9,9 +9,7 @@ import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
@@ -95,7 +93,7 @@ public class InterviewDetailsController implements Initializable {
     void deleteInterview(ActionEvent event) {
 
         try {
-            interviewBO.deletInterview(String.valueOf(delInterview.getInterviewID()));
+            boolean isInterviewDeleted=interviewBO.deletInterview(String.valueOf(delInterview.getInterviewID()));
             tblInterview.getItems().clear();
             allInterviews.clear();
             allInterviews=interviewBO.getAllInterviews();
@@ -114,6 +112,14 @@ public class InterviewDetailsController implements Initializable {
                 tblInterview.getColumns().get(9).setCellValueFactory(new PropertyValueFactory<>("thiredInterviewResult"));
                 tblInterview.getColumns().get(10).setCellValueFactory(new PropertyValueFactory<>("email"));
                 tblInterview.getColumns().get(11).setCellValueFactory(new PropertyValueFactory<>("telNumber"));
+            }
+            if(isInterviewDeleted){
+                Alert alert=new Alert(Alert.AlertType.INFORMATION,"Interview details successfully deleted.", ButtonType.OK);
+                alert.show();
+            }
+            else {
+                Alert alert=new Alert(Alert.AlertType.INFORMATION,"Interview details can not be deleted.", ButtonType.OK);
+                alert.show();
             }
         } catch (Exception e) {
             e.printStackTrace();
