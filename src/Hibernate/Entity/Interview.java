@@ -25,6 +25,10 @@ public class Interview {
     private String thiredInterviewResult;
     @ManyToOne
     @JoinColumns({@JoinColumn(name="studentregNumber", referencedColumnName = "regNumber"),@JoinColumn(name="studentFullregNumber", referencedColumnName = "fullRegId")})
+<<<<<<< HEAD
+=======
+    //@JoinColumn(name="studentregNumber", referencedColumnName = "regNumber")
+>>>>>>> 6b9535c4dd6e35cfeaa3c1300e11a58bb775e042
     private Student student;
 
     public Interview() {
