@@ -71,8 +71,8 @@ public class InterviewBOimpl implements InterviewBO {
     }
 
     @Override
-    public List<Interview> searchInterviews(String key) throws Exception {
-        List<Hibernate.Entity.Interview> allInterviews=interviewHIB.searchInterviews(key);
+    public List<Interview> searchInterviews(String id,String nic) throws Exception {
+        List<Hibernate.Entity.Interview> allInterviews=interviewHIB.searchInterviews(id,nic);
         List<Interview> interviews=new ArrayList<>();
         for(Hibernate.Entity.Interview interview:allInterviews){
             Student student=new Student(interview.getStudent().getRegNumber(),interview.getStudent().getSname(),interview.getStudent().getRdate(),interview.getStudent().getEmail(),interview.getStudent().getTelNumber(),interview.getStudent().getAddress(),interview.getStudent().getNicNumber(),interview.getStudent().getTradeOne(),interview.getStudent().getTradeTwo(),interview.getStudent().getTradeThree(),interview.getStudent().getFullRegId(),interview.getStudent().getDob(),interview.getStudent().getTrainingType());

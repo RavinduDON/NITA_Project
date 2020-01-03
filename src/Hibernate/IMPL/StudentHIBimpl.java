@@ -62,17 +62,18 @@ public class StudentHIBimpl implements StudentHIB {
     public boolean delete(String s) throws Exception {
 
 //        Student student=HIBCUDutill.session.get(Student.class,Integer.parseInt(s));
-        allStudents = searchANYthing(s);
-        if (allStudents != null) {
-            HIBCUDutill.openSession();
-        for (Student student : allStudents) {
-            HIBCUDutill.session.delete(student);
-        }
-            HIBCUDutill.closeSession();
-            return true;
-        } else {
-            return false;
-        }
+//        allStudents = searchById(s,nic);
+//        if (allStudents != null) {
+//            HIBCUDutill.openSession();
+//        for (Student student : allStudents) {
+//            HIBCUDutill.session.delete(student);
+//        }
+//            HIBCUDutill.closeSession();
+//            return true;
+//        } else {
+//            return false;
+//        }
+        return false;
 
     }
 
@@ -131,6 +132,21 @@ public class StudentHIBimpl implements StudentHIB {
     }
 
     @Override
+    public boolean deleteStudent(String id, String nic) throws Exception {
+        allStudents = searchById(id,nic);
+        if (allStudents != null) {
+            HIBCUDutill.openSession();
+        for (Student student : allStudents) {
+            HIBCUDutill.session.delete(student);
+        }
+            HIBCUDutill.closeSession();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
     public boolean addStudentCourse(Student student) throws Exception {
 
         String tradeOne=student.getTradeOne();
@@ -158,8 +174,22 @@ public class StudentHIBimpl implements StudentHIB {
     public Student getNextSTDid(String nic) throws Exception {
        HIBCUDutill.openSession();
 //       Object result=HIBCUDutill.session.createSQLQuery("SELECT student_seq.next_val");
-        Student student= (Student) HIBCUDutill.session.createNativeQuery("SELECT regNumber from Student where nicNumber like'%"+nic+"%'",Student.class);
+        Student student= (Student) HIBCUDutill.session.createNativeQuery("SELECT regNumber from Student where nicNumber='"+nic+"'",Student.class);
         return student;
 
+    }
+
+    @Override
+    public List<Student> searchById(String id,String nic) throws Exception {
+        List<Student> students;
+        HIBCUDutill.openSession();
+        students=HIBCUDutill.session.createNativeQuery("SELECT * FROM Student WHERE " +
+                "regNumber='"+id+"'AND nicNumber='"+nic+"'",Student.class).list();
+        if(students.size()>0){
+            HIBCUDutill.closeSession();
+            return students;
+        }else {
+            return null;
+        }
     }
 }

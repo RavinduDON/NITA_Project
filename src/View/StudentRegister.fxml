@@ -132,7 +132,7 @@
       <ComboBox fx:id="cmbTrainingType" layoutX="388.0" layoutY="500.0" onMouseClicked="#cmbTrainigTypeMouseClicked" prefHeight="31.0" prefWidth="297.0" promptText="Training type" />
       <Label layoutX="465.0" layoutY="65.0" prefHeight="27.0" prefWidth="244.0" text="Registration Number">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font></Label>
       <Label layoutX="138.0" layoutY="505.0" prefHeight="28.0" prefWidth="179.0" text="Training Type">
          <font>
@@ -140,6 +140,12 @@
          </font></Label>
       <Button fx:id="btnSendEmail" layoutX="870.0" layoutY="718.0" minHeight="57.0" mnemonicParsing="false" onAction="#sendEmail" text="Send Email" />
       <Button fx:id="btnClear" layoutX="993.0" layoutY="718.0" minHeight="57.0" mnemonicParsing="false" onAction="#allClear" text="Finish" />
+      <Label layoutX="898.0" layoutY="21.0" text="NIC Number">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtSearchNIC" layoutX="1066.0" layoutY="19.0" prefHeight="31.0" prefWidth="235.0" />
    </children>
    <stylesheets>
       <URL value="@../Styles/front_style.css" />

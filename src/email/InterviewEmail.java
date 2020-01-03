@@ -20,7 +20,7 @@ public class InterviewEmail {
         properties.put("mail.smtp.port","25");
 
         String myEmail="colombostudent.nita@gmail.com";
-        String password="xxxxxxxx";
+        String password="DMCol2505231";
         Session session=Session.getInstance(properties, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {

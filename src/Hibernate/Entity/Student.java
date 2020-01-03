@@ -15,7 +15,7 @@ public class Student{
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator ="stdRegNum" )
     @SequenceGenerator(name = "stdRegNum",
     sequenceName = "student_seq",
-    initialValue = 4740,
+    initialValue = 1,
     allocationSize = 1)
     @Id
     private int regNumber;

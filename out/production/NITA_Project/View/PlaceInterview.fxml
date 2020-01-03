@@ -110,6 +110,18 @@
          <font>
             <Font name="System Bold" size="16.0" />
          </font></Label>
+      <TextField fx:id="txtSTDSearchNIC" layoutX="910.0" layoutY="73.0" prefHeight="31.0" prefWidth="308.0" />
+      <Label layoutX="759.0" layoutY="75.0" prefHeight="31.0" prefWidth="190.0" text="NIC Number">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="863.0" layoutY="721.0" text="NIC Number ">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtSearchINTNic" layoutX="982.0" layoutY="716.0" prefHeight="31.0" prefWidth="257.0" />
    </children>
    <stylesheets>
       <URL value="@../Styles/front_style.css" />

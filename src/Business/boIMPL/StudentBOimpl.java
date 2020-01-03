@@ -32,8 +32,8 @@ public class StudentBOimpl implements StudentBO {
     }
 
     @Override
-    public boolean deletStudent(String id) throws Exception {
-        return studentHIB.delete(id);
+    public boolean deletStudent(String id,String nic) throws Exception {
+        return studentHIB.deleteStudent(id,nic);
     }
 
     @Override
@@ -78,6 +78,17 @@ public class StudentBOimpl implements StudentBO {
         Hibernate.Entity.Student student=studentHIB.getNextSTDid(nic);
         Student dto= new Student(student.getRegNumber());
         return dto;
+    }
+
+    @Override
+    public List<Student> searchById(String id,String nic) throws Exception {
+        List<Hibernate.Entity.Student> allStudents=studentHIB.searchById(id,nic);
+        List<Student> students=new ArrayList<>();
+        for(Hibernate.Entity.Student student:allStudents){
+            Student dto=new Student(student.getRegNumber(),student.getSname(),student.getRdate(),student.getEmail(),student.getTelNumber(),student.getAddress(),student.getNicNumber(),student.getTradeOne(),student.getTradeTwo(),student.getTradeThree(),student.getFullRegId(),student.getDob(),student.getTrainingType());
+            students.add(dto);
+        }
+        return students;
     }
 
 

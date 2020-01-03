@@ -88,7 +88,7 @@ public class StudentDetailsController implements Initializable {
     @FXML
     void delete(ActionEvent event) {
         try {
-            boolean isDeleted=bo.deletStudent(String.valueOf(delstudent.getRegNumber()));
+            boolean isDeleted=bo.deletStudent(String.valueOf(delstudent.getRegNumber()),delstudent.getNicNumber());
                 tblStudent.getItems().clear();
                 allStudents.clear();
                 allStudents = bo.getAllStudents();

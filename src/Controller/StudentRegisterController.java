@@ -120,6 +120,8 @@ public class StudentRegisterController implements Initializable {
     @FXML
     private Button btnClear;
 
+    @FXML
+    private TextField txtSearchNIC;
 
     @FXML
     private ComboBox<TrainingType> cmbTrainingType;
@@ -280,7 +282,7 @@ public class StudentRegisterController implements Initializable {
     @FXML
     void search(ActionEvent event) throws Exception {
 
-        allStudents=studentBO.searchANYthing(txtRegNumber.getText());
+        allStudents=studentBO.searchById(txtRegNumber.getText(),txtSearchNIC.getText());
         if(allStudents!=null){
             for(Student student : allStudents){
                 txtfullName.setText(student.getName());
@@ -296,7 +298,6 @@ public class StudentRegisterController implements Initializable {
 
             }
 
-            btnNotify.setDisable(true);
             btnRegStudent.setDisable(true);
         }
     else{

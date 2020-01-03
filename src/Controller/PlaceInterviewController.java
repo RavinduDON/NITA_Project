@@ -108,6 +108,12 @@ public class PlaceInterviewController implements Initializable {
     private Button btnSearchInterview;
 
     @FXML
+    private TextField txtSTDSearchNIC;
+
+    @FXML
+    private TextField txtSearchINTNic;
+
+    @FXML
     private TextField txtStdReg;
     String pattern = "yyyy-MM-dd";
 
@@ -171,8 +177,9 @@ public class PlaceInterviewController implements Initializable {
     @FXML
     void placeInterview(ActionEvent event) throws Exception {
         String regNumber=txtSearchStudentRegNumber.getText();
+        String nicNum=txtStdNIC.getText();
         allStudents.clear();
-        allStudents=studentBO.searchANYthing(regNumber);
+        allStudents=studentBO.searchById(regNumber,nicNum);
         for(Student student : allStudents) {
             fullRegID = txtStdReg.getText();
             nicNumber = txtStdNIC.getText();
@@ -203,8 +210,9 @@ public class PlaceInterviewController implements Initializable {
     @FXML
     void searchStudent(ActionEvent event) throws Exception {
         String regNumber=txtSearchStudentRegNumber.getText();
+        String nicNum=txtSTDSearchNIC.getText();
         allStudents.clear();
-        allStudents=studentBO.searchANYthing(regNumber);
+        allStudents=studentBO.searchById(regNumber,nicNum);
         if(allStudents!=null){
         for(Student studentAF : allStudents){
             //txtRegNumber.setText(Integer.toString(studentAF.getRegNumber()));
@@ -238,7 +246,7 @@ public class PlaceInterviewController implements Initializable {
 
     @FXML
     void searchInterview(ActionEvent event) throws Exception {
-        allInterviews=interviewBO.searchInterviews(txtSearchInterview.getText());
+        allInterviews=interviewBO.searchInterviews(txtSearchInterview.getText(),txtSearchINTNic.getText());
         for(Interview interview : allInterviews){
            txtstdName.setText(interview.getStdName());
            txtStdReg.setText(interview.getFullRegID());
@@ -257,7 +265,7 @@ public class PlaceInterviewController implements Initializable {
     @FXML
     void senSMS(ActionEvent event) throws Exception {
         fullRegID=txtStdReg.getText();
-        interviewDate=txtInterviewDate.getEditor().getText();
+        interviewDate=txtInterviewDate.getValue().format(DateTimeFormatter.ofPattern(pattern));
         telNumber=txtTelNumber.getText();
         InterviewSMS.SendSMS(telNumber,fullRegID,interviewDate);
     }
@@ -266,7 +274,7 @@ public class PlaceInterviewController implements Initializable {
     void sendEmail(ActionEvent event) throws Exception {
         fullRegID=txtStdReg.getText();
         stdName=txtstdName.getText();
-        interviewDate=txtInterviewDate.getEditor().getText();
+        interviewDate=txtInterviewDate.getValue().format(DateTimeFormatter.ofPattern(pattern));
         interviewPlace=txtInterviewPlace.getText();
         interviewTime=txtInterviewTime.getText();
         email=txtEmail.getText();
