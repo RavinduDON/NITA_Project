@@ -40,8 +40,8 @@ public class InterviewBOimpl implements InterviewBO {
         List<Hibernate.Entity.Interview> allInterviews=interviewHIB.getAll();
         List<Interview> interviews=new ArrayList<>();
         for(Hibernate.Entity.Interview interview:allInterviews){
-            Student student=new Student(interview.getStudent().getRegNumber(),interview.getStudent().getSname(),interview.getStudent().getRdate(),interview.getStudent().getEmail(),interview.getStudent().getTelNumber(),interview.getStudent().getAddress(),interview.getStudent().getNicNumber(),interview.getStudent().getTradeOne(),interview.getStudent().getTradeTwo(),interview.getStudent().getTradeThree(),interview.getStudent().getFullRegId(),interview.getStudent().getDob(),interview.getStudent().getTrainingType());
-            Interview dto=new Interview(interview.getInterviewID(),interview.getFullRegID(),interview.getNicNumber(),interview.getStdName(),interview.getEmail(),interview.getTelNumber(),interview.getInterviewDate(),interview.getInterviewTime(),interview.getInterviewPlace(),interview.getFirstInterviewResult(),interview.getSecondInterviewResult(),interview.getThiredInterviewResult(),student);
+            //Student student=new Student(interview.getStudent().getRegNumber(),interview.getStudent().getSname(),interview.getStudent().getRdate(),interview.getStudent().getEmail(),interview.getStudent().getTelNumber(),interview.getStudent().getAddress(),interview.getStudent().getNicNumber(),interview.getStudent().getTradeOne(),interview.getStudent().getTradeTwo(),interview.getStudent().getTradeThree(),interview.getStudent().getFullRegId(),interview.getStudent().getDob(),interview.getStudent().getTrainingType());
+            Interview dto=new Interview(interview.getInterviewID(),interview.getFullRegID(),interview.getNicNumber(),interview.getStdName(),interview.getEmail(),interview.getTelNumber(),interview.getInterviewDate(),interview.getInterviewTime(),interview.getInterviewPlace(),interview.getFirstInterviewResult(),interview.getSecondInterviewResult(),interview.getThiredInterviewResult());
             interviews.add(dto);
         }
         return interviews;
@@ -57,9 +57,9 @@ public class InterviewBOimpl implements InterviewBO {
         List<Hibernate.Entity.Interview> allInterviews=interviewHIB.searchANYthing(key);
         List<Interview> interviews=new ArrayList<>();
         for(Hibernate.Entity.Interview interview:allInterviews){
-            Student student=new Student(interview.getStudent().getRegNumber(),interview.getStudent().getSname(),interview.getStudent().getRdate(),interview.getStudent().getEmail(),interview.getStudent().getTelNumber(),interview.getStudent().getAddress(),interview.getStudent().getNicNumber(),interview.getStudent().getTradeOne(),interview.getStudent().getTradeTwo(),interview.getStudent().getTradeThree(),interview.getStudent().getFullRegId(),interview.getStudent().getDob(),interview.getStudent().getTrainingType());
+            //Student student=new Student(interview.getStudent().getRegNumber(),interview.getStudent().getSname(),interview.getStudent().getRdate(),interview.getStudent().getEmail(),interview.getStudent().getTelNumber(),interview.getStudent().getAddress(),interview.getStudent().getNicNumber(),interview.getStudent().getTradeOne(),interview.getStudent().getTradeTwo(),interview.getStudent().getTradeThree(),interview.getStudent().getFullRegId(),interview.getStudent().getDob(),interview.getStudent().getTrainingType());
 
-            Interview dto=new Interview(interview.getInterviewID(),interview.getFullRegID(),interview.getNicNumber(),interview.getStdName(),interview.getEmail(),interview.getTelNumber(),interview.getInterviewDate(),interview.getInterviewTime(),interview.getInterviewPlace(),interview.getFirstInterviewResult(),interview.getSecondInterviewResult(),interview.getThiredInterviewResult(),student);
+            Interview dto=new Interview(interview.getInterviewID(),interview.getFullRegID(),interview.getNicNumber(),interview.getStdName(),interview.getEmail(),interview.getTelNumber(),interview.getInterviewDate(),interview.getInterviewTime(),interview.getInterviewPlace(),interview.getFirstInterviewResult(),interview.getSecondInterviewResult(),interview.getThiredInterviewResult());
             interviews.add(dto);
         }
         return interviews;
@@ -75,9 +75,9 @@ public class InterviewBOimpl implements InterviewBO {
         List<Hibernate.Entity.Interview> allInterviews=interviewHIB.searchInterviews(id,nic);
         List<Interview> interviews=new ArrayList<>();
         for(Hibernate.Entity.Interview interview:allInterviews){
-            Student student=new Student(interview.getStudent().getRegNumber(),interview.getStudent().getSname(),interview.getStudent().getRdate(),interview.getStudent().getEmail(),interview.getStudent().getTelNumber(),interview.getStudent().getAddress(),interview.getStudent().getNicNumber(),interview.getStudent().getTradeOne(),interview.getStudent().getTradeTwo(),interview.getStudent().getTradeThree(),interview.getStudent().getFullRegId(),interview.getStudent().getDob(),interview.getStudent().getTrainingType());
+            //Student student=new Student(interview.getStudent().getRegNumber(),interview.getStudent().getSname(),interview.getStudent().getRdate(),interview.getStudent().getEmail(),interview.getStudent().getTelNumber(),interview.getStudent().getAddress(),interview.getStudent().getNicNumber(),interview.getStudent().getTradeOne(),interview.getStudent().getTradeTwo(),interview.getStudent().getTradeThree(),interview.getStudent().getFullRegId(),interview.getStudent().getDob(),interview.getStudent().getTrainingType());
 
-            Interview dto=new Interview(interview.getInterviewID(),interview.getFullRegID(),interview.getNicNumber(),interview.getStdName(),interview.getEmail(),interview.getTelNumber(),interview.getInterviewDate(),interview.getInterviewTime(),interview.getInterviewPlace(),interview.getFirstInterviewResult(),interview.getSecondInterviewResult(),interview.getThiredInterviewResult(),student);
+            Interview dto=new Interview(interview.getInterviewID(),interview.getFullRegID(),interview.getNicNumber(),interview.getStdName(),interview.getEmail(),interview.getTelNumber(),interview.getInterviewDate(),interview.getInterviewTime(),interview.getInterviewPlace(),interview.getFirstInterviewResult(),interview.getSecondInterviewResult(),interview.getThiredInterviewResult());
             interviews.add(dto);
         }
         return interviews;
