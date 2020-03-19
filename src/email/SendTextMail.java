@@ -20,7 +20,7 @@ public class SendTextMail {
         properties.put("mail.smtp.port","25");
 
         String myEmail="colombostudent.nita@gmail.com";
-        String password="DMCol2505231";
+        String password="xxxxxxxxxxxxxxxxx";
         Session session=Session.getInstance(properties, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
